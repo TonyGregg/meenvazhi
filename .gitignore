@@ -17,6 +17,10 @@ pipeline/summary.json
 node_modules/
 web/dist/
 web/dev-dist/
+web/test-results/
+web/playwright-report/
+web/*.tsbuildinfo
+web/probe.tmp.mjs
 
 # OS and editors
 .DS_Store

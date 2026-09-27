@@ -1,0 +1,43 @@
+import js from '@eslint/js';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+
+export default tseslint.config(
+  { ignores: ['dist', 'dev-dist', 'node_modules'] },
+  js.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked,
+  {
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      ecmaVersion: 2022,
+      globals: globals.browser,
+      parserOptions: {
+        project: ['./tsconfig.app.json', './tsconfig.node.json', './tsconfig.e2e.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    plugins: { 'react-hooks': reactHooks, 'react-refresh': reactRefresh },
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      // Catches a forgotten await on the storage and fetch helpers, which would
+      // silently drop the advisory rather than fail loudly.
+      '@typescript-eslint/no-floating-promises': 'error',
+      '@typescript-eslint/no-misused-promises': 'error',
+    },
+  },
+  {
+    // Config and build scripts are not in a tsconfig project, so type-aware
+    // rules cannot run on them.
+    files: ['scripts/**/*.mjs', 'eslint.config.js', 'vite.config.ts', 'vite-plugin-local-data.ts'],
+    // Spread first: disableTypeChecked carries its own languageOptions, and
+    // spreading it after would discard the Node globals set here.
+    ...tseslint.configs.disableTypeChecked,
+    languageOptions: {
+      ...tseslint.configs.disableTypeChecked.languageOptions,
+      globals: { ...globals.node, ...globals.nodeBuiltin },
+    },
+  },
+);

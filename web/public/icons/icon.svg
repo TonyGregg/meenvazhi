@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Meenvazhi">
+  <title>Meenvazhi</title>
+  <!--
+    Placeholder icon, meant to be replaced.
+
+    Ocean blue ground, a white fish, and a compass needle running through it: the
+    app's whole job is pointing at fish. The amber tick marks north, the one
+    orientation that matters on a bearing.
+
+    Everything sits inside the central 80% so the same artwork survives being
+    cropped to a circle or a squircle by a launcher.
+  -->
+  <rect width="512" height="512" rx="96" fill="#04283c"/>
+
+  <!-- Compass ring -->
+  <circle cx="256" cy="256" r="168" fill="none" stroke="#ffffff" stroke-opacity="0.22" stroke-width="10"/>
+
+  <!-- North tick, amber -->
+  <path d="M256 60 L276 108 L256 96 L236 108 Z" fill="#ffb02e"/>
+
+  <!-- Needle, pointing north-northwest, the bearing the real advisory gave on the day this was built -->
+  <path d="M256 256 L206 118 L256 148 Z" fill="#ffffff" fill-opacity="0.55"/>
+
+  <!-- Fish body -->
+  <path d="M168 300 C196 250 262 226 322 248 C352 259 372 280 382 300 C372 320 352 341 322 352 C262 374 196 350 168 300 Z" fill="#ffffff"/>
+  <!-- Tail, doubling as the needle's south end -->
+  <path d="M168 300 L108 252 L124 300 L108 348 Z" fill="#ffffff"/>
+  <!-- Eye, punched out of the body so it reads at 48 pixels -->
+  <circle cx="330" cy="288" r="13" fill="#04283c"/>
+</svg>

@@ -1,0 +1,124 @@
+/*
+ * Design tokens and the three screen modes.
+ *
+ * Sun is the default, not Day. The first thing this app has to survive is
+ * midday glare on an open deck, so the default trades every bit of subtlety for
+ * contrast: near-black on pure white, no mid greys, heavy weights, thick borders.
+ *
+ * Night is dim red on black. That is not decoration. Red light preserves dark
+ * adaptation, and someone who has just read a bright white screen in the
+ * wheelhouse cannot see the water for a minute afterwards.
+ *
+ * The fonts are imported through the bundler rather than from public/, so Vite
+ * rewrites the URLs for whatever base the site is deployed under and fingerprints
+ * them for cache-busting. A hand-written absolute path breaks on a project Pages
+ * subpath.
+ *
+ * The mode is always chosen by hand and never follows prefers-color-scheme. The
+ * ambient light on a boat has nothing to do with what the operating system thinks
+ * the time of day is.
+ */
+
+:root {
+  /* Sun: the default. */
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-sunk: #f0f0f0;
+  --text: #0b0b0b;
+  --text-dim: #3a3a3a;
+  --border: #0b0b0b;
+  --border-width: 2px;
+  --accent: #00325a;
+  --accent-text: #ffffff;
+  --warn-bg: #ffe27a;
+  --warn-text: #2a1d00;
+  --danger-bg: #b3000f;
+  --danger-text: #ffffff;
+  --ok: #0a5f2c;
+  --dead-text: #6a6a6a;
+
+  --font-body: 'Noto Sans Malayalam Subset', 'Noto Sans Tamil Subset',
+    system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* 18px base: bigger than a typical app, because this is read at arm's length. */
+  --size-base: 1.125rem;
+  --size-small: 1rem;
+  --size-label: 0.9375rem;
+  --size-big: 2.5rem;
+  --size-huge: 3.5rem;
+
+  --weight-normal: 500;
+  --weight-bold: 700;
+
+  /* Touch targets. 56px minimum, 64px for anything primary. Wet fingers on a
+     rolling deck are imprecise, and a wet screen produces spurious touches. */
+  --tap: 56px;
+  --tap-primary: 64px;
+
+  --gap: 0.75rem;
+  --pad: 1rem;
+  --radius: 10px;
+
+  color-scheme: light;
+}
+
+:root[data-theme='day'] {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --surface-sunk: #e8ecf0;
+  --text: #11181f;
+  --text-dim: #4a5560;
+  --border: #c3ccd4;
+  --border-width: 1px;
+  --accent: #04283c;
+  --accent-text: #ffffff;
+  --warn-bg: #fff3cd;
+  --warn-text: #5c4400;
+  --danger-bg: #c0192b;
+  --danger-text: #ffffff;
+  --ok: #10703a;
+  --dead-text: #8894a0;
+  color-scheme: light;
+}
+
+:root[data-theme='night'] {
+  --bg: #000000;
+  --surface: #0a0000;
+  --surface-sunk: #140303;
+  --text: #ff4a2b;
+  --text-dim: #a8301c;
+  --border: #5c1a10;
+  --border-width: 1px;
+  --accent: #2a0a04;
+  --accent-text: #ff6a4a;
+  --warn-bg: #2a1000;
+  --warn-text: #ff9a3c;
+  --danger-bg: #4a0000;
+  --danger-text: #ff6a5a;
+  --ok: #b34a2a;
+  --dead-text: #6a2418;
+  color-scheme: dark;
+}
+
+/*
+ * Indic fonts are scoped to their own script ranges so digits and Latin text come
+ * from the system font. The subsets carry no Latin glyphs, and letting the browser
+ * reach for them anyway produces missing-glyph boxes for numbers.
+ */
+@font-face {
+  font-family: 'Noto Sans Malayalam Subset';
+  src: url('../assets/fonts/NotoSansMalayalam-subset.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0D00-0D7F, U+200C-200D, U+0964-0965;
+}
+
+@font-face {
+  font-family: 'Noto Sans Tamil Subset';
+  src: url('../assets/fonts/NotoSansTamil-subset.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0B80-0BFF, U+200C-200D, U+0964-0965;
+}

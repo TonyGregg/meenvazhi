@@ -1,0 +1,379 @@
+@import './tokens.css';
+
+/*
+ * Layout and interaction rules, all of them driven by where this gets used.
+ *
+ * No drag, swipe or long-press anywhere in the app. Every one of those fails with
+ * wet hands, and a wet capacitive screen generates touches nobody made. Everything
+ * is a plain tap on a large target.
+ *
+ * No animation at all, not merely reduced animation. Motion costs battery, and a
+ * screen that moves is harder to read on a deck that is already moving.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--size-base);
+  font-weight: var(--weight-normal);
+  line-height: 1.45;
+  /* Respects the phone's notch and home bar without pushing content off screen. */
+  padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) 0 env(safe-area-inset-left, 0);
+  overscroll-behavior-y: contain;
+  /* No pull-to-refresh: an accidental downward swipe must not reload the app. */
+  touch-action: manipulation;
+}
+
+* {
+  animation: none !important;
+  transition: none !important;
+}
+
+button,
+select,
+a.button {
+  font: inherit;
+  color: inherit;
+  min-height: var(--tap);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 0.5rem 0.875rem;
+  cursor: pointer;
+  touch-action: manipulation;
+  /* Kills the 300ms tap highlight flash, which reads as lag. */
+  -webkit-tap-highlight-color: transparent;
+}
+
+button[aria-pressed='true'],
+button.primary {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+  font-weight: var(--weight-bold);
+}
+
+button.primary {
+  min-height: var(--tap-primary);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+/* Layout ------------------------------------------------------------------ */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.app__main {
+  flex: 1;
+  padding: var(--pad);
+  /* Clears the fixed tab bar, plus the home bar beneath it. */
+  padding-bottom: calc(var(--tap-primary) + env(safe-area-inset-bottom, 0px) + 2rem);
+  max-width: 44rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  flex-wrap: wrap;
+}
+
+.label {
+  font-size: var(--size-label);
+  font-weight: var(--weight-bold);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.muted {
+  color: var(--text-dim);
+  font-size: var(--size-small);
+}
+
+.card {
+  background: var(--surface);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--pad);
+}
+
+/* Numbers ----------------------------------------------------------------- */
+
+/*
+ * Tabular figures throughout. Proportional digits shift width as they change, so
+ * a bearing ticking over appears to jitter, which is exactly wrong for the one
+ * number someone is steering by.
+ */
+.num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
+.big {
+  font-size: var(--size-big);
+  font-weight: var(--weight-bold);
+  line-height: 1.05;
+}
+
+.huge {
+  font-size: var(--size-huge);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+}
+
+/* Banners ----------------------------------------------------------------- */
+
+.banner {
+  padding: 0.875rem var(--pad);
+  font-weight: var(--weight-bold);
+  border: var(--border-width) solid transparent;
+}
+
+.banner--warn {
+  background: var(--warn-bg);
+  color: var(--warn-text);
+  border-color: var(--warn-text);
+}
+
+.banner--danger {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  border-color: var(--danger-text);
+}
+
+.banner--info {
+  background: var(--surface-sunk);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+/*
+ * A zone from a dead advisory is struck through and dimmed. A glance at a moving
+ * screen must not be able to mistake an expired zone for a live one, and a banner
+ * alone is too easy to scroll past.
+ */
+.dead {
+  color: var(--dead-text);
+}
+
+.dead .zone__bearing,
+.dead .zone__distance {
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+}
+
+/* Tab bar ----------------------------------------------------------------- */
+
+/* Fixed at the bottom, in the thumb's reach when holding the phone one-handed. */
+.tabs {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--surface);
+  border-top: var(--border-width) solid var(--border);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  z-index: 10;
+}
+
+.tabs button {
+  border: 0;
+  border-radius: 0;
+  min-height: var(--tap-primary);
+  /* Scales down rather than clipping: the Malayalam and Tamil tab labels are
+     considerably longer than the English ones and were being cut off. */
+  font-size: clamp(0.72rem, 3.1vw, var(--size-label));
+  padding: 0.25rem 0.125rem;
+  overflow: hidden;
+  min-width: 0;
+  text-align: center;
+  line-height: 1.15;
+  font-weight: var(--weight-bold);
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+}
+
+.tabs button[aria-current='page'] {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.tabs__icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* Header ------------------------------------------------------------------ */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  padding: 0.625rem var(--pad);
+  background: var(--accent);
+  color: var(--accent-text);
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 5;
+}
+
+.header__name {
+  font-weight: var(--weight-bold);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+/*
+ * Controls in the header must not inherit the header's white text, or they end up
+ * white on a white control background and read as empty boxes. Caught in a
+ * screenshot, invisible to the tests, because the elements were present and
+ * correctly labelled the whole time.
+ */
+.header select,
+.header button {
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--surface);
+  font-weight: var(--weight-bold);
+}
+
+.header select:disabled,
+.header button:disabled {
+  opacity: 0.65;
+}
+
+.header__dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  display: inline-block;
+  background: currentColor;
+  flex: none;
+}
+
+/* Zone card --------------------------------------------------------------- */
+
+.zone {
+  display: grid;
+  /* minmax(0, ...) so the columns may shrink. Without it a long unit label, such
+     as the Malayalam abbreviation for nautical miles, overflows the card. */
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  gap: 0.25rem var(--pad);
+  align-items: baseline;
+  text-align: left;
+  width: 100%;
+}
+
+.zone__code {
+  grid-column: 1 / -1;
+  font-weight: var(--weight-bold);
+  font-size: var(--size-small);
+  letter-spacing: 0.08em;
+}
+
+.zone__bearing {
+  font-size: var(--size-huge);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.zone__distance {
+  font-size: var(--size-big);
+  font-weight: var(--weight-bold);
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.zone__meta {
+  grid-column: 1 / -1;
+  font-size: var(--size-small);
+  color: var(--text-dim);
+}
+
+.zone__dms {
+  font-size: var(--size-small);
+  word-break: break-word;
+}
+
+.zone--target {
+  outline: 4px solid var(--accent);
+  outline-offset: -1px;
+}
+
+/* Utility ----------------------------------------------------------------- */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.grow {
+  flex: 1;
+}
+
+.centre {
+  text-align: center;
+}
+
+.wrap-anywhere {
+  overflow-wrap: anywhere;
+}
+
+/* Nothing in the app scrolls sideways. */
+.app,
+.app__main {
+  overflow-x: hidden;
+}

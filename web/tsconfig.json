@@ -1,0 +1,10 @@
+{
+  // Split deliberately. App code must not see Node globals: a stray `process` or
+  // `Buffer` compiles fine here and then fails in a browser on a boat.
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.e2e.json" }
+  ]
+}
