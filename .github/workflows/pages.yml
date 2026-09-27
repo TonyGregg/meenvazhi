@@ -40,38 +40,27 @@ jobs:
           # arrangement exists to prevent, and the trigger was only half of it.
           ref: main
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Build the app
+        working-directory: web
+        run: |
+          npm ci
+          npm run build
+
       - name: Assemble the site
         # The app and its data are served from one origin, so there is no CORS to
         # configure, one cache to reason about, and a much simpler service worker.
         run: |
-          mkdir -p dist
-          if [ -f web/package.json ]; then
-            echo "web/ not built yet in this milestone; publishing data only"
-          fi
+          rm -rf dist
+          cp -R web/dist dist
           mkdir -p dist/data
           cp -R public-data/. dist/data/
-          # A placeholder index until the PWA lands, so the Pages URL is not a 404.
-          if [ ! -f dist/index.html ]; then
-            cat > dist/index.html <<'HTML'
-          <!doctype html><meta charset="utf-8"><title>Meenvazhi</title>
-          <h1>Meenvazhi</h1>
-          <p>Daily INCOIS Potential Fishing Zone data.</p>
-          <ul>
-            <li><a href="data/pfz-latest.json">pfz-latest.json</a></li>
-            <li><a href="data/pfz-latest.gpx">pfz-latest.gpx</a></li>
-            <li><a href="data/pfz-latest.txt">pfz-latest.txt</a></li>
-            <li><a href="data/status.json">status.json</a></li>
-          </ul>
-          <p>Advisory only. Not for navigation or safety of life at sea.</p>
-          <p>Source: INCOIS, Ministry of Earth Sciences, Govt. of India</p>
-          HTML
-          fi
 
-      # Pages must be switched on once by hand: Settings, then Pages, then set
-      # Source to GitHub Actions. This action's `enablement: true` option cannot
-      # do it for you, because the built-in Actions token is not permitted to
-      # create a Pages site and the call fails with "Resource not accessible by
-      # integration".
       - name: Report what is being published
         # So the run log records the advisory actually deployed. Without this, a
         # stale deploy looks identical to a fresh one.

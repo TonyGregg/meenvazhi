@@ -107,3 +107,23 @@ def test_fetched_html_is_kept_as_an_artifact_not_committed(pipeline: dict[str, A
     upload = next(s for s in steps if str(s.get("uses", "")).startswith("actions/upload-artifact"))
     assert "runs/" in upload["with"]["path"]
     assert upload["if"].startswith("always()"), "capture the HTML even when the run failed"
+
+
+def test_pages_builds_the_app_before_deploying(pages: dict[str, Any]) -> None:
+    """The deploy must publish the built app, not just the data files."""
+    steps = pages["jobs"]["build-and-deploy"]["steps"]
+    names = [s.get("name") or s.get("uses", "") for s in steps]
+    assert any("setup-node" in n for n in names), "the app has to be built before it can be deployed"
+    assert "Build the app" in names
+    assert "Assemble the site" in names
+    # Order matters: assembling before building would copy a stale or absent dist.
+    assert names.index("Build the app") < names.index("Assemble the site")
+
+
+def test_ci_runs_the_offline_end_to_end_tests() -> None:
+    """The offline behaviour is the whole product, so it cannot be checked by hand only."""
+    ci = load("ci.yml")
+    web = ci["jobs"]["web"]
+    run_steps = " ".join(str(s.get("run", "")) for s in web["steps"])
+    assert "npm run test:e2e" in run_steps
+    assert "playwright install" in run_steps
