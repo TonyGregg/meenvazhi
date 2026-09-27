@@ -69,6 +69,26 @@ docs/           INCOIS.md, SCHEMA.md
 .github/        pipeline.yml (cron), pages.yml (deploy), ci.yml
 ```
 
+## One-time GitHub setup
+
+Two settings have to be changed by hand. Neither can be done from a workflow.
+
+**Pages.** Settings, then Pages, then set Source to **GitHub Actions**, not a
+branch. Until this is done the deploy job fails at `actions/configure-pages` with
+`Create Pages site failed. Error: Resource not accessible by integration`. That
+action has an `enablement: true` option which looks like it avoids this step, but
+the built-in Actions token is not permitted to create a Pages site, so it does not
+work.
+
+**Workflow permissions.** Settings, then Actions, then General, then set Workflow
+permissions to **Read and write**. The daily pipeline commits the fetched advisory
+back to the default branch, so the token needs write access to repository contents.
+If that step ever fails with a permission error, this is why.
+
+The Pages deploy is invoked directly by the pipeline rather than triggered by the
+data commit, because a push made with the built-in token does not start another
+workflow. Without that, the site would keep serving the first day's data forever.
+
 ## Running it
 
 ```bash
