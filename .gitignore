@@ -11,6 +11,7 @@ htmlcov/
 # Captured INCOIS responses from live runs (uploaded as CI artifacts, never committed)
 pipeline/runs/
 run.json
+pipeline/summary.json
 
 # Node
 node_modules/

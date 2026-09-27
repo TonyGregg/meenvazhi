@@ -74,6 +74,11 @@ jobs:
           set -e
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"
           echo "published=$(jq -r '.published' summary.json)" >> "$GITHUB_OUTPUT"
+          # INCOIS's own date for the advisory, which is not necessarily today in
+          # IST: a run just after midnight IST still carries the previous day's
+          # advisory until INCOIS issues the next one. An all-cloudy day has no
+          # date at all, because the timestamp only appears on populated pages.
+          echo "advisory_date=$(jq -r '.advisory_date // empty' summary.json)" >> "$GITHUB_OUTPUT"
           # Exit 3 means a sector could not be fetched and previously published
           # data was deliberately left untouched. That is the pipeline working as
           # designed on a bad day, so surface it without failing the workflow;
@@ -106,7 +111,14 @@ jobs:
             echo "no change in public-data; nothing to commit"
             exit 0
           fi
-          git commit -m "data: PFZ advisory $(TZ=Asia/Kolkata date +%F)"
+          # The git log is the audit trail of what INCOIS said on each day, so the
+          # message must name the advisory's date, not the date we happened to run.
+          date="${{ steps.run.outputs.advisory_date }}"
+          if [ -n "$date" ]; then
+            git commit -m "data: PFZ advisory $date"
+          else
+            git commit -m "data: no advisory, all sectors cloud-covered ($(TZ=Asia/Kolkata date +%F) IST)"
+          fi
           # Retry once against a moving remote rather than failing the day's run.
           git push || { git pull --rebase --autostash && git push; }
 
