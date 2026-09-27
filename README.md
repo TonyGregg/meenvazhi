@@ -17,6 +17,21 @@ trip. Nothing runs on a server, so nothing can go down while the boat is at sea.
 >
 > Source: INCOIS, Ministry of Earth Sciences, Govt. of India
 
+## Live
+
+Published daily to GitHub Pages:
+
+| | |
+|---|---|
+| Site | <https://tonygregg.github.io/meenvazhi/> |
+| Advisory JSON | <https://tonygregg.github.io/meenvazhi/data/pfz-latest.json> |
+| Waypoints for a GPS unit | <https://tonygregg.github.io/meenvazhi/data/pfz-latest.gpx> |
+| Text digest | <https://tonygregg.github.io/meenvazhi/data/pfz-latest.txt> |
+| Last run, including failures | <https://tonygregg.github.io/meenvazhi/data/status.json> |
+
+The app and its data share one origin, so there is no CORS to configure and the
+service worker stays simple.
+
 ## Status
 
 The pipeline is complete and verified against the live site. The web app is not
