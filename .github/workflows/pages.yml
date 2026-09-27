@@ -1,0 +1,65 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Invoked by pipeline.yml after a successful data commit. See the note there:
+  # a GITHUB_TOKEN push cannot trigger a workflow, so this must be callable.
+  workflow_call:
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - "public-data/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble the site
+        # The app and its data are served from one origin, so there is no CORS to
+        # configure, one cache to reason about, and a much simpler service worker.
+        run: |
+          mkdir -p dist
+          if [ -f web/package.json ]; then
+            echo "web/ not built yet in this milestone; publishing data only"
+          fi
+          mkdir -p dist/data
+          cp -R public-data/. dist/data/
+          # A placeholder index until the PWA lands, so the Pages URL is not a 404.
+          if [ ! -f dist/index.html ]; then
+            cat > dist/index.html <<'HTML'
+          <!doctype html><meta charset="utf-8"><title>Meenvazhi</title>
+          <h1>Meenvazhi</h1>
+          <p>Daily INCOIS Potential Fishing Zone data.</p>
+          <ul>
+            <li><a href="data/pfz-latest.json">pfz-latest.json</a></li>
+            <li><a href="data/pfz-latest.gpx">pfz-latest.gpx</a></li>
+            <li><a href="data/pfz-latest.txt">pfz-latest.txt</a></li>
+            <li><a href="data/status.json">status.json</a></li>
+          </ul>
+          <p>Advisory only. Not for navigation or safety of life at sea.</p>
+          <p>Source: INCOIS, Ministry of Earth Sciences, Govt. of India</p>
+          HTML
+          fi
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deploy
+        uses: actions/deploy-pages@v4

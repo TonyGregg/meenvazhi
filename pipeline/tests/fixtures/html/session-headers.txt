@@ -1,0 +1,10 @@
+HTTP/1.1 200 
+Date: Sun, 27 Sep 2026 21:43:56 GMT
+Server: Apache/2.4.63 (Red Hat Enterprise Linux) OpenSSL/3.5.5 mod_fcgid/2.3.9
+X-Frame-Options: SAMEORIGIN
+vary: accept-encoding
+Content-Type: text/html;charset=UTF-8
+Set-Cookie: JSESSIONID=REDACTED_SESSION_TOKEN; Path=/MarineFisheries; HttpOnly;HttpOnly;Secure
+X-XSS-Protection: 1; mode=block
+Transfer-Encoding: chunked
+

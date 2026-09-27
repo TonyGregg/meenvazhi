@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Captured INCOIS responses from live runs (uploaded as CI artifacts, never committed)
+pipeline/runs/
+run.json
+
+# Node
+node_modules/
+web/dist/
+web/dev-dist/
+
+# OS
+.DS_Store

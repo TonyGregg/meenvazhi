@@ -1,0 +1,39 @@
+{
+  "last_attempt_at": "2026-09-27T22:28:44Z",
+  "published": true,
+  "reason": null,
+  "exit_code": 0,
+  "advisory_date": "2026-09-27",
+  "consecutive_failures": 0,
+  "sectors": [
+    {
+      "sector_id": "SEC005",
+      "sector_name": "KERALA",
+      "status": "NO_ADVISORY",
+      "reason": "excessive cloud cover",
+      "zone_count": 0
+    },
+    {
+      "sector_id": "SEC004",
+      "sector_name": "KARNATAKA",
+      "status": "HAS_ADVISORY",
+      "reason": null,
+      "zone_count": 20
+    },
+    {
+      "sector_id": "SEC014",
+      "sector_name": "LAKSHADWEEP",
+      "status": "NO_ADVISORY",
+      "reason": "excessive cloud cover",
+      "zone_count": 0
+    },
+    {
+      "sector_id": "SEC006",
+      "sector_name": "SOUTH TAMILNADU",
+      "status": "NO_ADVISORY",
+      "reason": "excessive cloud cover",
+      "zone_count": 0
+    }
+  ],
+  "last_success_at": "2026-09-27T22:28:44Z"
+}

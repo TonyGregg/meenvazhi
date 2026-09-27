@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+
+      - name: Install dependencies
+        working-directory: pipeline
+        run: |
+          uv venv --python 3.12 .venv
+          uv pip install --python .venv/bin/python -r requirements-dev.txt
+
+      - name: Lint
+        working-directory: pipeline
+        run: |
+          .venv/bin/ruff check .
+          .venv/bin/ruff format --check .
+
+      - name: Type check
+        working-directory: pipeline
+        run: .venv/bin/mypy meenvazhi run_pipeline.py
+
+      - name: Test
+        working-directory: pipeline
+        run: .venv/bin/python -m pytest
+
+      - name: End-to-end run with no network
+        # Exercises fetch orchestration, build, GPX and publish against the saved
+        # fixtures, so a schema or parser regression fails here rather than in
+        # production at 17:00 IST.
+        working-directory: pipeline
+        run: |
+          .venv/bin/python run_pipeline.py \
+            --from-fixtures tests/fixtures/html \
+            --out "$RUNNER_TEMP/out" -v
+          test -s "$RUNNER_TEMP/out/pfz-latest.json"
+          test -s "$RUNNER_TEMP/out/pfz-latest.gpx"
+
+      - name: Validate GPX against the schema
+        working-directory: pipeline
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq libxml2-utils
+          xmllint --noout "$RUNNER_TEMP/out/pfz-latest.gpx"

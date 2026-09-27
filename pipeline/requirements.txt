@@ -1,0 +1,10 @@
+# Runtime dependencies for the Meenvazhi daily pipeline.
+# httpx is the house standard HTTP client (see bloom/requirements.txt), not requests.
+httpx==0.28.1
+beautifulsoup4==4.13.3
+lxml==5.3.1
+PyYAML==6.0.2
+python-dateutil==2.9.0.post0
+# Pure-Python exact WGS84 geodesics. Chosen over pyproj: no binary wheel, and
+# Geodesic.WGS84.Inverse is deterministic, which is what golden tests need.
+geographiclib==2.0

@@ -1,0 +1,120 @@
+name: Daily PFZ pipeline
+
+# INCOIS publishes the advisory around midday IST; the capture used to build this
+# project was timestamped 15:26 IST. Both schedules below leave generous margin,
+# because GitHub's cron is best-effort and can drift 10 to 30 minutes under load.
+#
+# The second run is a safety net, not a second fetch: it no-ops when status.json
+# already records a success for today's IST advisory date.
+on:
+  schedule:
+    - cron: "30 11 * * *"   # 17:00 IST
+    - cron: "0 15 * * *"    # 20:30 IST, retry
+  workflow_dispatch:
+    inputs:
+      sectors:
+        description: "Comma-separated sector ids (blank uses config.yaml)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Never let two runs write public-data at once, and never cancel one midway.
+concurrency:
+  group: pipeline
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    outputs:
+      published: ${{ steps.run.outputs.published }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Skip if today's advisory is already published
+        id: guard
+        # Only guards the retry schedule. A manual dispatch always runs.
+        run: |
+          if [ "${{ github.event.schedule }}" != "0 15 * * *" ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          today="$(TZ=Asia/Kolkata date +%F)"
+          if [ -f public-data/status.json ] && \
+             jq -e --arg d "$today" '.published == true and .advisory_date == $d' public-data/status.json >/dev/null; then
+            echo "today's advisory ($today) is already published; skipping the retry"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: astral-sh/setup-uv@v5
+        if: steps.guard.outputs.skip != 'true'
+
+      - name: Install dependencies
+        if: steps.guard.outputs.skip != 'true'
+        working-directory: pipeline
+        run: |
+          uv venv --python 3.12 .venv
+          uv pip install --python .venv/bin/python -r requirements.txt
+
+      - name: Fetch advisories
+        id: run
+        if: steps.guard.outputs.skip != 'true'
+        working-directory: pipeline
+        run: |
+          set +e
+          .venv/bin/python run_pipeline.py \
+            ${{ inputs.sectors && format('--sectors {0}', inputs.sectors) || '' }} \
+            --save-html runs/ -v | tee summary.json
+          code=${PIPESTATUS[0]}
+          set -e
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          echo "published=$(jq -r '.published' summary.json)" >> "$GITHUB_OUTPUT"
+          # Exit 3 means a sector could not be fetched and previously published
+          # data was deliberately left untouched. That is the pipeline working as
+          # designed on a bad day, so surface it without failing the workflow;
+          # anything else is a real fault.
+          if [ "$code" -eq 3 ]; then
+            echo "::warning::Nothing published; the previous advisory is still live. See status.json."
+            exit 0
+          fi
+          exit "$code"
+
+      - name: Upload fetched HTML
+        # Kept for 14 days rather than committed: 50 KB per sector per day adds up,
+        # and this is only ever needed to debug a parse failure. Without it, an
+        # INCOIS redesign costs a day of guessing.
+        if: always() && steps.guard.outputs.skip != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: incois-html-${{ github.run_id }}
+          path: pipeline/runs/
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Commit the advisory
+        if: steps.run.outputs.published == 'true'
+        run: |
+          git config user.name "meenvazhi-bot"
+          git config user.email "noreply@github.com"
+          git add public-data
+          if git diff --cached --quiet; then
+            echo "no change in public-data; nothing to commit"
+            exit 0
+          fi
+          git commit -m "data: PFZ advisory $(TZ=Asia/Kolkata date +%F)"
+          # Retry once against a moving remote rather than failing the day's run.
+          git push || { git pull --rebase --autostash && git push; }
+
+  deploy:
+    needs: fetch
+    if: needs.fetch.outputs.published == 'true'
+    # Called directly rather than relying on the data commit to trigger pages.yml:
+    # a push made with the default GITHUB_TOKEN does not trigger other workflows,
+    # so a push-triggered deploy would never fire and the site would serve stale
+    # JSON indefinitely.
+    uses: ./.github/workflows/pages.yml
