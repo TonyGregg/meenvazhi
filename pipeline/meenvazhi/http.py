@@ -51,7 +51,7 @@ class Settings:
 
     def __init__(self, app: dict[str, Any] | None = None) -> None:
         cfg = app if app is not None else config.app()
-        self.user_agent: str = cfg.get("user_agent", "Meenvazhi/1.0 (+https://github.com/antonygenil/meenvazhi)")
+        self.user_agent: str = cfg.get("user_agent", "Meenvazhi/1.0 (+https://github.com/TonyGregg/meenvazhi)")
         self.timeout: float = float(cfg.get("timeout_seconds", 30))
         self.retries: int = int(cfg.get("retries", 3))
         self.interval: float = float(cfg.get("per_host_min_interval", 2.0))

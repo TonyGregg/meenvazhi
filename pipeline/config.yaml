@@ -1,7 +1,7 @@
 app:
   # Identifiable User-Agent, as a matter of courtesy to INCOIS. Update the URL
   # once the repo is published.
-  user_agent: "Meenvazhi/1.0 (+https://github.com/antonygenil/meenvazhi)"
+  user_agent: "Meenvazhi/1.0 (+https://github.com/TonyGregg/meenvazhi)"
   timeout_seconds: 30
   retries: 3
   # Deliberately slower than bloom's 1.0s default. We run once a day and have

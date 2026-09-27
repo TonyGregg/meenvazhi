@@ -105,6 +105,9 @@ def build_document(
     now: datetime,
 ) -> dict[str, Any]:
     """Assemble the published document. `now` is injected, never read from the clock."""
+    # Coerced so the published type does not depend on whether the caller passed
+    # an int or a float. The golden byte-compare caught exactly that drift.
+    reachable_nmi = float(reachable_nmi)
     sectors = [build_sector(p, home, reachable_nmi) for p in pages]
     all_zones = [z for s in sectors for z in s["zones"]]
     issued = advisory_date(pages)

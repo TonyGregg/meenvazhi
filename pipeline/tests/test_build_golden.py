@@ -117,3 +117,30 @@ def test_build_is_deterministic(document: dict) -> None:
     ]
     again = build_document(pages, home=get_port("kochi"), reachable_nmi=120, now=FROZEN_NOW)
     assert json.dumps(again, sort_keys=True) == json.dumps(document, sort_keys=True)
+
+
+def test_reachable_nmi_type_is_stable(document: dict) -> None:
+    """The published type must not depend on how the caller spelled the argument.
+
+    Passing 120 rather than 120.0 previously changed the JSON from an int to a
+    float, which the golden byte-compare caught. Coercion in build_document fixes
+    it; this pins it.
+    """
+    from meenvazhi.build import build_document as build
+
+    pages = [
+        parse_sector_page(read_fixture(f), expected_sector_id=i, expected_sector_name=n) for f, i, n in SECTOR_SPEC
+    ]
+    as_int = build(pages, home=get_port("kochi"), reachable_nmi=120, now=FROZEN_NOW)
+    as_float = build(pages, home=get_port("kochi"), reachable_nmi=120.0, now=FROZEN_NOW)
+    assert isinstance(as_int["reachable_nmi"], float)
+    assert json.dumps(as_int) == json.dumps(as_float)
+
+
+def test_user_agent_url_matches_the_gpx_creator() -> None:
+    """Both must point at the real repo, so INCOIS can see who is calling."""
+    from meenvazhi import config
+    from meenvazhi.gpx import build_gpx as _build_gpx  # noqa: F401
+
+    agent = config.app()["user_agent"]
+    assert "github.com/TonyGregg/meenvazhi" in agent

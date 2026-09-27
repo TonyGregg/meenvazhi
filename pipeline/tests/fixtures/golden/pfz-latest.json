@@ -16,7 +16,7 @@
     "lat": 9.937,
     "lon": 76.261
   },
-  "reachable_nmi": 120,
+  "reachable_nmi": 120.0,
   "sectors": [
     {
       "sector_id": "SEC005",

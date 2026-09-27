@@ -87,7 +87,7 @@ def build_gpx(document: dict[str, Any], *, reachable_only: bool = False) -> str:
     stamp = document["generated_at"]
     valid_until = document.get("valid_until")
     advisory_date = document.get("advisory_date") or "unknown date"
-    creator = f"{document['generator']} (+https://github.com/antonygenil/meenvazhi)"
+    creator = f"{document['generator']} (+https://github.com/TonyGregg/meenvazhi)"
 
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',

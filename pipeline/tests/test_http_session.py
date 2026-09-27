@@ -14,7 +14,7 @@ import pytest
 from meenvazhi.http import FetchError, PoliteClient, RobotsDisallowed, Settings
 
 APP = {
-    "user_agent": "Meenvazhi/1.0 (+https://github.com/antonygenil/meenvazhi)",
+    "user_agent": "Meenvazhi/1.0 (+https://github.com/TonyGregg/meenvazhi)",
     "timeout_seconds": 5,
     "retries": 3,
     "per_host_min_interval": 0,  # tests must not actually sleep
@@ -73,7 +73,7 @@ def test_user_agent_identifies_the_project() -> None:
     with make_client(handler) as client:
         client.get(HOME)
 
-    assert seen == ["Meenvazhi/1.0 (+https://github.com/antonygenil/meenvazhi)"]
+    assert seen == ["Meenvazhi/1.0 (+https://github.com/TonyGregg/meenvazhi)"]
 
 
 def test_referer_is_passed_through() -> None:
