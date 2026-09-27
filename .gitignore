@@ -17,5 +17,8 @@ node_modules/
 web/dist/
 web/dev-dist/
 
-# OS
+# OS and editors
 .DS_Store
+.idea/
+.vscode/
+*.swp
