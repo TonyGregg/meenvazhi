@@ -29,6 +29,16 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Check out the branch tip, not the SHA that triggered this run.
+          #
+          # When pipeline.yml calls this workflow, it has already committed the
+          # day's advisory, but that commit did not exist when the run started.
+          # The default checkout uses the triggering SHA, so it would publish the
+          # data as it was BEFORE the fetch, and the site would serve yesterday's
+          # advisory indefinitely. That is the exact failure the workflow_call
+          # arrangement exists to prevent, and the trigger was only half of it.
+          ref: main
 
       - name: Assemble the site
         # The app and its data are served from one origin, so there is no CORS to
@@ -62,6 +72,15 @@ jobs:
       # do it for you, because the built-in Actions token is not permitted to
       # create a Pages site and the call fails with "Resource not accessible by
       # integration".
+      - name: Report what is being published
+        # So the run log records the advisory actually deployed. Without this, a
+        # stale deploy looks identical to a fresh one.
+        run: |
+          echo "commit:       $(git rev-parse --short HEAD) $(git log -1 --format=%s)"
+          echo "advisory_date: $(jq -r '.advisory_date' dist/data/pfz-latest.json)"
+          echo "generated_at:  $(jq -r '.generated_at' dist/data/pfz-latest.json)"
+          echo "zones:         $(jq -r '.counts.zones' dist/data/pfz-latest.json)"
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
