@@ -9,6 +9,7 @@
 
 import { validateDocument, SchemaTooNewError, type PfzDocument } from './pfz';
 import { loadDocument, saveDocument, requestPersistence } from './store';
+import { dataBaseUrl } from './platform';
 
 /** Short: an unreachable network should not hold up a boat's screen. */
 const NETWORK_TIMEOUT_MS = 6000;
@@ -27,12 +28,7 @@ export interface FetchResult {
 }
 
 function dataUrl(): string {
-  // import.meta.env.BASE_URL always ends in a slash.
-  return `${import.meta.env.BASE_URL}data/pfz-latest.json`;
-}
-
-export function gpxUrl(): string {
-  return `${import.meta.env.BASE_URL}data/pfz-latest.gpx`;
+  return `${dataBaseUrl()}pfz-latest.json`;
 }
 
 async function fromNetwork(): Promise<PfzDocument> {

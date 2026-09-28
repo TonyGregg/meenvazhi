@@ -11,9 +11,14 @@
  */
 
 import { registerSW } from 'virtual:pwa-register';
+import { isNativeApp } from './lib/platform';
 
 export function registerServiceWorker(): void {
   if (import.meta.env.DEV) return;
+  // Inside the Android app the whole shell is already on the phone, installed with
+  // the APK, and updates come through the Play Store or a new APK instead. The
+  // advisory itself still persists offline through IndexedDB.
+  if (isNativeApp()) return;
 
   const update = registerSW({
     immediate: true,

@@ -83,6 +83,56 @@ Application, tick Offline under Service Workers, and hard reload. Then delete th
 `pfz-data` cache, stay offline and reload again: it should still work, this time
 from IndexedDB.
 
+## The Android app
+
+A native Android app for **Android 15 and later**, built with Capacitor around the
+same React code as the website. The website is unchanged and still deployed as
+before; the app is a second build target.
+
+It differs from the website in only a few places, all in `web/src/lib/platform.ts`
+and gated on running inside the app:
+
+- **Data** is fetched from GitHub Pages by absolute URL, since relative paths
+  inside an APK would resolve to whatever advisory was current when it was built.
+- **No service worker.** The whole app ships inside the APK, and the advisory
+  persists offline in IndexedDB, which Android does not evict the way a browser
+  evicts its caches.
+- **GPX export** goes through the Android share sheet, because the WebView can
+  neither download files nor share them the browser way.
+- **GPS** uses the native location permission, requested only when the Compass tab
+  opens.
+- **The back button** returns to the zone list, then sends the app to the
+  background rather than closing it.
+
+Verified on an Android 15 emulator: it launches, fetches the live advisory, and
+with airplane mode on and the app force-stopped it relaunches and shows all zones
+from the saved copy.
+
+### Building it
+
+Needs Java 21 and the Android SDK (platform 36, build tools 36). On a Mac:
+
+```bash
+brew install --cask android-commandlinetools
+export ANDROID_HOME=/opt/homebrew/share/android-commandlinetools
+$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
+echo "sdk.dir=$ANDROID_HOME" > web/android/local.properties
+
+cd web
+npm run apk:debug
+# -> web/android/app/build/outputs/apk/debug/app-debug.apk
+```
+
+### Putting it on a phone
+
+Copy `app-debug.apk` to the phone, by USB, Google Drive or WhatsApp to yourself,
+and open it. Android will ask to allow installing apps from that source; allow it
+once. Open the app once while the phone has a signal so it downloads the advisory.
+
+This is a debug build, fine for your own phones. The Play Store needs a signed
+release build, which means creating a signing key first. That key has to be kept
+safe permanently: lose it and you can no longer publish updates to the same app.
+
 ## Why the bearings have to be recomputed
 
 INCOIS reports each zone relative to its nearest landing centre. Recomputing the

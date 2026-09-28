@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { App as NativeApp } from '@capacitor/app';
 import { AppHeader } from '@/components/AppHeader';
 import { BanNotice } from '@/components/BanNotice';
 import { CompassView } from '@/components/CompassView';
@@ -18,6 +19,7 @@ import { LOCALE_TAGS, messages } from '@/i18n';
 import { allZones } from '@/lib/pfz';
 import { withHomePort } from '@/lib/recompute';
 import { assess } from '@/lib/staleness';
+import { isNativeApp } from '@/lib/platform';
 
 type Tab = 'zones' | 'plot' | 'compass' | 'settings';
 
@@ -34,6 +36,21 @@ export function App(): React.JSX.Element {
   const online = useOnline();
   const [tab, setTab] = useState<Tab>('zones');
   const [sector, setSector] = useState<string | null>(null);
+
+  // Android's back button: from any other tab it returns to the zone list, and from
+  // the zone list it sends the app to the background rather than closing it. A
+  // fisherman who backs out by accident should find the app exactly where they left
+  // it, not reloading.
+  useEffect(() => {
+    if (!isNativeApp()) return;
+    const listener = NativeApp.addListener('backButton', () => {
+      if (tab !== 'zones') setTab('zones');
+      else void NativeApp.minimizeApp();
+    });
+    return () => {
+      void listener.then((handle) => handle.remove());
+    };
+  }, [tab]);
 
   const t = messages(settings.locale);
   const localeTag = LOCALE_TAGS[settings.locale];

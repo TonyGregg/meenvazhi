@@ -8,6 +8,8 @@
  */
 
 import { useEffect, useState } from 'react';
+import { Geolocation, type Position as NativePosition } from '@capacitor/geolocation';
+import { isNativeApp } from '@/lib/platform';
 
 export interface Position {
   lat: number;
@@ -35,7 +37,56 @@ export function useGeolocation(active: boolean): GeolocationState {
   });
 
   useEffect(() => {
-    if (!active || typeof navigator === 'undefined' || !navigator.geolocation) return;
+    if (!active || !isNativeApp()) return;
+
+    let callbackId: string | null = null;
+    let cancelled = false;
+
+    const onFix = (p: NativePosition | null): void => {
+      if (!p) return;
+      setState((s) => ({
+        ...s,
+        error: null,
+        position: {
+          lat: p.coords.latitude,
+          lon: p.coords.longitude,
+          headingDeg: p.coords.heading ?? null,
+          speedKnots: p.coords.speed == null ? null : p.coords.speed * MS_PER_S_TO_KNOTS,
+          accuracyM: p.coords.accuracy,
+        },
+      }));
+    };
+
+    void (async () => {
+      try {
+        const permission = await Geolocation.requestPermissions({ permissions: ['location'] });
+        if (permission.location === 'denied') {
+          setState((s) => ({ ...s, error: 'Location permission denied' }));
+          return;
+        }
+        if (cancelled) return;
+        // Same battery reasoning as the web path: coarse accuracy is plenty when
+        // the nearest zone is a hundred-odd nautical miles away.
+        callbackId = await Geolocation.watchPosition(
+          { enableHighAccuracy: false, maximumAge: 15000, timeout: 30000 },
+          (position, error) => {
+            if (error) setState((s) => ({ ...s, error: error instanceof Error ? error.message : String(error) }));
+            else onFix(position);
+          },
+        );
+      } catch (error) {
+        setState((s) => ({ ...s, error: error instanceof Error ? error.message : String(error) }));
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      if (callbackId !== null) void Geolocation.clearWatch({ id: callbackId });
+    };
+  }, [active]);
+
+  useEffect(() => {
+    if (!active || isNativeApp() || typeof navigator === 'undefined' || !navigator.geolocation) return;
 
     let watchId: number | null = null;
 

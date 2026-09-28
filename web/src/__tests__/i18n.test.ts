@@ -106,6 +106,14 @@ describe('the translated catalogues are actually translated', () => {
   });
 });
 
+describe('plurals', () => {
+  it('says "1 day old", not "1 days old"', () => {
+    // Seen on the Android emulator the first time the app ran offline.
+    expect(en.ageDays(1)).toBe('1 day old');
+    expect(en.ageDays(5)).toBe('5 days old');
+  });
+});
+
 describe('locale selection', () => {
   it('offers Malayalam and Tamil before English', () => {
     expect(LOCALES[0]).toBe('ml');

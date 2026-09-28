@@ -22,8 +22,9 @@ web/playwright-report/
 web/*.tsbuildinfo
 web/probe.tmp.mjs
 
-# OS and editors
+# OS and editors (IntelliJ module files included)
 .DS_Store
 .idea/
 .vscode/
 *.swp
+*.iml

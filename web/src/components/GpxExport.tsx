@@ -2,6 +2,8 @@ import { useCallback, useState } from 'react';
 import type { Messages } from '@/i18n';
 import type { PfzDocument, Zone } from '@/lib/pfz';
 import { buildGpx, gpxFilename } from '@/lib/gpx';
+import { isNativeApp } from '@/lib/platform';
+import { shareGpxNatively } from '@/lib/nativeShare';
 
 interface Props {
   t: Messages;
@@ -44,6 +46,15 @@ export function GpxExport({ t, doc, zones }: Props): React.JSX.Element {
 
   const share = useCallback(() => {
     setError(null);
+    if (isNativeApp()) {
+      // The WebView can neither download nor share a File, so hand it to Android.
+      const sectorNameOf = (zone: Zone): string =>
+        doc.sectors.find((s) => s.zones.some((z) => z.id === zone.id))?.sector_name ?? '';
+      shareGpxNatively(gpxFilename(doc), buildGpx(doc, zones, sectorNameOf), t.share).catch((e: unknown) =>
+        setError(e instanceof Error ? e.message : String(e)),
+      );
+      return;
+    }
     const file = makeFile();
     if (!navigator.canShare?.({ files: [file] })) {
       download();
@@ -52,7 +63,7 @@ export function GpxExport({ t, doc, zones }: Props): React.JSX.Element {
     void navigator.share({ files: [file], title: file.name }).catch(() => {
       // A cancelled share is not an error worth reporting.
     });
-  }, [makeFile, download]);
+  }, [makeFile, download, doc, zones, t.share]);
 
   if (zones.length === 0) {
     return (
@@ -64,7 +75,10 @@ export function GpxExport({ t, doc, zones }: Props): React.JSX.Element {
     );
   }
 
-  const canShare = typeof navigator !== 'undefined' && typeof navigator.canShare === 'function';
+  // In the Android app sharing always works, through the native share sheet, and a
+  // browser-style download does not work at all, so share is the only button.
+  const native = isNativeApp();
+  const canShare = native || (typeof navigator !== 'undefined' && typeof navigator.canShare === 'function');
 
   return (
     <div className="card stack">
@@ -77,9 +91,11 @@ export function GpxExport({ t, doc, zones }: Props): React.JSX.Element {
             {t.share}
           </button>
         ) : null}
-        <button type="button" className={canShare ? 'grow' : 'primary grow'} onClick={download}>
-          {t.download}
-        </button>
+        {native ? null : (
+          <button type="button" className={canShare ? 'grow' : 'primary grow'} onClick={download}>
+            {t.download}
+          </button>
+        )}
       </div>
       {error ? <p className="muted">{error}</p> : null}
     </div>

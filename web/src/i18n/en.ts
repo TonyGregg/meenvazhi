@@ -26,7 +26,7 @@ export const en = {
   // Staleness. Safety-critical: never soften these.
   freshToday: 'Today’s advisory',
   freshYesterday: 'Yesterday’s advisory',
-  ageDays: (n: number) => `${n} days old`,
+  ageDays: (n: number) => (n === 1 ? '1 day old' : `${n} days old`),
   agingWarning: 'This advisory is getting old. Fish move.',
   staleWarning: 'This advisory is out of date. Do not rely on it.',
   expiredWarning: 'This advisory has expired. The zones have moved.',

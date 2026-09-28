@@ -53,3 +53,35 @@ console.log('maskable-512.png');
 const favicon = await sharp(source, { density: 384 }).resize(32, 32).png({ compressionLevel: 9 }).toBuffer();
 await writeFile(`${ICONS}favicon.ico`, favicon);
 console.log('favicon.ico');
+
+/**
+ * Source images for the Android launcher icon and splash screen, consumed by
+ * `npx @capacitor/assets generate --android`. Android's adaptive icons are built
+ * from a separate foreground and background, with the foreground confined to the
+ * central 66% because launchers crop the rest to their own shape.
+ */
+const ASSETS = fileURLToPath(new URL('../assets/', import.meta.url));
+const { mkdir } = await import('node:fs/promises');
+await mkdir(ASSETS, { recursive: true });
+
+await sharp(source, { density: 768 }).resize(1024, 1024).png().toFile(`${ASSETS}icon-only.png`);
+
+const foregroundArt = await sharp(source, { density: 768 }).resize(640, 640).png().toBuffer();
+await sharp({ create: { width: 1024, height: 1024, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
+  .composite([{ input: foregroundArt, gravity: 'centre' }])
+  .png()
+  .toFile(`${ASSETS}icon-foreground.png`);
+
+await sharp({ create: { width: 1024, height: 1024, channels: 4, background: '#04283c' } })
+  .png()
+  .toFile(`${ASSETS}icon-background.png`);
+
+/** Splash: the icon centred on the brand colour, so launch looks deliberate. */
+const splashArt = await sharp(source, { density: 768 }).resize(900, 900).png().toBuffer();
+for (const name of ['splash.png', 'splash-dark.png']) {
+  await sharp({ create: { width: 2732, height: 2732, channels: 4, background: '#04283c' } })
+    .composite([{ input: splashArt, gravity: 'centre' }])
+    .png()
+    .toFile(`${ASSETS}${name}`);
+}
+console.log('android source assets');
