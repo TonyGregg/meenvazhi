@@ -34,17 +34,54 @@ service worker stays simple.
 
 ## Status
 
-The pipeline is complete and verified against the live site. The web app is not
-built yet, deliberately: the plan gates it behind three consecutive days of correct
-data in production, because a polished app over a wrong scraper just makes bad data
-look authoritative.
+Pipeline and app are both built and running. The app was started before the
+plan's three-day soak gate on the pipeline had elapsed, which was a deliberate
+call: the scraper had by then been validated against the live site twice and
+reproduced the captured fixtures exactly.
 
 | Part | State |
 |---|---|
-| Python pipeline, parser, geodesics, GPX, publishing | Done, 200 tests, 97% coverage |
-| GitHub Actions cron and Pages deploy | Written, pending first real scheduled run |
-| Progressive web app | Not started |
-| Sea-surface-temperature fronts | Deferred; no stable source confirmed yet |
+| Python pipeline, parser, geodesics, GPX, publishing | 212 tests, 97% coverage |
+| Daily cron, Pages deploy, CI | Running; one manual and one scheduled path verified |
+| Progressive web app | 110 unit tests, 12 browser tests, verified offline on the live site |
+| Sea-surface-temperature fronts | Deferred; no stable source confirmed |
+| Offline basemap, species vocabulary | Not started |
+
+## The app
+
+A ranked list of zones is the home screen, not a map. Bearing and distance from
+your home port are the largest things on it. There is also a canvas plot with
+range rings, a compass that recomputes the course from the boat's own position,
+and GPX export of whatever is in range.
+
+English, Malayalam and Tamil, with the fonts subsetted and self-hosted so they
+work with no network. Digits stay Latin in every language, because they are read
+against a GPS unit that shows Latin digits. Three screen modes, defaulting to a
+high-contrast sunlight mode, with a dim red night mode that preserves dark
+adaptation in the wheelhouse.
+
+Map tiles are deliberately never cached. Bulk-caching OpenStreetMap tiles is
+against the tile usage policy, and a 350 nautical mile radius of the Arabian Sea
+is hundreds of megabytes of featureless blue water.
+
+The advisory is kept in IndexedDB, not only in the service worker cache.
+Verifying this in a real browser showed exactly why: on a first visit the service
+worker has registered but is not yet controlling the page, so the advisory never
+passes through it and the runtime cache does not exist yet. On the first trip,
+IndexedDB is the only copy there is.
+
+```bash
+cd web
+npm install
+npm run build:full && npm run preview   # service worker is live here, unlike npm run dev
+npm test                                # 110 unit tests
+npm run test:e2e                        # 12 browser tests, including offline
+```
+
+To check the offline behaviour by hand, open the preview, then in DevTools go to
+Application, tick Offline under Service Workers, and hard reload. Then delete the
+`pfz-data` cache, stay offline and reload again: it should still work, this time
+from IndexedDB.
 
 ## Why the bearings have to be recomputed
 
