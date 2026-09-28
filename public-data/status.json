@@ -1,5 +1,5 @@
 {
-  "last_attempt_at": "2026-09-28T18:40:19Z",
+  "last_attempt_at": "2026-09-28T21:03:26Z",
   "published": true,
   "reason": null,
   "exit_code": 0,
@@ -35,5 +35,5 @@
       "zone_count": 90
     }
   ],
-  "last_success_at": "2026-09-28T18:40:19Z"
+  "last_success_at": "2026-09-28T21:03:26Z"
 }
