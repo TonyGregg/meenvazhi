@@ -90,8 +90,8 @@ first, with the course to steer from that port. Zones beyond the range are never
 silently dropped: a line under the list says how many are hidden, with one tap to
 show them.
 
-**By area** works the way INCOIS presents its advisory. Pick Karnataka, Kerala,
-South Tamil Nadu or North Tamil Nadu and see every zone in it, in the order INCOIS
+**By area** works the way INCOIS presents its advisory. Pick South Tamil Nadu,
+North Tamil Nadu, Kerala, Karnataka or Goa and see every zone in it, in the order INCOIS
 lists them along the coast, with nothing filtered by range. Each zone leads with
 INCOIS's own bearing and distance from its nearest landing centre, which is what
 someone sailing from that stretch of coast uses. The course from your home port
@@ -240,7 +240,7 @@ Up to seven runs a day, every two hours from 10:00 to 22:00 India time, because
 GitHub's scheduler can delay a run by several hours. Once the day's advisory is
 published, the remaining runs stop before sending INCOIS a single request, and a
 run that finds nothing new writes nothing. Each run that does reach INCOIS makes
-five requests. An identifiable User-Agent with a contact URL. Strictly sequential
+six requests: the landing page, then one per area. An identifiable User-Agent with a contact URL. Strictly sequential
 requests over a single session, with a two-second minimum interval and exponential
 backoff. No parallel fetching. INCOIS serves no `robots.txt`, and the client
 handles that as "nothing disallowed" rather than treating the 404 as permission to

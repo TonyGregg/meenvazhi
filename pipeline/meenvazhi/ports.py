@@ -28,17 +28,9 @@ class Port:
 
 
 PORTS: tuple[Port, ...] = (
-    # Approximate positions of each fishing harbour, grouped by state along the
-    # coast in INCOIS order. A few hundred metres of error is immaterial for zones
+    # Approximate positions of each fishing harbour, grouped by state in the same
+    # order as the areas. A few hundred metres of error is immaterial for zones
     # tens of miles out; the area view uses INCOIS's own bearing from the coast.
-    Port("karwar", "Karwar (Baithkol)", "Karnataka", "west", 14.8050, 74.1170),
-    Port("malpe", "Malpe", "Karnataka", "west", 13.3500, 74.7040),
-    Port("mangalore", "Mangalore", "Karnataka", "west", 12.8450, 74.8280),
-    Port("beypore", "Beypore", "Kerala", "west", 11.1700, 75.8060),
-    Port("munambam", "Munambam", "Kerala", "west", 10.1780, 76.1700),
-    Port("kochi", "Kochi (Cochin Fisheries Harbour)", "Kerala", "west", 9.9370, 76.2610),
-    Port("neendakara", "Neendakara", "Kerala", "west", 8.9383, 76.5392),
-    Port("vizhinjam", "Vizhinjam", "Kerala", "west", 8.3790, 76.9900),
     Port("colachel", "Colachel", "Tamil Nadu", "west", 8.1747, 77.2513),
     Port("chinnamuttom", "Chinnamuttom (Kanniyakumari)", "Tamil Nadu", "east", 8.0975, 77.5642),
     Port("tuticorin", "Tuticorin (Thoothukudi)", "Tamil Nadu", "east", 8.8000, 78.1580),
@@ -46,6 +38,16 @@ PORTS: tuple[Port, ...] = (
     Port("nagapattinam", "Nagapattinam", "Tamil Nadu", "east", 10.7667, 79.8433),
     Port("cuddalore", "Cuddalore", "Tamil Nadu", "east", 11.7208, 79.7797),
     Port("chennai", "Chennai (Kasimedu)", "Tamil Nadu", "east", 13.1167, 80.2967),
+    Port("vizhinjam", "Vizhinjam", "Kerala", "west", 8.3790, 76.9900),
+    Port("neendakara", "Neendakara", "Kerala", "west", 8.9383, 76.5392),
+    Port("kochi", "Kochi (Cochin Fisheries Harbour)", "Kerala", "west", 9.9370, 76.2610),
+    Port("munambam", "Munambam", "Kerala", "west", 10.1780, 76.1700),
+    Port("beypore", "Beypore", "Kerala", "west", 11.1700, 75.8060),
+    Port("mangalore", "Mangalore", "Karnataka", "west", 12.8450, 74.8280),
+    Port("malpe", "Malpe", "Karnataka", "west", 13.3500, 74.7040),
+    Port("karwar", "Karwar (Baithkol)", "Karnataka", "west", 14.8050, 74.1170),
+    Port("cutbona", "Cutbona", "Goa", "west", 15.1640, 73.9440),
+    Port("malim", "Panaji (Malim)", "Goa", "west", 15.5020, 73.8230),
 )
 
 PORT_BY_SLUG = {p.slug: p for p in PORTS}

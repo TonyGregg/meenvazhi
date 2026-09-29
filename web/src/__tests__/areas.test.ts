@@ -70,7 +70,7 @@ describe('labels', () => {
   });
 
   it('covers every sector the pipeline fetches, in all three languages', () => {
-    for (const id of ['SEC004', 'SEC005', 'SEC006', 'SEC007']) {
+    for (const id of ['SEC003', 'SEC004', 'SEC005', 'SEC006', 'SEC007']) {
       expect(en.sectorNames[id]).toBeTruthy();
       expect(ta.sectorNames[id]).toBeTruthy();
     }

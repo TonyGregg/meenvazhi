@@ -119,6 +119,7 @@ export const ml: Messages = {
   fromCoastIncois: (place: string) => `${place} തീരത്ത് നിന്ന് · INCOIS`,
   fromYourPort: (port: string) => `${port}-ൽ നിന്ന്`,
   sectorNames: {
+    SEC003: 'ഗോവ',
     SEC004: 'കർണാടക',
     SEC005: 'കേരളം',
     SEC006: 'തെക്കൻ തമിഴ്നാട്',

@@ -138,17 +138,17 @@ def test_default_port_is_the_kochi_fishing_harbour() -> None:
 
 
 def test_ports_have_plausible_indian_coordinates() -> None:
-    # Karwar in the north-west to Chennai in the north-east.
+    # Panaji in the north-west to Chennai in the north-east.
     for port in PORTS:
-        assert 8.0 <= port.lat <= 15.0, port.slug
-        assert 74.0 <= port.lon <= 80.5, port.slug
+        assert 8.0 <= port.lat <= 16.0, port.slug
+        assert 73.5 <= port.lon <= 80.5, port.slug
         assert port.coast in ("west", "east")
 
 
 def test_every_fetched_area_has_a_home_port() -> None:
     """Each area the pipeline fetches needs a harbour its fishermen actually sail from."""
     states = {p.state for p in PORTS}
-    assert {"Karnataka", "Kerala", "Tamil Nadu"} <= states
+    assert {"Goa", "Karnataka", "Kerala", "Tamil Nadu"} <= states
     tamil = [p for p in PORTS if p.state == "Tamil Nadu"]
     # North Tamil Nadu starts around Nagapattinam; South around Kanniyakumari.
     assert any(p.lat > 10.5 for p in tamil), "no harbour for North Tamil Nadu"
