@@ -2,6 +2,7 @@ MEENVAZHI PFZ 2026-09-28
 Valid until: 2026-09-29
 From: Kochi (Cochin Fisheries Harbour)
 
+KARNATAKA: 24 zones, none within 120 nmi
 KERALA: 103 zone(s)
   KL90 21nmi 327T depth 17-22m (10 13 45 N 76 4 15 E)
   KL89 22nmi 326T depth 18-23m (10 14 16 N 76 3 28 E)
@@ -106,9 +107,8 @@ KERALA: 103 zone(s)
   KL40 114nmi 318T depth 75-80m (11 21 59 N 74 58 12 E)
   KL39 116nmi 318T depth 73-78m (11 23 21 N 74 56 36 E)
   KL38 118nmi 318T depth 71-76m (11 25 14 N 74 55 42 E)
-KARNATAKA: 24 zones, none within 120 nmi
-LAKSHADWEEP: 10 zones, none within 120 nmi
 SOUTH TAMILNADU: 90 zones, none within 120 nmi
+NORTH TAMILNADU: 119 zones, none within 120 nmi
 
 Advisory only. Not for navigation or safety of life at sea.
 Source: INCOIS, Ministry of Earth Sciences, Govt. of India

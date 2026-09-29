@@ -1,18 +1,11 @@
 {
-  "last_attempt_at": "2026-09-28T21:03:26Z",
+  "last_attempt_at": "2026-09-29T10:34:07Z",
   "published": true,
   "reason": null,
   "exit_code": 0,
   "advisory_date": "2026-09-28",
   "consecutive_failures": 0,
   "sectors": [
-    {
-      "sector_id": "SEC005",
-      "sector_name": "KERALA",
-      "status": "HAS_ADVISORY",
-      "reason": null,
-      "zone_count": 140
-    },
     {
       "sector_id": "SEC004",
       "sector_name": "KARNATAKA",
@@ -21,11 +14,11 @@
       "zone_count": 24
     },
     {
-      "sector_id": "SEC014",
-      "sector_name": "LAKSHADWEEP",
+      "sector_id": "SEC005",
+      "sector_name": "KERALA",
       "status": "HAS_ADVISORY",
       "reason": null,
-      "zone_count": 10
+      "zone_count": 140
     },
     {
       "sector_id": "SEC006",
@@ -33,7 +26,14 @@
       "status": "HAS_ADVISORY",
       "reason": null,
       "zone_count": 90
+    },
+    {
+      "sector_id": "SEC007",
+      "sector_name": "NORTH TAMILNADU",
+      "status": "HAS_ADVISORY",
+      "reason": null,
+      "zone_count": 119
     }
   ],
-  "last_success_at": "2026-09-28T21:03:26Z"
+  "last_success_at": "2026-09-29T10:34:07Z"
 }
