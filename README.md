@@ -148,15 +148,21 @@ Project settings that differ from Capacitor's defaults:
 - `NSLocationWhenInUseUsageDescription` in `Info.plist`. Without a purpose string
   iOS refuses the location request and App Review rejects the app.
 
-**Not yet built or run.** Building for iOS needs the full Xcode app, which was not
-installed when this was set up. The project files validate, the web bundle syncs,
-and all shared code is covered by the same tests as the other targets, but nothing
-has run in a simulator or on an iPhone.
+- Swift tools 6.2 for the plugin package, set through Capacitor's
+  `experimental.ios.spm.swiftToolsVersion`. Capacitor defaults to 5.9, which has no
+  constant for iOS 26, so the generated `Package.swift` would not resolve.
+- Light status-bar text, over the dark header that runs up under it.
+
+Verified with Xcode 27 on an iPhone 17 simulator running iOS 27: it launches,
+fetches the live advisory, and with its data source made unreachable it relaunches
+from the saved copy with the "saved copy" banner. The simulator has no airplane
+mode, so offline was simulated by installing a copy of the build whose data address
+points nowhere, over the installed app so its saved advisory was kept.
 
 ### Building it
 
-Install Xcode from the App Store, open it once to accept the licence and install
-the iOS 26 simulator, then:
+Install Xcode from the App Store, open it once to accept the licence and add the
+iOS platform, then:
 
 ```bash
 sudo xcode-select -s /Applications/Xcode.app

@@ -55,8 +55,10 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
+	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Meenvazhi uses your position to show the course and distance from your boat to the fishing zone you have chosen. It is only used while the Compass screen is open.</string>
 </dict>

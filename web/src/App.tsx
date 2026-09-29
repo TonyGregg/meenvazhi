@@ -183,7 +183,9 @@ export function App(): React.JSX.Element {
             ['zones', t.tabZones, '≣'],
             ['plot', t.tabPlot, '◉'],
             ['compass', t.tabCompass, '↑'],
-            ['settings', t.tabSettings, '⚙'],
+            // U+FE0E asks for the plain text glyph: iOS otherwise draws the gear as a
+            // colour emoji, unlike the other three tab icons.
+            ['settings', t.tabSettings, '\u2699\uFE0E'],
           ] as const
         ).map(([id, label, glyph]) => (
           <button

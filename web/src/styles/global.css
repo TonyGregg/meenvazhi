@@ -29,8 +29,14 @@ body {
   font-size: var(--size-base);
   font-weight: var(--weight-normal);
   line-height: 1.45;
-  /* Respects the phone's notch and home bar without pushing content off screen. */
-  padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) 0 env(safe-area-inset-left, 0);
+  /*
+   * Side insets only. The top inset belongs to the sticky header, not the body:
+   * WebKit applies a sticky element's top offset on top of the body's padding, so
+   * reserving the status-bar space in both places drew the header a full status-bar
+   * height too low on iPhones, over the first card. Measured in the iOS app:
+   * safe area 62px, header drawn at 124px, page not scrolled.
+   */
+  padding: 0 env(safe-area-inset-right, 0) 0 env(safe-area-inset-left, 0);
   overscroll-behavior-y: contain;
   /* No pull-to-refresh: an accidental downward swipe must not reload the app. */
   touch-action: manipulation;
@@ -254,12 +260,24 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: var(--gap);
-  padding: 0.625rem var(--pad);
+  /* The header's own background runs up under the status bar, so the status-bar
+     text sits on the dark brand colour; the native apps set it to light text. */
+  padding: calc(0.625rem + env(safe-area-inset-top, 0px)) var(--pad) 0.625rem;
   background: var(--accent);
   color: var(--accent-text);
   position: sticky;
-  top: env(safe-area-inset-top, 0px);
+  top: 0;
   z-index: 5;
+}
+
+/* Keep the language picker and Refresh on one line; let the name wrap instead. */
+.header > .row {
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.header__name {
+  min-width: 0;
 }
 
 .header__name {
