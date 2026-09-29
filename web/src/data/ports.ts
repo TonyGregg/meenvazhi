@@ -18,13 +18,23 @@ export interface Port {
 }
 
 export const PORTS: readonly Port[] = [
-  { slug: 'kochi', name: 'Kochi (Cochin Fisheries Harbour)', state: 'Kerala', coast: 'west', lat: 9.937, lon: 76.261 },
-  { slug: 'munambam', name: 'Munambam', state: 'Kerala', coast: 'west', lat: 10.178, lon: 76.17 },
-  { slug: 'beypore', name: 'Beypore', state: 'Kerala', coast: 'west', lat: 11.17, lon: 75.806 },
-  { slug: 'vizhinjam', name: 'Vizhinjam', state: 'Kerala', coast: 'west', lat: 8.379, lon: 76.99 },
+  // Approximate positions of each fishing harbour, grouped by state along the coast
+  // in INCOIS order. Mirrors pipeline/meenvazhi/ports.py.
+  { slug: 'karwar', name: 'Karwar (Baithkol)', state: 'Karnataka', coast: 'west', lat: 14.805, lon: 74.117 },
   { slug: 'malpe', name: 'Malpe', state: 'Karnataka', coast: 'west', lat: 13.35, lon: 74.704 },
   { slug: 'mangalore', name: 'Mangalore', state: 'Karnataka', coast: 'west', lat: 12.845, lon: 74.828 },
-  { slug: 'tuticorin', name: 'Tuticorin (Thoothukudi)', state: 'Tamil Nadu', coast: 'east', lat: 8.75, lon: 78.2 },
+  { slug: 'beypore', name: 'Beypore', state: 'Kerala', coast: 'west', lat: 11.17, lon: 75.806 },
+  { slug: 'munambam', name: 'Munambam', state: 'Kerala', coast: 'west', lat: 10.178, lon: 76.17 },
+  { slug: 'kochi', name: 'Kochi (Cochin Fisheries Harbour)', state: 'Kerala', coast: 'west', lat: 9.937, lon: 76.261 },
+  { slug: 'neendakara', name: 'Neendakara', state: 'Kerala', coast: 'west', lat: 8.9383, lon: 76.5392 },
+  { slug: 'vizhinjam', name: 'Vizhinjam', state: 'Kerala', coast: 'west', lat: 8.379, lon: 76.99 },
+  { slug: 'colachel', name: 'Colachel', state: 'Tamil Nadu', coast: 'west', lat: 8.1747, lon: 77.2513 },
+  { slug: 'chinnamuttom', name: 'Chinnamuttom (Kanniyakumari)', state: 'Tamil Nadu', coast: 'east', lat: 8.0975, lon: 77.5642 },
+  { slug: 'tuticorin', name: 'Tuticorin (Thoothukudi)', state: 'Tamil Nadu', coast: 'east', lat: 8.8, lon: 78.158 },
+  { slug: 'rameswaram', name: 'Rameswaram', state: 'Tamil Nadu', coast: 'east', lat: 9.2876, lon: 79.3129 },
+  { slug: 'nagapattinam', name: 'Nagapattinam', state: 'Tamil Nadu', coast: 'east', lat: 10.7667, lon: 79.8433 },
+  { slug: 'cuddalore', name: 'Cuddalore', state: 'Tamil Nadu', coast: 'east', lat: 11.7208, lon: 79.7797 },
+  { slug: 'chennai', name: 'Chennai (Kasimedu)', state: 'Tamil Nadu', coast: 'east', lat: 13.1167, lon: 80.2967 },
 ] as const;
 
 export const DEFAULT_PORT_SLUG = 'kochi';

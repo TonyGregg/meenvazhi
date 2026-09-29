@@ -138,10 +138,38 @@ def test_default_port_is_the_kochi_fishing_harbour() -> None:
 
 
 def test_ports_have_plausible_indian_coordinates() -> None:
+    # Karwar in the north-west to Chennai in the north-east.
     for port in PORTS:
-        assert 8.0 <= port.lat <= 13.5, port.slug
-        assert 74.0 <= port.lon <= 79.0, port.slug
+        assert 8.0 <= port.lat <= 15.0, port.slug
+        assert 74.0 <= port.lon <= 80.5, port.slug
         assert port.coast in ("west", "east")
+
+
+def test_every_fetched_area_has_a_home_port() -> None:
+    """Each area the pipeline fetches needs a harbour its fishermen actually sail from."""
+    states = {p.state for p in PORTS}
+    assert {"Karnataka", "Kerala", "Tamil Nadu"} <= states
+    tamil = [p for p in PORTS if p.state == "Tamil Nadu"]
+    # North Tamil Nadu starts around Nagapattinam; South around Kanniyakumari.
+    assert any(p.lat > 10.5 for p in tamil), "no harbour for North Tamil Nadu"
+    assert any(p.lat < 9.5 for p in tamil), "no harbour for South Tamil Nadu"
+
+
+def test_app_and_pipeline_port_lists_match() -> None:
+    """The app recomputes bearings from its own copy of this list.
+
+    If the two drifted, the same home port would give different courses depending on
+    whether the figure came from the pipeline or from the phone.
+    """
+    import re
+
+    ts = (Path(__file__).resolve().parents[2] / "web" / "src" / "data" / "ports.ts").read_text(encoding="utf-8")
+    entries = re.findall(
+        r"slug: '([^']+)', name: '([^']+)', state: '([^']+)', coast: '([^']+)', lat: ([0-9.]+), lon: ([0-9.]+)", ts
+    )
+    app = [(slug, name, state, coast, float(lat), float(lon)) for slug, name, state, coast, lat, lon in entries]
+    pipeline = [(p.slug, p.name, p.state, p.coast, p.lat, p.lon) for p in PORTS]
+    assert app == pipeline
 
 
 def test_port_slugs_are_unique() -> None:

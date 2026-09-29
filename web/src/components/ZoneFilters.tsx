@@ -44,10 +44,15 @@ export function ZoneFilters({
           {t.homePort}
         </label>
         <select id="home-port" value={homePort} onChange={(e) => onHomePort(e.target.value)} style={{ width: '100%' }}>
-          {PORTS.map((p) => (
-            <option key={p.slug} value={p.slug}>
-              {p.name}
-            </option>
+          {/* Grouped by state, in the coast order INCOIS uses. */}
+          {[...new Set(PORTS.map((p) => p.state))].map((state) => (
+            <optgroup key={state} label={state}>
+              {PORTS.filter((p) => p.state === state).map((p) => (
+                <option key={p.slug} value={p.slug}>
+                  {p.name}
+                </option>
+              ))}
+            </optgroup>
           ))}
         </select>
       </div>
