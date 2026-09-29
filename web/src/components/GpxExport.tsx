@@ -47,7 +47,7 @@ export function GpxExport({ t, doc, zones }: Props): React.JSX.Element {
   const share = useCallback(() => {
     setError(null);
     if (isNativeApp()) {
-      // The WebView can neither download nor share a File, so hand it to Android.
+      // The app's WebView can neither download nor share a File, so hand it to the OS.
       const sectorNameOf = (zone: Zone): string =>
         doc.sectors.find((s) => s.zones.some((z) => z.id === zone.id))?.sector_name ?? '';
       shareGpxNatively(gpxFilename(doc), buildGpx(doc, zones, sectorNameOf), t.share).catch((e: unknown) =>
@@ -75,7 +75,7 @@ export function GpxExport({ t, doc, zones }: Props): React.JSX.Element {
     );
   }
 
-  // In the Android app sharing always works, through the native share sheet, and a
+  // In the native apps sharing always works, through the system share sheet, and a
   // browser-style download does not work at all, so share is the only button.
   const native = isNativeApp();
   const canShare = native || (typeof navigator !== 'undefined' && typeof navigator.canShare === 'function');

@@ -1,9 +1,9 @@
 /**
- * Handing a GPX file to another Android app.
+ * Handing a GPX file to another app, on Android or iOS.
  *
- * Neither browser route works inside the Android WebView: `<a download>` does
+ * Neither browser route works inside the app's WebView: `<a download>` does
  * nothing, and `navigator.share` does not accept files there. So the native app
- * writes the file into its cache directory and opens the Android share sheet on
+ * writes the file into its cache directory and opens the system share sheet on
  * it, which is how it reaches a chart app, a file manager or a WhatsApp group.
  */
 

@@ -16,9 +16,9 @@ export default defineConfig({
     ...devices['Pixel 7'],
   },
   webServer: {
-    command: 'npm run build:full && npx vite preview --port 4173',
+    command: 'npm run build:e2e && npx vite preview --port 4173',
     url: 'http://localhost:4173/meenvazhi/',
-    reuseExistingServer: true,
+    reuseExistingServer: false,
     timeout: 180_000,
   },
 });

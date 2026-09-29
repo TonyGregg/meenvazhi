@@ -18,6 +18,16 @@ interface WebManifest {
  * because that is the only configuration that resembles the real one.
  */
 
+/**
+ * Every test runs on the evening the golden advisory was issued: 27 Sep 2026, valid
+ * until the 28th. Without this the suite reads the real clock, and the day after
+ * that advisory expires the app rightly swaps "saved copy" for "expired" and the
+ * tests fail for being right. The staleness test moves the clock itself.
+ */
+test.beforeEach(async ({ page }) => {
+  await page.clock.setFixedTime(new Date('2026-09-27T18:00:00Z'));
+});
+
 async function waitForServiceWorker(page: import('@playwright/test').Page): Promise<void> {
   await page.waitForFunction(
     () => navigator.serviceWorker.controller !== null || navigator.serviceWorker.ready !== undefined,

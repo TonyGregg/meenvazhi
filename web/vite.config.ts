@@ -4,10 +4,10 @@ import { VitePWA } from 'vite-plugin-pwa';
 import { fileURLToPath } from 'node:url';
 import { localData } from './vite-plugin-local-data';
 
-// The Android app is served from the root of the WebView's local origin, so it
-// needs base '/'. The website is a project Pages site under /meenvazhi/.
-const isAndroid = process.env.BUILD_TARGET === 'android';
-const base = isAndroid ? '/' : (process.env.VITE_BASE ?? '/meenvazhi/');
+// The Android and iOS apps are served from the root of the WebView's local origin,
+// so they need base '/'. The website is a project Pages site under /meenvazhi/.
+const isNative = process.env.BUILD_TARGET === 'native';
+const base = isNative ? '/' : (process.env.VITE_BASE ?? '/meenvazhi/');
 
 export default defineConfig({
   base,
@@ -18,9 +18,9 @@ export default defineConfig({
     react(),
     localData(),
     VitePWA({
-      // The APK already carries the whole app shell, so the service worker and
-      // manifest are only built for the website.
-      disable: isAndroid,
+      // The native apps already carry the whole app shell, so the service worker
+      // and manifest are only built for the website.
+      disable: isNative,
       // Never swap the running app out from under someone mid-trip. The update
       // is offered; the person chooses when to take it.
       registerType: 'prompt',
