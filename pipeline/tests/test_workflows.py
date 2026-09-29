@@ -85,17 +85,51 @@ def test_pipeline_runs_are_not_cancelled_midway(pipeline: dict[str, Any]) -> Non
     assert pipeline["concurrency"]["cancel-in-progress"] is False
 
 
-def test_pipeline_is_scheduled_with_margin_after_the_incois_update(pipeline: dict[str, Any]) -> None:
-    """INCOIS published at 15:26 IST on the day this was built, so 09:56 UTC.
+def _schedule_minutes_utc(pipeline: dict[str, Any]) -> list[int]:
+    minutes = []
+    for entry in pipeline["on"]["schedule"]:
+        minute, hour = entry["cron"].split()[:2]
+        minutes.append(int(hour) * 60 + int(minute))
+    return sorted(minutes)
 
-    Both schedules must sit comfortably after that, since GitHub's cron drifts.
+
+def test_pipeline_runs_several_times_a_day(pipeline: dict[str, Any]) -> None:
+    """One run a day proved fragile: GitHub delayed the first two by six and seven hours."""
+    assert len(_schedule_minutes_utc(pipeline)) >= 5
+
+
+def test_some_runs_come_after_the_incois_update(pipeline: dict[str, Any]) -> None:
+    """INCOIS published at 15:26 IST, 09:56 UTC, on the day this was built.
+
+    Runs before that only ever find yesterday's advisory, so several must come after it.
     """
-    crons = [s["cron"] for s in pipeline["on"]["schedule"]]
-    assert crons, "the pipeline must be scheduled"
-    for cron in crons:
-        minute, hour = cron.split()[0], cron.split()[1]
-        utc_minutes = int(hour) * 60 + int(minute)
-        assert utc_minutes > 10 * 60, f"{cron} leaves too little margin after the INCOIS update"
+    after_update = [m for m in _schedule_minutes_utc(pipeline) if m > 9 * 60 + 56]
+    assert len(after_update) >= 3
+
+
+def test_every_run_is_before_midnight_india_time(pipeline: dict[str, Any]) -> None:
+    """A run after midnight IST files the day's advisory under the next date's guard,
+    which is exactly how the first scheduled runs published the same advisory twice.
+    Midnight IST is 18:30 UTC."""
+    assert max(_schedule_minutes_utc(pipeline)) < 18 * 60 + 30
+
+
+def test_every_scheduled_run_checks_before_contacting_incois(pipeline: dict[str, Any]) -> None:
+    """With seven runs a day, the guard has to cover all of them, not just a retry slot."""
+    steps = pipeline["jobs"]["fetch"]["steps"]
+    guard = next(s for s in steps if s.get("id") == "guard")
+    assert "github.event_name" in guard["run"]
+    assert "schedule" in guard["run"]
+    # And it must not be tied to one particular cron expression any more.
+    assert "github.event.schedule" not in guard["run"]
+
+
+def test_unchanged_runs_do_not_commit_or_deploy(pipeline: dict[str, Any]) -> None:
+    """Both depend on the pipeline reporting published, which it does not for a no-op."""
+    steps = pipeline["jobs"]["fetch"]["steps"]
+    commit = next(s for s in steps if s.get("name") == "Commit the advisory")
+    assert commit["if"] == "steps.run.outputs.published == 'true'"
+    assert "published" in pipeline["jobs"]["deploy"]["if"]
 
 
 def test_fetched_html_is_kept_as_an_artifact_not_committed(pipeline: dict[str, Any]) -> None:

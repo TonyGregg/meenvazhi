@@ -1,15 +1,29 @@
 name: Daily PFZ pipeline
 
-# INCOIS publishes the advisory around midday IST; the capture used to build this
-# project was timestamped 15:26 IST. Both schedules below leave generous margin,
-# because GitHub's cron is best-effort and can drift 10 to 30 minutes under load.
+# Runs every two hours from 10:00 to 22:00 India time.
 #
-# The second run is a safety net, not a second fetch: it no-ops when status.json
-# already records a success for today's IST advisory date.
+# One run a day proved fragile. GitHub's scheduler delayed the first two scheduled
+# runs by six and seven hours, which pushed the day's advisory past midnight India
+# time, possibly after a boat had already left. With seven chances a day, a few
+# delayed runs no longer matter.
+#
+# The extra runs cost INCOIS almost nothing:
+#   - A scheduled run stops before making any request once today's advisory is
+#     already published (the guard step below).
+#   - Before INCOIS posts the day's update, a run fetches the same advisory as
+#     last time. The pipeline recognises it as unchanged and writes nothing, so
+#     there is nothing to commit and nothing to deploy.
+# Each run that does reach INCOIS makes five sequential requests: one to open a
+# session, then one per sector, at least two seconds apart.
 on:
   schedule:
-    - cron: "30 11 * * *"   # 17:00 IST
-    - cron: "0 15 * * *"    # 20:30 IST, retry
+    - cron: "30 4 * * *"    # 10:00 IST
+    - cron: "30 6 * * *"    # 12:00 IST
+    - cron: "30 8 * * *"    # 14:00 IST
+    - cron: "30 10 * * *"   # 16:00 IST, just after the 15:26 IST update seen on 27 Sep
+    - cron: "30 12 * * *"   # 18:00 IST
+    - cron: "30 14 * * *"   # 20:00 IST
+    - cron: "30 16 * * *"   # 22:00 IST
   workflow_dispatch:
     inputs:
       sectors:
@@ -37,15 +51,15 @@ jobs:
 
       - name: Skip if today's advisory is already published
         id: guard
-        # Only guards the retry schedule. A manual dispatch always runs.
+        # Guards every scheduled run. A manual dispatch always runs.
         run: |
-          if [ "${{ github.event.schedule }}" != "0 15 * * *" ]; then
+          if [ "${{ github.event_name }}" != "schedule" ]; then
             echo "skip=false" >> "$GITHUB_OUTPUT"; exit 0
           fi
           today="$(TZ=Asia/Kolkata date +%F)"
           if [ -f public-data/status.json ] && \
              jq -e --arg d "$today" '.published == true and .advisory_date == $d' public-data/status.json >/dev/null; then
-            echo "today's advisory ($today) is already published; skipping the retry"
+            echo "today's advisory ($today) is already published; not contacting INCOIS again"
             echo "skip=true" >> "$GITHUB_OUTPUT"
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"

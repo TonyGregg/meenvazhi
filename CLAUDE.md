@@ -67,7 +67,12 @@ output, regenerate them deliberately and read the diff.
 
 ## Being a good citizen
 
-One run per day, an identifiable User-Agent with a contact URL, strictly sequential
+Up to seven scheduled runs a day, every two hours from 10:00 to 22:00 IST, because
+GitHub's cron can run hours late. Two guards keep that cheap and must stay: a
+scheduled run makes no request at all once today's advisory is published, and a
+run that fetches an advisory identical to the published one writes nothing (not
+even `status.json`), so there is nothing to commit or deploy. Each run that does
+reach INCOIS: an identifiable User-Agent with a contact URL, strictly sequential
 requests over one session with a two-second floor, exponential backoff, no
 parallelism. This is a small government service, not a CDN.
 

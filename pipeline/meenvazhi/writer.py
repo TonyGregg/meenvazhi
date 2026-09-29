@@ -33,12 +33,18 @@ HISTORY_DIR = "history"
 HISTORY_INDEX = "index.json"
 
 
+UNCHANGED_REASON = "unchanged since the last publish"
+
+
 @dataclass(slots=True)
 class PublishOutcome:
     published: bool
     reason: str | None = None
     advisory_date: str | None = None
     files: list[str] = field(default_factory=list)
+    # True when the run succeeded but INCOIS had nothing new: the same advisory as
+    # the one already published. Not a failure, and nothing is written.
+    unchanged: bool = False
 
 
 def write_atomic(path: Path, data: str) -> None:
@@ -144,6 +150,30 @@ def write_history_index(out_dir: Path, *, now: datetime) -> None:
     write_atomic(history / HISTORY_INDEX, json.dumps(payload, indent=2) + "\n")
 
 
+def _comparable(document: dict[str, Any]) -> dict[str, Any]:
+    """The document minus the one field that changes on every run."""
+    return {k: v for k, v in document.items() if k != "generated_at"}
+
+
+def is_unchanged(out_dir: Path, document: dict[str, Any]) -> bool:
+    """True when the published advisory already says exactly this.
+
+    The pipeline runs several times a day, and until INCOIS posts the day's update
+    every run fetches the same advisory as last time. Publishing it again would
+    change nothing but the generated_at timestamp, and would add a commit and a
+    deploy for each run. An unreadable previous file counts as changed, so a
+    corrupt file is always replaced.
+    """
+    path = out_dir / LATEST_JSON
+    if not path.exists():
+        return False
+    try:
+        previous = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    return isinstance(previous, dict) and _comparable(previous) == _comparable(document)
+
+
 def publish(
     results: list[SectorResult],
     *,
@@ -168,6 +198,14 @@ def publish(
         return PublishOutcome(published=False, reason=f"sector fetch failed: {names}")
 
     advisory_date = document.get("advisory_date")
+
+    if is_unchanged(out_dir, document):
+        return PublishOutcome(
+            published=False,
+            reason=UNCHANGED_REASON,
+            advisory_date=advisory_date,
+            unchanged=True,
+        )
     json_text = json.dumps(document, indent=2, ensure_ascii=False) + "\n"
     written: list[str] = []
 

@@ -21,6 +21,8 @@ from meenvazhi.writer import (
     HISTORY_DIR,
     LATEST_JSON,
     STATUS_JSON,
+    UNCHANGED_REASON,
+    is_unchanged,
     prune_history,
     publish,
     write_atomic,
@@ -229,3 +231,65 @@ def test_prune_history_drops_only_expired_files(tmp_path: Path) -> None:
     assert (history / "2026-09-01.json").exists()
     assert (history / "index.json").exists()
     assert (history / "notadate.json").exists()
+
+
+# --- Several runs a day --------------------------------------------------------
+#
+# The pipeline now runs every two hours. Until INCOIS posts the day's update, each
+# run fetches exactly the advisory already published. Those runs must write
+# nothing at all, so the workflow has nothing to commit and nothing to deploy.
+
+
+def test_identical_advisory_is_not_republished(tmp_path: Path, document: dict, gpx: str) -> None:
+    results = [_ok("SEC004", "KARNATAKA", SectorStatus.HAS_ADVISORY, zones=20)]
+    first = _publish(results, tmp_path, document, gpx)
+    assert first.published
+
+    before = {p: p.read_bytes() for p in tmp_path.rglob("*") if p.is_file()}
+    again = dict(document, generated_at="2026-09-27T13:31:04Z")  # only the run time differs
+    second = publish(results, document=again, gpx=gpx, text="summary\n", out_dir=tmp_path, now=NOW)
+
+    assert not second.published
+    assert second.unchanged
+    assert second.reason == UNCHANGED_REASON
+    after = {p: p.read_bytes() for p in tmp_path.rglob("*") if p.is_file()}
+    assert after == before, "an unchanged run must not touch a single file"
+
+
+def test_a_real_change_is_published(tmp_path: Path, document: dict, gpx: str) -> None:
+    results = [_ok("SEC004", "KARNATAKA", SectorStatus.HAS_ADVISORY, zones=20)]
+    _publish(results, tmp_path, document, gpx)
+
+    updated = json.loads(json.dumps(document))
+    updated["advisory_date"] = "2026-09-28"
+    outcome = publish(results, document=updated, gpx=gpx, text="summary\n", out_dir=tmp_path, now=NOW)
+
+    assert outcome.published
+    assert not outcome.unchanged
+    assert json.loads((tmp_path / LATEST_JSON).read_text(encoding="utf-8"))["advisory_date"] == "2026-09-28"
+
+
+def test_a_change_in_one_zone_counts_as_a_change(tmp_path: Path, document: dict) -> None:
+    (tmp_path / LATEST_JSON).write_text(json.dumps(document), encoding="utf-8")
+    moved = json.loads(json.dumps(document))
+    moved["sectors"][1]["zones"][0]["lat"] += 0.01
+    assert not is_unchanged(tmp_path, moved)
+
+
+def test_first_ever_run_is_never_unchanged(tmp_path: Path, document: dict) -> None:
+    assert not is_unchanged(tmp_path, document)
+
+
+def test_a_corrupt_previous_file_is_replaced_not_trusted(tmp_path: Path, document: dict) -> None:
+    (tmp_path / LATEST_JSON).write_text("{ not json", encoding="utf-8")
+    assert not is_unchanged(tmp_path, document)
+
+
+def test_failures_still_win_over_unchanged(tmp_path: Path, document: dict, gpx: str) -> None:
+    """A broken session is reported as a failure even if the data looks familiar."""
+    ok = [_ok("SEC004", "KARNATAKA", SectorStatus.HAS_ADVISORY, zones=20)]
+    _publish(ok, tmp_path, document, gpx)
+    outcome = _publish([_failed("SEC004", "KARNATAKA")], tmp_path, document, gpx)
+    assert not outcome.published
+    assert not outcome.unchanged
+    assert "sector fetch failed" in (outcome.reason or "")

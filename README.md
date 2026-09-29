@@ -269,7 +269,11 @@ reachable range, User-Agent, timeouts and history retention.
 
 ## Being a good citizen
 
-One run per day. An identifiable User-Agent with a contact URL. Strictly sequential
+Up to seven runs a day, every two hours from 10:00 to 22:00 India time, because
+GitHub's scheduler can delay a run by several hours. Once the day's advisory is
+published, the remaining runs stop before sending INCOIS a single request, and a
+run that finds nothing new writes nothing. Each run that does reach INCOIS makes
+five requests. An identifiable User-Agent with a contact URL. Strictly sequential
 requests over a single session, with a two-second minimum interval and exponential
 backoff. No parallel fetching. INCOIS serves no `robots.txt`, and the client
 handles that as "nothing disallowed" rather than treating the 404 as permission to

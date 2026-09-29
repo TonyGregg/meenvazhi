@@ -164,15 +164,24 @@ def main(argv: list[str] | None = None) -> int:
             now=now,
             retention_days=retention_days,
         )
-        exit_code = EXIT_OK if outcome.published else EXIT_FETCH_FAILED
-        write_status(out_dir, results, outcome=outcome, exit_code=exit_code, now=now)
+        if outcome.unchanged:
+            # A clean run with nothing new. status.json is deliberately not
+            # touched: rewriting it would change its timestamp, and the workflow
+            # would then commit and deploy on every one of the day's runs for no
+            # reason. The Actions run history records the attempt instead.
+            exit_code = EXIT_OK
+        else:
+            exit_code = EXIT_OK if outcome.published else EXIT_FETCH_FAILED
+            write_status(out_dir, results, outcome=outcome, exit_code=exit_code, now=now)
     except OSError as exc:
         log.error("write failed: %s", exc)
         outcome = PublishOutcome(published=False, reason=f"write failed: {exc}")
         exit_code = EXIT_WRITE_FAILED
 
     print(json.dumps(summarise(results, outcome, exit_code), indent=2))
-    if not outcome.published:
+    if outcome.unchanged:
+        log.info("nothing new from INCOIS; the published advisory already matches")
+    elif not outcome.published:
         log.warning("nothing published: %s (previously published data is untouched)", outcome.reason)
     return exit_code
 
