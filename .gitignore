@@ -13,6 +13,10 @@ pipeline/runs/
 run.json
 pipeline/summary.json
 
+# Built Android APKs: kept locally in apk/, not committed. A 12 MB binary per
+# build would bloat the history, and the APK is rebuilt from source in a minute.
+apk/
+
 # Node
 node_modules/
 web/dist/

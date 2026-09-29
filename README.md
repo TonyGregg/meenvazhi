@@ -135,12 +135,12 @@ echo "sdk.dir=$ANDROID_HOME" > web/android/local.properties
 
 cd web
 npm run apk:debug
-# -> web/android/app/build/outputs/apk/debug/app-debug.apk
+# -> apk/Meenvazhi-debug.apk at the top of the project
 ```
 
 ### Putting it on a phone
 
-Copy `app-debug.apk` to the phone, by USB, Google Drive or WhatsApp to yourself,
+Copy `apk/Meenvazhi-debug.apk` to the phone, by USB, Google Drive or WhatsApp to yourself,
 and open it. Android will ask to allow installing apps from that source; allow it
 once. Open the app once while the phone has a signal so it downloads the advisory.
 
