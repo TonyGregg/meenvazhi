@@ -4,8 +4,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 import { fileURLToPath } from 'node:url';
 import { localData } from './vite-plugin-local-data';
 
-// The Android and iOS apps are served from the root of the WebView's local origin,
-// so they need base '/'. The website is a project Pages site under /meenvazhi/.
+// The Android app is served from the root of the WebView's local origin, so it
+// needs base '/'. The website is a project Pages site under /meenvazhi/.
 const isNative = process.env.BUILD_TARGET === 'native';
 const base = isNative ? '/' : (process.env.VITE_BASE ?? '/meenvazhi/');
 

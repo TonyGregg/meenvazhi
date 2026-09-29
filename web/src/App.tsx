@@ -41,8 +41,7 @@ export function App(): React.JSX.Element {
   const [tab, setTab] = useState<Tab>('zones');
   const [sector, setSector] = useState<string | null>(null);
 
-  // Android's back button (iOS has none, so this never fires there): from any other
-  // tab it returns to the zone list, and from
+  // Android's back button: from any other tab it returns to the zone list, and from
   // the zone list it sends the app to the background rather than closing it. A
   // fisherman who backs out by accident should find the app exactly where they left
   // it, not reloading.

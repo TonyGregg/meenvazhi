@@ -17,17 +17,6 @@ const config: CapacitorConfig = {
     // Lets `chrome://inspect` attach to debug builds; release builds ignore it.
     webContentsDebuggingEnabled: true,
   },
-  experimental: {
-    ios: {
-      spm: {
-        // Capacitor writes the app's plugin package with Swift tools 5.9 by default,
-        // then fills in the iOS deployment target. Tools 5.9 has no constant for
-        // iOS 26, so the generated Package.swift fails to resolve ("'v26' is
-        // unavailable"). The .v26 constant arrived in Swift tools 6.2.
-        swiftToolsVersion: '6.2',
-      },
-    },
-  },
 };
 
 export default config;

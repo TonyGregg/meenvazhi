@@ -19,8 +19,6 @@
     "build:android": "npm run build:native && cap sync android",
     "apk:debug": "npm run build:android && cd android && ./gradlew assembleDebug",
     "build:native": "tsc --build && BUILD_TARGET=native vite build",
-    "build:ios": "npm run build:native && cap sync ios",
-    "ios:open": "npm run build:ios && cap open ios",
     "build:e2e": "npm run build && rm -rf dist/data && mkdir -p dist/data && cp ../pipeline/tests/fixtures/golden/pfz-latest.json dist/data/"
   },
   "dependencies": {
@@ -29,7 +27,6 @@
     "@capacitor/core": "^8.5.2",
     "@capacitor/filesystem": "^8.1.3",
     "@capacitor/geolocation": "^8.2.2",
-    "@capacitor/ios": "^8.5.2",
     "@capacitor/share": "^8.0.2",
     "idb-keyval": "^6.2.1",
     "react": "^19.1.0",

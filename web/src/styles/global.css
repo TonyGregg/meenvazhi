@@ -33,7 +33,8 @@ body {
    * Side insets only. The top inset belongs to the sticky header, not the body:
    * WebKit applies a sticky element's top offset on top of the body's padding, so
    * reserving the status-bar space in both places drew the header a full status-bar
-   * height too low on iPhones, over the first card. Measured in the iOS app:
+   * height too low on iPhones, over the first card. Measured in WebKit on an iPhone,
+   * which is also what Safari uses for the website:
    * safe area 62px, header drawn at 124px, page not scrolled.
    */
   padding: 0 env(safe-area-inset-right, 0) 0 env(safe-area-inset-left, 0);

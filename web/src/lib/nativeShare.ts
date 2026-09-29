@@ -1,5 +1,5 @@
 /**
- * Handing a GPX file to another app, on Android or iOS.
+ * Handing a GPX file to another app on Android.
  *
  * Neither browser route works inside the app's WebView: `<a download>` does
  * nothing, and `navigator.share` does not accept files there. So the native app
