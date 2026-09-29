@@ -83,6 +83,21 @@ Application, tick Offline under Service Workers, and hard reload. Then delete th
 `pfz-data` cache, stay offline and reload again: it should still work, this time
 from IndexedDB.
 
+## Two ways to read the zones
+
+**Nearest to me** lists zones within a chosen range of your home port, nearest
+first, with the course to steer from that port. Zones beyond the range are never
+silently dropped: a line under the list says how many are hidden, with one tap to
+show them.
+
+**By area** works the way INCOIS presents its advisory. Pick Karnataka, Kerala,
+South Tamil Nadu or North Tamil Nadu and see every zone in it, in the order INCOIS
+lists them along the coast, with nothing filtered by range. Each zone leads with
+INCOIS's own bearing and distance from its nearest landing centre, which is what
+someone sailing from that stretch of coast uses. The course from your home port
+appears alongside it. Both are labelled with the place they are measured from,
+because confusing the two would be a sixty-degree steering error.
+
 ## The Android app
 
 A native Android app for **Android 15 and later**, built with Capacitor around the

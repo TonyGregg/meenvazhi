@@ -66,8 +66,17 @@ describe('with a fresh advisory', () => {
     render(<App />);
     // Nothing is in range from Kochi at the default 120 nmi, which is the real
     // state of the data, so the out-of-range empty state is correct here.
-    await waitFor(() => expect(screen.getByRole('status')).toBeInTheDocument());
-    expect(screen.getByText(/No zones within/i)).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText(/No zones within/i)).toBeInTheDocument());
+    // And it says how many are being hidden, rather than letting them vanish.
+    expect(screen.getByText('20 more zones beyond 120 nmi')).toBeInTheDocument();
+  });
+
+  it('shows the hidden zones in one tap from the notice', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(await screen.findByRole('button', { name: 'Show them' }));
+    expect(await screen.findByText('20 zones')).toBeInTheDocument();
+    expect(screen.queryByText(/more zones beyond/)).not.toBeInTheDocument();
   });
 
   it('shows the zones after the range is lifted', async () => {
@@ -212,3 +221,72 @@ describe('tabs', () => {
     expect(screen.getByText('Credits')).toBeInTheDocument();
   });
 });
+
+describe('by area, the way INCOIS lists it', () => {
+  beforeEach(() => stubNetwork(golden));
+
+  async function openArea(user: ReturnType<typeof userEvent.setup>, area: RegExp): Promise<void> {
+    render(<App />);
+    await screen.findByText(/No zones within/i);
+    await user.click(screen.getByRole('button', { name: 'By area' }));
+    await user.click(screen.getByRole('button', { name: area }));
+  }
+
+  it('lists every zone in the area, ignoring the range filter', async () => {
+    const user = userEvent.setup();
+    await openArea(user, /^Karnataka/);
+    // All 20, although none is within the default 120 nmi of Kochi.
+    expect(await screen.findByText(/Karnataka · 20 zones/)).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: 'Set as target' })).toHaveLength(20);
+  });
+
+  it('keeps INCOIS order along the coast rather than sorting by distance', async () => {
+    const user = userEvent.setup();
+    await openArea(user, /^Karnataka/);
+    const places = screen.getAllByText(/^Off /).map((el) => el.textContent);
+    // Karwar is INCOIS's first row and the farthest from Kochi; nearest-first would
+    // put it last.
+    expect(places[0]).toBe('Off Karwar');
+    expect(places.at(-1)).toBe('Off Hosabettu-Udaivar');
+  });
+
+  it('names the origin of each bearing, so the two can never be confused', async () => {
+    const user = userEvent.setup();
+    await openArea(user, /^Karnataka/);
+    // INCOIS's bearing from the local coast, and ours from the home port, both on
+    // the first card, each labelled with its place.
+    expect((await screen.findAllByText('From Karwar coast · INCOIS'))[0]).toBeInTheDocument();
+    expect(screen.getAllByText('From Kochi').length).toBe(20);
+    expect(screen.getByText('W 270°')).toBeInTheDocument();
+  });
+
+  it('says plainly when an area has no advisory today', async () => {
+    const user = userEvent.setup();
+    await openArea(user, /^Kerala/);
+    expect(await screen.findByText('No advisory for this area today')).toBeInTheDocument();
+    expect(screen.getByText(/Cloud cover/)).toBeInTheDocument();
+  });
+
+  it('remembers the chosen view and area', async () => {
+    const user = userEvent.setup();
+    const first = render(<App />);
+    await screen.findByText(/No zones within/i);
+    await user.click(screen.getByRole('button', { name: 'By area' }));
+    await user.click(screen.getByRole('button', { name: /^Karnataka/ }));
+    first.unmount();
+
+    render(<App />);
+    expect(await screen.findByText(/Karnataka · 20 zones/)).toBeInTheDocument();
+  });
+
+  it('names the areas in Malayalam', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await screen.findByText(/No zones within/i);
+    await user.selectOptions(screen.getByLabelText('Language'), 'ml');
+    await user.click(screen.getByRole('button', { name: 'പ്രദേശം അനുസരിച്ച്' }));
+    expect(screen.getByRole('button', { name: /^കർണാടക/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /^തെക്കൻ തമിഴ്നാട്/ })).toBeInTheDocument();
+  });
+});
+

@@ -107,6 +107,23 @@ export const ml: Messages = {
   about: 'ആപ്പിനെക്കുറിച്ച്',
   credits: 'കടപ്പാട്',
 
+  viewNearest: 'എനിക്ക് അടുത്തുള്ളവ',
+  viewByArea: 'പ്രദേശം അനുസരിച്ച്',
+  area: 'പ്രദേശം',
+  inIncoisOrder: 'INCOIS നൽകുന്ന ക്രമത്തിൽ, തീരത്തിലൂടെ',
+  areaNoAdvisory: 'ഈ പ്രദേശത്തിന് ഇന്ന് അറിയിപ്പില്ല',
+  moreBeyondRange: (n: number, range: number) => `${range} നോ.മൈലിന് അപ്പുറം ${n} മേഖലകൾ കൂടി`,
+  showThem: 'അവ കാണിക്കുക',
+  fromCoastIncois: (place: string) => `${place} തീരത്ത് നിന്ന് · INCOIS`,
+  fromYourPort: (port: string) => `${port}-ൽ നിന്ന്`,
+  sectorNames: {
+    SEC004: 'കർണാടക',
+    SEC005: 'കേരളം',
+    SEC006: 'തെക്കൻ തമിഴ്നാട്',
+    SEC007: 'വടക്കൻ തമിഴ്നാട്',
+    SEC014: 'ലക്ഷദ്വീപ്',
+  },
+
   disclaimer: 'അറിയിപ്പ് മാത്രം. കപ്പൽയാത്രയ്ക്കോ കടലിലെ ജീവസുരക്ഷയ്ക്കോ ഉപയോഗിക്കരുത്.',
   credit: 'സ്രോതസ്സ്: INCOIS, ഭൗമശാസ്ത്ര മന്ത്രാലയം, ഭാരത സർക്കാർ',
   bearingsAreTrue: 'എല്ലാ ദിശകളും യഥാർഥ ഉത്തരം അനുസരിച്ച്, കാന്തികമല്ല.',

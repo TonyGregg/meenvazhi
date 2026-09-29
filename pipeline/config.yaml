@@ -17,11 +17,14 @@ incois:
   sector_path: "TextData?secid={secid}"
   # Sectors to fetch each day, in order. All 14 are known (see meenvazhi/incois.py);
   # these are the ones relevant to a boat working out of Kochi.
+  # In INCOIS's own order: the west coast north to south, then the east coast
+  # south to north. The app lists areas in this order.
   sectors:
-    - SEC005   # KERALA
     - SEC004   # KARNATAKA
-    - SEC014   # LAKSHADWEEP
+    - SEC005   # KERALA
     - SEC006   # SOUTH TAMILNADU
+    - SEC007   # NORTH TAMILNADU
+    # SEC014 LAKSHADWEEP was fetched until 29 Sep 2026; add it back here to restore it.
 
 output:
   home_port: kochi

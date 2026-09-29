@@ -82,7 +82,7 @@ export function ZoneCard({ t, zone, sectorName, isTarget, dead, onSetTarget }: P
   );
 }
 
-function CopyButton({ t, text }: { t: Messages; text: string }): React.JSX.Element {
+export function CopyButton({ t, text }: { t: Messages; text: string }): React.JSX.Element {
   // No state machine and no timer: a boat does not need a toast. The label flips
   // on the element itself via the title so nothing animates or reflows.
   const copy = (): void => {

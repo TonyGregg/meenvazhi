@@ -116,6 +116,25 @@ export const en = {
   about: 'About',
   credits: 'Credits',
 
+  // Two ways to read the zones: nearest to the home port, or area by area as INCOIS lists them.
+  viewNearest: 'Nearest to me',
+  viewByArea: 'By area',
+  area: 'Area',
+  inIncoisOrder: 'In the order INCOIS lists them, along the coast',
+  areaNoAdvisory: 'No advisory for this area today',
+  moreBeyondRange: (n: number, range: number) =>
+    n === 1 ? `1 more zone beyond ${range} nmi` : `${n} more zones beyond ${range} nmi`,
+  showThem: 'Show them',
+  fromCoastIncois: (place: string) => `From ${place} coast · INCOIS`,
+  fromYourPort: (port: string) => `From ${port}`,
+  sectorNames: {
+    SEC004: 'Karnataka',
+    SEC005: 'Kerala',
+    SEC006: 'South Tamil Nadu',
+    SEC007: 'North Tamil Nadu',
+    SEC014: 'Lakshadweep',
+  } as Record<string, string>,
+
   // Always present.
   disclaimer: 'Advisory only. Not for navigation or safety of life at sea.',
   credit: 'Source: INCOIS, Ministry of Earth Sciences, Govt. of India',

@@ -251,3 +251,31 @@ test.describe('layout', () => {
     }
   });
 });
+
+test.describe('by area', () => {
+  test('lists a whole area in INCOIS order without scrolling sideways', async ({ page }) => {
+    await page.goto('./');
+    await page.getByRole('button', { name: 'By area' }).click();
+    await page.getByRole('button', { name: /^Karnataka/ }).click();
+    await expect(page.getByText(/Karnataka · 20 zones/)).toBeVisible();
+    await expect(page.getByText('Off Karwar')).toBeVisible();
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    );
+    expect(overflow).toBeLessThanOrEqual(1);
+  });
+
+  test('works offline too', async ({ page, context }) => {
+    await page.goto('./');
+    await expect(page.getByText(/No zones within/i)).toBeVisible();
+    await page.evaluate(() => navigator.serviceWorker.ready);
+    await page.reload();
+    await page.waitForTimeout(1500);
+    await context.setOffline(true);
+    await page.reload();
+    await page.getByRole('button', { name: 'By area' }).click();
+    await page.getByRole('button', { name: /^Karnataka/ }).click();
+    await expect(page.getByText(/Karnataka · 20 zones/)).toBeVisible();
+  });
+});
+

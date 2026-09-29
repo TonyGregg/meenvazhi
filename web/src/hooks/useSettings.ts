@@ -13,6 +13,8 @@ import { detectLocale, isLocale, messages, type Locale } from '@/i18n';
 
 export type Theme = 'sun' | 'day' | 'night';
 export type SortBy = 'distance' | 'bearing';
+/** "Nearest to me" filters by range from the home port; "By area" follows INCOIS. */
+export type ZoneView = 'nearest' | 'area';
 
 export interface Settings {
   locale: Locale;
@@ -23,6 +25,9 @@ export interface Settings {
   sortBy: SortBy;
   /** Zone id the compass points at. */
   targetZoneId: string | null;
+  view: ZoneView;
+  /** The area last opened in the "By area" view, by INCOIS sector id. */
+  areaSectorId: string | null;
 }
 
 export const RANGE_OPTIONS: readonly (number | null)[] = [50, 100, 150, 200, null] as const;
@@ -53,6 +58,8 @@ function defaults(): Settings {
     rangeNmi: 120,
     sortBy: 'distance',
     targetZoneId: null,
+    view: 'nearest',
+    areaSectorId: null,
   };
 }
 
@@ -69,6 +76,8 @@ function reconcile(stored: Partial<Settings>): Settings {
         : base.rangeNmi,
     sortBy: stored.sortBy === 'bearing' ? 'bearing' : 'distance',
     targetZoneId: typeof stored.targetZoneId === 'string' ? stored.targetZoneId : null,
+    view: stored.view === 'area' ? 'area' : 'nearest',
+    areaSectorId: typeof stored.areaSectorId === 'string' ? stored.areaSectorId : null,
   };
 }
 

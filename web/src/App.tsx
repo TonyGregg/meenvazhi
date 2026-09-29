@@ -11,12 +11,16 @@ import { SettingsView } from '@/components/SettingsView';
 import { StalenessBanner } from '@/components/StalenessBanner';
 import { ZoneFilters } from '@/components/ZoneFilters';
 import { ZoneList } from '@/components/ZoneList';
+import { AreaView } from '@/components/AreaView';
+import { HiddenZonesNotice } from '@/components/HiddenZonesNotice';
+import { ViewToggle } from '@/components/ViewToggle';
 import { DEFAULT_PORT_SLUG, portBySlug } from '@/data/ports';
 import { useOnline } from '@/hooks/useOnline';
 import { usePfzData } from '@/hooks/usePfzData';
 import { useSettings } from '@/hooks/useSettings';
 import { LOCALE_TAGS, messages } from '@/i18n';
 import { allZones } from '@/lib/pfz';
+import { hiddenByRange, incoisOrder, pickAreaSector, portShortName } from '@/lib/areas';
 import { withHomePort } from '@/lib/recompute';
 import { assess } from '@/lib/staleness';
 import { isNativeApp } from '@/lib/platform';
@@ -102,6 +106,15 @@ export function App(): React.JSX.Element {
 
   const sectorNames = doc ? doc.sectors.filter((s) => s.zones.length > 0).map((s) => s.sector_name) : [];
 
+  // "Nearest to me": zones the range filter hides are counted, never silently dropped.
+  const hidden = doc ? hiddenByRange(doc, sector) : 0;
+
+  // "By area": one sector, every zone, in the order INCOIS lists them.
+  const areaSector = doc ? pickAreaSector(doc, settings.areaSectorId) : undefined;
+  const areaZones = useMemo(() => (areaSector ? incoisOrder(areaSector.zones) : []), [areaSector]);
+  const byArea = settings.view === 'area';
+  const shownZones = byArea ? areaZones : visibleZones;
+
   return (
     <div className="app">
       <AppHeader
@@ -124,23 +137,42 @@ export function App(): React.JSX.Element {
       <main className="app__main stack">
         {tab === 'zones' ? (
           <>
+            <ViewToggle t={t} view={settings.view} onChange={(v) => update('view', v)} />
             <ZoneFilters
               t={t}
               homePort={settings.homePort}
               rangeNmi={settings.rangeNmi}
               sortBy={settings.sortBy}
-              sectorNames={sectorNames}
+              sectorNames={byArea ? [] : sectorNames}
               selectedSector={sector}
               onHomePort={(slug) => update('homePort', slug)}
               onRange={(value) => update('rangeNmi', value)}
               onSortBy={(value) => update('sortBy', value)}
               onSector={setSector}
+              showRangeControls={!byArea}
             />
-            {emptyReason ? (
-              <EmptyState t={t} reason={emptyReason} rangeNmi={settings.rangeNmi} />
+            {!doc ? (
+              <EmptyState t={t} reason="no-data" rangeNmi={settings.rangeNmi} />
+            ) : byArea ? (
+              <>
+                <AreaView
+                  t={t}
+                  doc={doc}
+                  sector={areaSector}
+                  zones={areaZones}
+                  portName={portShortName(port.name)}
+                  targetZoneId={settings.targetZoneId}
+                  dead={staleness.isDead}
+                  onSector={(id) => update('areaSectorId', id)}
+                  onSetTarget={(id) => update('targetZoneId', id)}
+                />
+                {areaZones.length > 0 ? <GpxExport t={t} doc={doc} zones={areaZones} /> : null}
+              </>
             ) : (
-              doc && (
-                <>
+              <>
+                {emptyReason ? (
+                  <EmptyState t={t} reason={emptyReason} rangeNmi={settings.rangeNmi} />
+                ) : (
                   <ZoneList
                     t={t}
                     doc={doc}
@@ -149,9 +181,15 @@ export function App(): React.JSX.Element {
                     dead={staleness.isDead}
                     onSetTarget={(id) => update('targetZoneId', id)}
                   />
-                  <GpxExport t={t} doc={doc} zones={visibleZones} />
-                </>
-              )
+                )}
+                <HiddenZonesNotice
+                  t={t}
+                  hidden={hidden}
+                  rangeNmi={settings.rangeNmi}
+                  onShow={() => update('rangeNmi', null)}
+                />
+                {visibleZones.length > 0 ? <GpxExport t={t} doc={doc} zones={visibleZones} /> : null}
+              </>
             )}
           </>
         ) : null}
@@ -161,7 +199,7 @@ export function App(): React.JSX.Element {
             <PlotView
               t={t}
               doc={doc}
-              zones={visibleZones.length > 0 ? visibleZones : allZones(doc)}
+              zones={shownZones.length > 0 ? shownZones : allZones(doc)}
               targetZoneId={settings.targetZoneId}
               dead={staleness.isDead}
             />

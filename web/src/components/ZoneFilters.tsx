@@ -14,6 +14,8 @@ interface Props {
   onRange: (value: number | null) => void;
   onSortBy: (value: SortBy) => void;
   onSector: (value: string | null) => void;
+  /** False in the area view, which shows every zone and so has no range or sort. */
+  showRangeControls?: boolean;
 }
 
 /**
@@ -33,6 +35,7 @@ export function ZoneFilters({
   onRange,
   onSortBy,
   onSector,
+  showRangeControls = true,
 }: Props): React.JSX.Element {
   return (
     <div className="card stack">
@@ -49,6 +52,8 @@ export function ZoneFilters({
         </select>
       </div>
 
+      {showRangeControls ? (
+      <>
       <div>
         <span className="label" id="range-label">
           {t.range}
@@ -101,6 +106,8 @@ export function ZoneFilters({
             ))}
           </select>
         </div>
+      ) : null}
+      </>
       ) : null}
     </div>
   );

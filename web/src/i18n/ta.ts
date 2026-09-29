@@ -105,6 +105,23 @@ export const ta: Messages = {
   about: 'ஆப் பற்றி',
   credits: 'நன்றி',
 
+  viewNearest: 'எனக்கு அருகில்',
+  viewByArea: 'பகுதி வாரியாக',
+  area: 'பகுதி',
+  inIncoisOrder: 'INCOIS பட்டியலிடும் வரிசையில், கரையோரமாக',
+  areaNoAdvisory: 'இந்தப் பகுதிக்கு இன்று அறிவிப்பு இல்லை',
+  moreBeyondRange: (n: number, range: number) => `${range} க.மைலுக்கு அப்பால் மேலும் ${n} மண்டலங்கள்`,
+  showThem: 'அவற்றைக் காட்டு',
+  fromCoastIncois: (place: string) => `${place} கரையிலிருந்து · INCOIS`,
+  fromYourPort: (port: string) => `${port}-இலிருந்து`,
+  sectorNames: {
+    SEC004: 'கர்நாடகா',
+    SEC005: 'கேரளா',
+    SEC006: 'தெற்கு தமிழ்நாடு',
+    SEC007: 'வடக்கு தமிழ்நாடு',
+    SEC014: 'லட்சத்தீவு',
+  },
+
   disclaimer: 'அறிவிப்பு மட்டுமே. கப்பல் வழிசெலுத்தலுக்கோ கடல் உயிர்ப் பாதுகாப்புக்கோ பயன்படுத்த வேண்டாம்.',
   credit: 'ஆதாரம்: INCOIS, பூமி அறிவியல் அமைச்சகம், இந்திய அரசு',
   bearingsAreTrue: 'அனைத்து திசைகளும் உண்மை வடக்கு, காந்த வடக்கு அல்ல.',
