@@ -166,6 +166,35 @@ a {
   line-height: 1;
 }
 
+/* Forecast dates, as INCOIS shows them: date on the left, validity on the right. */
+.forecast-dates {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+  padding: 0.625rem var(--pad);
+  background: var(--surface-sunk);
+  border-bottom: var(--border-width) solid var(--border);
+}
+
+.forecast-dates__right {
+  text-align: right;
+}
+
+.forecast-dates__value {
+  /* One line per date, always: a date split across lines is easy to misread. The
+     type shrinks a little on narrow phones, where the Malayalam month is long. */
+  font-size: clamp(1rem, 4.4vw, 1.25rem);
+  font-weight: var(--weight-bold);
+  white-space: nowrap;
+}
+
+/* An expired or stale advisory: the dates are struck through, like its zones. */
+.forecast-dates--dead .forecast-dates__value {
+  color: var(--dead-text);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
 /* Banners ----------------------------------------------------------------- */
 
 .banner {
@@ -271,14 +300,26 @@ a {
   z-index: 5;
 }
 
-/* Keep the language picker and Refresh on one line; let the name wrap instead. */
-.header > .row {
-  flex-wrap: nowrap;
-  flex-shrink: 0;
+/*
+ * The name is never squeezed or broken: "Meenvazhi · മീൻവഴി" stays on one line.
+ * When the language picker and Refresh do not fit beside it, as happens with the
+ * longer Malayalam and Tamil labels on a phone, they move to a second row on the
+ * right instead of overlapping the name.
+ */
+.header {
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
 }
 
 .header__name {
-  min-width: 0;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.header > .row {
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .header__name {

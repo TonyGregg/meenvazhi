@@ -129,7 +129,8 @@ describe('offline with a saved copy', () => {
     stubNetwork(null);
     render(<App />);
     await waitFor(() => expect(screen.getByText(/saved copy/i)).toBeInTheDocument());
-    expect(screen.getByText(/Issued/)).toBeInTheDocument();
+    // The dates stay on screen offline, in the bar under the header.
+    expect(screen.getByText('Forecast date')).toBeInTheDocument();
   });
 });
 
@@ -287,6 +288,45 @@ describe('by area, the way INCOIS lists it', () => {
     await user.click(screen.getByRole('button', { name: 'പ്രദേശം അനുസരിച്ച്' }));
     expect(screen.getByRole('button', { name: /^കർണാടക/ })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /^തെക്കൻ തമിഴ്നാട്/ })).toBeInTheDocument();
+  });
+});
+
+describe('forecast dates, as INCOIS shows them', () => {
+  beforeEach(() => stubNetwork(golden));
+
+  it('shows Forecast date and Valid upto under the header on every screen', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await screen.findByText('Forecast date');
+    expect(screen.getByText('Valid upto')).toBeInTheDocument();
+    expect(screen.getByText('27 Sept 2026')).toBeInTheDocument();
+    expect(screen.getByText('28 Sept 2026')).toBeInTheDocument();
+
+    for (const tab of ['Plot', 'Compass', 'Settings']) {
+      await user.click(screen.getByRole('button', { name: tab }));
+      expect(screen.getByText('Forecast date')).toBeInTheDocument();
+    }
+  });
+
+  it('labels them in Tamil', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await screen.findByText('Forecast date');
+    await user.selectOptions(screen.getByLabelText('Language'), 'ta');
+    expect(screen.getByText('முன்னறிவிப்பு தேதி')).toBeInTheDocument();
+    expect(screen.getByText('செல்லுபடி வரை')).toBeInTheDocument();
+  });
+
+  it('does not repeat the dates in the banner when the bar already shows them', async () => {
+    stubNetwork(golden);
+    const first = render(<App />);
+    await screen.findByText('Forecast date');
+    first.unmount();
+
+    stubNetwork(null);
+    render(<App />);
+    const banner = await screen.findByText(/saved copy/i);
+    expect(banner.parentElement?.textContent ?? '').not.toMatch(/Forecast date/);
   });
 });
 

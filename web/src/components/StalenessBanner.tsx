@@ -8,6 +8,8 @@ interface Props {
   localeTag: string;
   /** True when the advisory came from storage rather than the network. */
   fromCache: boolean;
+  /** True when the forecast-dates bar is on screen, so the dates need not repeat. */
+  datesShownAbove?: boolean;
 }
 
 /**
@@ -20,7 +22,7 @@ interface Props {
  * alone is ambiguous after a few days at sea, and absolute alone asks someone to
  * do date arithmetic on a moving deck.
  */
-export function StalenessBanner({ t, report, localeTag, fromCache }: Props): React.JSX.Element | null {
+export function StalenessBanner({ t, report, localeTag, fromCache, datesShownAbove = false }: Props): React.JSX.Element | null {
   if (report.freshness === 'fresh' && !fromCache) return null;
 
   const dead = report.isDead;
@@ -43,11 +45,15 @@ export function StalenessBanner({ t, report, localeTag, fromCache }: Props): Rea
 
   const detail = (): string => {
     const bits: string[] = [];
-    if (report.advisoryDate) bits.push(t.issued(shortDate(report.advisoryDate, localeTag)));
+    // With the dates bar on screen the absolute dates are already visible, so the
+    // banner adds only the relative age. Without it, it carries everything itself.
+    if (report.advisoryDate && !datesShownAbove) bits.push(t.issued(shortDate(report.advisoryDate, localeTag)));
     // A negative age is not shown as a number; the clock warning covers it.
     if (report.ageDays !== null && report.ageDays > 0) bits.push(t.ageDays(report.ageDays));
-    if (report.validUntil) bits.push(t.validUntil(shortDate(report.validUntil, localeTag)));
-    else if (report.freshness !== 'none') bits.push(t.noValidity);
+    if (!datesShownAbove) {
+      if (report.validUntil) bits.push(t.validUntil(shortDate(report.validUntil, localeTag)));
+      else if (report.freshness !== 'none') bits.push(t.noValidity);
+    }
     return bits.join(' · ');
   };
 

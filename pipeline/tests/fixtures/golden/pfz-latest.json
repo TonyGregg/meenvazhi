@@ -4,6 +4,8 @@
   "generator": "Meenvazhi/1.0.0",
   "advisory_date": "2026-09-27",
   "valid_until": "2026-09-28",
+  "forecast_date": "2026-09-27",
+  "valid_upto": "2026-09-28",
   "source": {
     "name": "INCOIS Potential Fishing Zone advisory",
     "url": "https://incois.gov.in/MarineFisheries/TextDataHome?mfid=1&request_locale=en",

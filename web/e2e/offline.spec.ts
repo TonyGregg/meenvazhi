@@ -279,3 +279,40 @@ test.describe('by area', () => {
   });
 });
 
+test.describe('forecast dates and header on a small phone', () => {
+  test.use({ viewport: { width: 360, height: 780 } });
+
+  for (const locale of ['en', 'ml', 'ta'] as const) {
+    test(`fit without overlapping or wrapping in ${locale}`, async ({ page }) => {
+      // Two layout bugs here were invisible to text assertions: the Malayalam name
+      // overlapping the language picker, and a date split across two lines.
+      await page.goto('./');
+      await page.locator('#locale').selectOption(locale);
+      await expect(page.locator('.forecast-dates')).toBeVisible();
+
+      const layout = await page.evaluate(() => {
+        const rect = (s: string) => document.querySelector(s)!.getBoundingClientRect();
+        const name = rect('.header__name');
+        const controls = rect('.header > .row');
+        const overlap = !(name.right <= controls.left || controls.top >= name.bottom - 1);
+        const values = [...document.querySelectorAll<HTMLElement>('.forecast-dates__value')];
+        const oneLine = values.every(
+          (v) => v.getBoundingClientRect().height < parseFloat(getComputedStyle(v).fontSize) * 1.9,
+        );
+        return { overlap, oneLine, overflow: document.documentElement.scrollWidth - innerWidth };
+      });
+
+      expect(layout.overlap).toBe(false);
+      expect(layout.oneLine).toBe(true);
+      expect(layout.overflow).toBeLessThanOrEqual(1);
+    });
+  }
+
+  test('shows the golden advisory dates', async ({ page }) => {
+    await page.goto('./');
+    await expect(page.getByText('Forecast date')).toBeVisible();
+    await expect(page.getByText('27 Sept 2026')).toBeVisible();
+    await expect(page.getByText('28 Sept 2026')).toBeVisible();
+  });
+});
+

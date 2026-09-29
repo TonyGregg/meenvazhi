@@ -76,7 +76,8 @@ describe('expiry outranks age', () => {
 });
 
 describe('aging and stale, when no validity was published', () => {
-  const noValidity = () => doc({ valid_until: null });
+  // Blank every source of validity, including INCOIS's landing-page date.
+  const noValidity = () => doc({ valid_until: null, valid_upto: null });
 
   it('is aging at two days', () => {
     const r = assess(noValidity(), at('2026-09-29T09:00:00Z'));
@@ -103,7 +104,10 @@ describe('an all-cloudy day', () => {
     // INCOIS only stamps a timestamp on a populated page, so a day where every
     // sector is cloud-covered legitimately has no advisory_date. That is not
     // stale data, but it cannot be called fresh either.
-    const r = assess(doc({ advisory_date: null, valid_until: null }), at('2026-09-27T12:00:00Z'));
+    const r = assess(
+      doc({ advisory_date: null, valid_until: null, forecast_date: null, valid_upto: null }),
+      at('2026-09-27T12:00:00Z'),
+    );
     expect(r.freshness).toBe('aging');
     expect(r.ageDays).toBeNull();
     expect(r.isDead).toBe(false);
@@ -132,8 +136,8 @@ describe('what the report always carries', () => {
   it('marks everything below fresh as requiring a warning', () => {
     const cases: Array<[PfzDocument | null, string]> = [
       [null, '2026-09-27T09:00:00Z'],
-      [doc({ valid_until: null }), '2026-09-29T09:00:00Z'],
-      [doc({ valid_until: null }), '2026-10-01T09:00:00Z'],
+      [doc({ valid_until: null, valid_upto: null }), '2026-09-29T09:00:00Z'],
+      [doc({ valid_until: null, valid_upto: null }), '2026-10-01T09:00:00Z'],
       [doc(), '2026-09-29T09:00:00Z'],
       [doc(), '2026-09-20T09:00:00Z'],
     ];
@@ -144,3 +148,38 @@ describe('what the report always carries', () => {
     }
   });
 });
+
+describe("INCOIS's landing-page dates", () => {
+  it('are preferred over the dates taken from sector pages', () => {
+    // A landing page saying the forecast is for the 29th wins over a sector date of the 27th.
+    const r = assess(doc({ forecast_date: '2026-09-29', valid_upto: '2026-09-30' }), at('2026-09-30T09:00:00Z'));
+    expect(r.advisoryDate).toBe('2026-09-29');
+    expect(r.validUntil).toBe('2026-09-30');
+    expect(r.freshness).toBe('fresh');
+  });
+
+  it('make an all-cloudy day fresh rather than undated', () => {
+    // Every sector cloud-covered: the sector pages carry no date, the landing page does.
+    const r = assess(
+      doc({ advisory_date: null, valid_until: null, forecast_date: '2026-09-27', valid_upto: '2026-09-28' }),
+      at('2026-09-27T12:00:00Z'),
+    );
+    expect(r.freshness).toBe('fresh');
+    expect(r.mustWarn).toBe(false);
+  });
+
+  it('still expire once Valid upto has passed', () => {
+    const r = assess(doc({ forecast_date: '2026-09-27', valid_upto: '2026-09-28' }), at('2026-09-29T01:00:00Z'));
+    expect(r.freshness).toBe('expired');
+  });
+
+  it('fall back to the sector dates for documents published before they existed', () => {
+    const older = { ...base };
+    delete older.forecast_date;
+    delete older.valid_upto;
+    const r = assess(older, at('2026-09-27T12:00:00Z'));
+    expect(r.advisoryDate).toBe('2026-09-27');
+    expect(r.validUntil).toBe('2026-09-28');
+  });
+});
+

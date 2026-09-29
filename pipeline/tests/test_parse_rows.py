@@ -143,3 +143,60 @@ def test_incois_bearing_is_not_a_bearing_from_home(karnataka) -> None:
     bearings = [r.bearing_deg for r in karnataka.rows]
     assert min(bearings) >= 248
     assert max(bearings) <= 270
+
+
+# --- The landing page's Forecast Date and Valid upto ---------------------------
+
+
+def test_forecast_dates_from_the_captured_landing_page() -> None:
+    from conftest import read_fixture
+
+    from meenvazhi.parse import parse_forecast_dates
+
+    dates = parse_forecast_dates(read_fixture("textdatahome.html"))
+    assert dates.forecast_date is not None and dates.forecast_date.isoformat() == "2026-09-27"
+    assert dates.valid_upto is not None and dates.valid_upto.isoformat() == "2026-09-28"
+
+
+def _landing(forecast: str, valid: str) -> str:
+    return (
+        "<table><tr><td>&nbsp;</td><td>Forecast Date</td><td>Valid upto</td><td>&nbsp;</td></tr>"
+        f"<tr><td>&nbsp;</td><td>{forecast}</td><td>{valid}</td><td>&nbsp;</td></tr></table>"
+    )
+
+
+def test_forecast_dates_are_found_by_label_not_position() -> None:
+    from meenvazhi.parse import parse_forecast_dates
+
+    swapped = (
+        "<table><tr><td>Valid upto</td><td>Forecast Date</td></tr>"
+        "<tr><td>30 SEP 2026</td><td>29 SEP 2026</td></tr></table>"
+    )
+    dates = parse_forecast_dates(swapped)
+    assert dates.forecast_date is not None and dates.forecast_date.isoformat() == "2026-09-29"
+    assert dates.valid_upto is not None and dates.valid_upto.isoformat() == "2026-09-30"
+
+
+@pytest.mark.parametrize(
+    "html",
+    [
+        "",
+        "<p>no table at all</p>",
+        _landing("", ""),
+        _landing("soon", "later"),
+        "<table><tr><td>Forecast Date</td><td>Valid upto</td></tr></table>",  # labels, no values row
+    ],
+)
+def test_missing_or_unreadable_forecast_dates_come_back_empty(html: str) -> None:
+    """Never a crash: the advisory is usable without these dates."""
+    from meenvazhi.parse import parse_forecast_dates
+
+    dates = parse_forecast_dates(html)
+    assert dates.forecast_date is None
+    assert dates.valid_upto is None
+
+
+def test_sector_pages_do_not_carry_the_landing_page_dates(kerala_html: str) -> None:
+    from meenvazhi.parse import parse_forecast_dates
+
+    assert parse_forecast_dates(kerala_html).forecast_date is None

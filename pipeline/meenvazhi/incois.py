@@ -24,8 +24,8 @@ from pathlib import Path
 
 from . import config
 from .http import FetchError, PoliteClient
-from .model import FetchFailed, ParseError, SectorPage, SectorStatus
-from .parse import parse_sector_page
+from .model import FetchFailed, ForecastDates, ParseError, SectorPage, SectorStatus
+from .parse import parse_forecast_dates, parse_sector_page
 from .sectors import get_sector
 
 log = logging.getLogger("meenvazhi.incois")
@@ -56,6 +56,17 @@ class SectorResult:
         return self.page is not None
 
 
+HOME_HTML = "TextDataHome.html"
+
+
+@dataclass(frozen=True, slots=True)
+class FetchedAdvisory:
+    """Everything one run gathers: each sector's outcome, and the landing page's dates."""
+
+    results: list[SectorResult]
+    forecast: ForecastDates
+
+
 def _base_url() -> str:
     return str(config.incois().get("base_url", "https://incois.gov.in/MarineFisheries/"))
 
@@ -70,8 +81,11 @@ def sector_url(sector_id: str) -> str:
     return _base_url() + template.format(secid=sector_id)
 
 
-def open_session(client: PoliteClient) -> None:
-    """Fetch the landing page to obtain a session cookie.
+def open_session(client: PoliteClient) -> str:
+    """Fetch the landing page to obtain a session cookie, and return the page.
+
+    The page is returned because it also carries INCOIS's Forecast Date and Valid
+    upto, so reading them costs no extra request.
 
     Asserts the cookie actually arrived. Without that check a misconfigured run
     would cheerfully fetch every sector, receive an empty shell each time, and
@@ -79,12 +93,13 @@ def open_session(client: PoliteClient) -> None:
     """
     url = home_url()
     log.info("opening session: %s", url)
-    client.get(url)
+    html = client.get_text(url)
     if not client.cookie(SESSION_COOKIE):
         raise FetchError(
             f"{url} did not set a {SESSION_COOKIE} cookie; without a session INCOIS returns "
             "an empty page shell for every sector"
         )
+    return html
 
 
 def _save_html(save_dir: Path, sector_id: str, html: str) -> None:
@@ -140,13 +155,19 @@ def fetch_all(
     sector_ids: list[str],
     *,
     save_dir: Path | None = None,
-) -> list[SectorResult]:
+) -> FetchedAdvisory:
     """Fetch every configured sector sequentially over one session."""
     if save_dir is not None:
         stamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
         save_dir = save_dir / stamp
 
-    open_session(client)
+    home_html = open_session(client)
+    if save_dir is not None:
+        save_dir.mkdir(parents=True, exist_ok=True)
+        (save_dir / HOME_HTML).write_text(home_html, encoding="utf-8")
+    forecast = parse_forecast_dates(home_html)
+    log.info("INCOIS forecast date %s, valid upto %s", forecast.forecast_date, forecast.valid_upto)
+
     results: list[SectorResult] = []
     for sector_id in sector_ids:
         try:
@@ -155,10 +176,10 @@ def fetch_all(
             sector = get_sector(sector_id)
             log.error("%s: %s", sector_id, exc)
             results.append(SectorResult(sector.sector_id, sector.name, None, str(exc)))
-    return results
+    return FetchedAdvisory(results=results, forecast=forecast)
 
 
-def load_from_fixtures(fixture_dir: Path, sector_ids: list[str]) -> list[SectorResult]:
+def load_from_fixtures(fixture_dir: Path, sector_ids: list[str]) -> FetchedAdvisory:
     """Parse saved HTML instead of fetching, for offline development and CI.
 
     Files are matched by sector id, case-insensitively, anywhere in the filename,
@@ -183,4 +204,13 @@ def load_from_fixtures(fixture_dir: Path, sector_ids: list[str]) -> list[SectorR
             results.append(SectorResult(sector.sector_id, sector.name, None, str(exc)))
         else:
             results.append(SectorResult(sector.sector_id, sector.name, page))
-    return results
+
+    # The landing page, if saved alongside: "textdatahome.html" in the test fixtures,
+    # "TextDataHome.html" in --save-html output.
+    homes = [p for p in candidates if "textdatahome" in p.name.lower()]
+    forecast = (
+        parse_forecast_dates(homes[0].read_text(encoding="utf-8", errors="replace"))
+        if homes
+        else ForecastDates(forecast_date=None, valid_upto=None)
+    )
+    return FetchedAdvisory(results=results, forecast=forecast)

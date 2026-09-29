@@ -17,7 +17,7 @@ from conftest import GOLDEN_DIR, read_fixture
 from meenvazhi import SCHEMA_VERSION
 from meenvazhi.build import build_document
 from meenvazhi.gpx import build_gpx
-from meenvazhi.parse import parse_sector_page
+from meenvazhi.parse import parse_forecast_dates, parse_sector_page
 from meenvazhi.ports import get_port
 from meenvazhi.textsummary import build_text
 
@@ -32,12 +32,16 @@ SECTOR_SPEC = (
 )
 
 
+# The landing page captured the same day, carrying INCOIS's Forecast Date and Valid upto.
+FORECAST = parse_forecast_dates(read_fixture("textdatahome.html"))
+
+
 @pytest.fixture
 def document() -> dict:
     pages = [
         parse_sector_page(read_fixture(f), expected_sector_id=i, expected_sector_name=n) for f, i, n in SECTOR_SPEC
     ]
-    return build_document(pages, home=get_port("kochi"), reachable_nmi=120, now=FROZEN_NOW)
+    return build_document(pages, home=get_port("kochi"), reachable_nmi=120, now=FROZEN_NOW, forecast=FORECAST)
 
 
 def test_matches_golden_json(document: dict) -> None:
@@ -115,7 +119,7 @@ def test_build_is_deterministic(document: dict) -> None:
     pages = [
         parse_sector_page(read_fixture(f), expected_sector_id=i, expected_sector_name=n) for f, i, n in SECTOR_SPEC
     ]
-    again = build_document(pages, home=get_port("kochi"), reachable_nmi=120, now=FROZEN_NOW)
+    again = build_document(pages, home=get_port("kochi"), reachable_nmi=120, now=FROZEN_NOW, forecast=FORECAST)
     assert json.dumps(again, sort_keys=True) == json.dumps(document, sort_keys=True)
 
 
@@ -131,8 +135,8 @@ def test_reachable_nmi_type_is_stable(document: dict) -> None:
     pages = [
         parse_sector_page(read_fixture(f), expected_sector_id=i, expected_sector_name=n) for f, i, n in SECTOR_SPEC
     ]
-    as_int = build(pages, home=get_port("kochi"), reachable_nmi=120, now=FROZEN_NOW)
-    as_float = build(pages, home=get_port("kochi"), reachable_nmi=120.0, now=FROZEN_NOW)
+    as_int = build(pages, home=get_port("kochi"), reachable_nmi=120, now=FROZEN_NOW, forecast=FORECAST)
+    as_float = build(pages, home=get_port("kochi"), reachable_nmi=120.0, now=FROZEN_NOW, forecast=FORECAST)
     assert isinstance(as_int["reachable_nmi"], float)
     assert json.dumps(as_int) == json.dumps(as_float)
 
@@ -144,3 +148,23 @@ def test_user_agent_url_matches_the_gpx_creator() -> None:
 
     agent = config.app()["user_agent"]
     assert "github.com/TonyGregg/meenvazhi" in agent
+
+
+def test_forecast_dates_are_published_as_incois_shows_them(document: dict) -> None:
+    assert document["forecast_date"] == "2026-09-27"
+    assert document["valid_upto"] == "2026-09-28"
+
+
+def test_an_all_cloudy_day_still_has_a_forecast_date() -> None:
+    """The reason the landing page matters: cloudy sector pages carry no date at all."""
+    cloudy = [
+        parse_sector_page(read_fixture(f), expected_sector_id=i, expected_sector_name=n)
+        for f, i, n in SECTOR_SPEC
+        if i != "SEC004"
+    ]
+    without = build_document(cloudy, home=get_port("kochi"), reachable_nmi=120, now=FROZEN_NOW)
+    assert without["advisory_date"] is None
+    with_dates = build_document(cloudy, home=get_port("kochi"), reachable_nmi=120, now=FROZEN_NOW, forecast=FORECAST)
+    assert with_dates["advisory_date"] == "2026-09-27"
+    assert with_dates["valid_until"] == "2026-09-28"
+    assert with_dates["forecast_date"] == "2026-09-27"

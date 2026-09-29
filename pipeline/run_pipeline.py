@@ -30,6 +30,7 @@ from meenvazhi.build import build_document
 from meenvazhi.gpx import GpxError, build_gpx
 from meenvazhi.http import FetchError, PoliteClient
 from meenvazhi.incois import SectorResult, fetch_all, load_from_fixtures
+from meenvazhi.model import ForecastDates
 from meenvazhi.ports import DEFAULT_PORT_SLUG, get_port
 from meenvazhi.sectors import get_sector
 from meenvazhi.textsummary import build_text
@@ -79,12 +80,19 @@ def resolve_sectors(raw: str | None) -> list[str]:
     return ids
 
 
-def summarise(results: list[SectorResult], outcome: PublishOutcome, exit_code: int) -> dict[str, Any]:
+def summarise(
+    results: list[SectorResult],
+    outcome: PublishOutcome,
+    exit_code: int,
+    forecast: ForecastDates | None = None,
+) -> dict[str, Any]:
     return {
         "generator": f"Meenvazhi/{__version__}",
         "published": outcome.published,
         "reason": outcome.reason,
         "advisory_date": outcome.advisory_date,
+        "forecast_date": forecast.forecast_date.isoformat() if forecast and forecast.forecast_date else None,
+        "valid_upto": forecast.valid_upto.isoformat() if forecast and forecast.valid_upto else None,
         "exit_code": exit_code,
         "files": outcome.files,
         "sectors": [
@@ -120,17 +128,18 @@ def main(argv: list[str] | None = None) -> int:
     log.info("home port %s (%.4f, %.4f); sectors %s", home.name, home.lat, home.lon, ", ".join(sector_ids))
 
     if args.from_fixtures:
-        results = load_from_fixtures(args.from_fixtures, sector_ids)
+        fetched = load_from_fixtures(args.from_fixtures, sector_ids)
     else:
         try:
             with PoliteClient() as client:
-                results = fetch_all(client, sector_ids, save_dir=args.save_html)
+                fetched = fetch_all(client, sector_ids, save_dir=args.save_html)
         except FetchError as exc:
             print(f"refusing to run: {exc}", file=sys.stderr)
             return EXIT_REFUSED
 
+    results = fetched.results
     pages = [r.page for r in results if r.page is not None]
-    document = build_document(pages, home=home, reachable_nmi=reachable_nmi, now=now)
+    document = build_document(pages, home=home, reachable_nmi=reachable_nmi, now=now, forecast=fetched.forecast)
 
     try:
         gpx = build_gpx(document)
@@ -139,7 +148,7 @@ def main(argv: list[str] | None = None) -> int:
         outcome = PublishOutcome(published=False, reason=f"gpx generation failed: {exc}")
         if not args.dry_run:
             write_status(out_dir, results, outcome=outcome, exit_code=EXIT_WRITE_FAILED, now=now)
-        print(json.dumps(summarise(results, outcome, EXIT_WRITE_FAILED), indent=2))
+        print(json.dumps(summarise(results, outcome, EXIT_WRITE_FAILED, fetched.forecast), indent=2))
         return EXIT_WRITE_FAILED
 
     text = build_text(document)
@@ -151,7 +160,11 @@ def main(argv: list[str] | None = None) -> int:
             reason="dry run" if not failed else f"dry run; {len(failed)} sector(s) failed",
             advisory_date=document.get("advisory_date"),
         )
-        print(json.dumps(summarise(results, outcome, EXIT_OK if not failed else EXIT_FETCH_FAILED), indent=2))
+        print(
+            json.dumps(
+                summarise(results, outcome, EXIT_OK if not failed else EXIT_FETCH_FAILED, fetched.forecast), indent=2
+            )
+        )
         return EXIT_OK if not failed else EXIT_FETCH_FAILED
 
     try:
@@ -178,7 +191,7 @@ def main(argv: list[str] | None = None) -> int:
         outcome = PublishOutcome(published=False, reason=f"write failed: {exc}")
         exit_code = EXIT_WRITE_FAILED
 
-    print(json.dumps(summarise(results, outcome, exit_code), indent=2))
+    print(json.dumps(summarise(results, outcome, exit_code, fetched.forecast), indent=2))
     if outcome.unchanged:
         log.info("nothing new from INCOIS; the published advisory already matches")
     elif not outcome.published:

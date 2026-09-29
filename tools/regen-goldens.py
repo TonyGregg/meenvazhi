@@ -23,7 +23,7 @@ sys.path.insert(0, str(REPO / "pipeline"))
 
 from meenvazhi.build import build_document  # noqa: E402
 from meenvazhi.gpx import build_gpx  # noqa: E402
-from meenvazhi.parse import parse_sector_page  # noqa: E402
+from meenvazhi.parse import parse_forecast_dates, parse_sector_page  # noqa: E402
 from meenvazhi.ports import get_port  # noqa: E402
 from meenvazhi.textsummary import build_text  # noqa: E402
 
@@ -52,11 +52,13 @@ def main() -> int:
         )
         for filename, sector_id, sector_name in SECTOR_SPEC
     ]
+    forecast = parse_forecast_dates((HTML_DIR / "textdatahome.html").read_text(encoding="utf-8", errors="replace"))
     document = build_document(
         pages,
         home=get_port(HOME_PORT),
         reachable_nmi=REACHABLE_NMI,
         now=FROZEN_NOW,
+        forecast=forecast,
     )
 
     outputs = {

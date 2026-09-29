@@ -33,7 +33,7 @@ page has five tables, one of them nested.
 from __future__ import annotations
 
 import re
-from datetime import datetime
+from datetime import date, datetime
 from zoneinfo import ZoneInfo
 
 from bs4 import BeautifulSoup, Tag
@@ -42,6 +42,7 @@ from dateutil import parser as dateparser
 from .model import (
     VALID_DIRECTIONS,
     FetchFailed,
+    ForecastDates,
     ParseError,
     Range,
     RawRow,
@@ -159,6 +160,56 @@ def parse_updated_at(html: str) -> datetime | None:
     except (ValueError, OverflowError):
         return None
     return None if naive is None else naive.replace(tzinfo=IST)
+
+
+FORECAST_LABEL = "forecast date"
+VALID_UPTO_LABEL = "valid upto"
+
+
+def _parse_incois_date(text: str) -> date | None:
+    """Parse INCOIS's '29 SEP 2026' style, returning None for anything else."""
+    if not re.fullmatch(r"\d{1,2}\s+[A-Za-z]{3,}\s+\d{4}", text.strip()):
+        return None
+    try:
+        return dateparser.parse(text, dayfirst=True).date()
+    except (ValueError, OverflowError):
+        return None
+
+
+def _value_under(labels: list[str], values: list[str], label: str) -> date | None:
+    """The date in the values row, in the same column as `label`."""
+    column = labels.index(label)
+    return _parse_incois_date(values[column]) if column < len(values) else None
+
+
+def parse_forecast_dates(html: str) -> ForecastDates:
+    """Read Forecast Date and Valid upto from the Text Data landing page.
+
+    The page lays them out as a small table: one row of labels, and the row beneath
+    it holding the dates in the same columns. They are found by their labels and
+    column position, never by the table's place in the page, for the same reason the
+    advisory table is found by its header: the page's layout has already changed once.
+
+    Missing or unreadable dates come back as None rather than raising. The advisory
+    is still usable without them; the sector pages carry their own dates on any day
+    that has zones.
+    """
+    soup = BeautifulSoup(html, "lxml")
+    for row in soup.find_all("tr"):
+        if not isinstance(row, Tag):
+            continue
+        labels = [_norm(td.get_text(" ")).lower() for td in row.find_all("td", recursive=False)]
+        if FORECAST_LABEL not in labels or VALID_UPTO_LABEL not in labels:
+            continue
+        values_row = row.find_next_sibling("tr")
+        if not isinstance(values_row, Tag):
+            break
+        values = [_norm(td.get_text(" ")) for td in values_row.find_all("td", recursive=False)]
+        return ForecastDates(
+            forecast_date=_value_under(labels, values, FORECAST_LABEL),
+            valid_upto=_value_under(labels, values, VALID_UPTO_LABEL),
+        )
+    return ForecastDates(forecast_date=None, valid_upto=None)
 
 
 def parse_rows(table: Tag) -> tuple[RawRow, ...]:

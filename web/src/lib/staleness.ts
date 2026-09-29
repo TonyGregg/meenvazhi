@@ -71,8 +71,10 @@ export function assess(doc: PfzDocument | null, now: Date): StalenessReport {
     };
   }
 
-  const advisoryDate = doc.advisory_date;
-  const validUntil = doc.valid_until;
+  // INCOIS's landing-page dates first: they exist even on a day when every sector
+  // is cloud-covered and no sector page carries a date.
+  const advisoryDate = doc.forecast_date ?? doc.advisory_date;
+  const validUntil = doc.valid_upto ?? doc.valid_until;
   const issued = advisoryDate ? dayStart(advisoryDate) : null;
   const ageDays = issued === null ? null : Math.round((todayStart(now) - issued) / DAY_MS);
 

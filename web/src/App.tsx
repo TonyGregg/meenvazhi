@@ -9,6 +9,7 @@ import { PlotView } from '@/components/PlotView';
 import { SafetyFooter } from '@/components/SafetyFooter';
 import { SettingsView } from '@/components/SettingsView';
 import { StalenessBanner } from '@/components/StalenessBanner';
+import { ForecastDatesBar } from '@/components/ForecastDatesBar';
 import { ZoneFilters } from '@/components/ZoneFilters';
 import { ZoneList } from '@/components/ZoneList';
 import { AreaView } from '@/components/AreaView';
@@ -125,7 +126,14 @@ export function App(): React.JSX.Element {
         onRefresh={() => void refresh()}
       />
 
-      <StalenessBanner t={t} report={staleness} localeTag={localeTag} fromCache={state.source === 'cache'} />
+      {doc ? <ForecastDatesBar t={t} doc={doc} localeTag={localeTag} dead={staleness.isDead} /> : null}
+      <StalenessBanner
+        t={t}
+        report={staleness}
+        localeTag={localeTag}
+        fromCache={state.source === 'cache'}
+        datesShownAbove={doc !== null}
+      />
       {state.needsAppUpdate ? (
         <div className="banner banner--warn" role="status">
           {t.appUpdateNeeded}

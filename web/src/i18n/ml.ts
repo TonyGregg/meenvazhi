@@ -30,9 +30,11 @@ export const ml: Messages = {
   expiredWarning: 'ഈ അറിയിപ്പിന്റെ കാലാവധി കഴിഞ്ഞു. മേഖലകൾ മാറി.',
   noDataWarning: 'ഈ ഫോണിൽ ഇതുവരെ അറിയിപ്പില്ല.',
   clockWarning: 'നിങ്ങളുടെ ഫോണിലെ സമയം തെറ്റാകാം.',
+  forecastDate: 'പ്രവചന തീയതി',
+  validUpto: 'സാധുത വരെ',
   validUntil: (date: string) => `${date} വരെ സാധുവാണ്`,
   noValidity: 'കാലാവധി തീയതി നൽകിയിട്ടില്ല',
-  issued: (date: string) => `${date}-ന് പ്രസിദ്ധീകരിച്ചു`,
+  issued: (date: string) => `പ്രവചന തീയതി ${date}`,
   lastChecked: (time: string) => `അവസാനം പരിശോധിച്ചത് ${time}`,
   usingSavedCopy: 'സേവ് ചെയ്ത പകർപ്പ് കാണിക്കുന്നു. സിഗ്നൽ ഇല്ല.',
 

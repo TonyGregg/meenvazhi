@@ -13,7 +13,7 @@ from typing import Any
 
 from . import SCHEMA_VERSION, __version__
 from .geo import inverse
-from .model import SectorPage, SectorStatus
+from .model import ForecastDates, SectorPage, SectorStatus
 from .ports import Port
 from .sectors import get_sector
 
@@ -103,15 +103,24 @@ def build_document(
     home: Port,
     reachable_nmi: float,
     now: datetime,
+    forecast: ForecastDates | None = None,
 ) -> dict[str, Any]:
-    """Assemble the published document. `now` is injected, never read from the clock."""
+    """Assemble the published document. `now` is injected, never read from the clock.
+
+    `forecast` is the Forecast Date and Valid upto from INCOIS's landing page. When
+    present they take precedence for advisory_date and valid_until, because they
+    exist every day: on a day when every sector is cloud-covered, the sector pages
+    carry no date at all and advisory_date would otherwise be null.
+    """
     # Coerced so the published type does not depend on whether the caller passed
     # an int or a float. The golden byte-compare caught exactly that drift.
     reachable_nmi = float(reachable_nmi)
     sectors = [build_sector(p, home, reachable_nmi) for p in pages]
     all_zones = [z for s in sectors for z in s["zones"]]
-    issued = advisory_date(pages)
-    expires = valid_until(pages)
+    forecast_date = forecast.forecast_date if forecast else None
+    valid_upto = forecast.valid_upto if forecast else None
+    issued = forecast_date or advisory_date(pages)
+    expires = valid_upto or valid_until(pages)
 
     return {
         "schema_version": SCHEMA_VERSION,
@@ -119,6 +128,9 @@ def build_document(
         "generator": f"Meenvazhi/{__version__}",
         "advisory_date": issued.isoformat() if issued else None,
         "valid_until": expires.isoformat() if expires else None,
+        # Exactly as INCOIS's Text Data page labels them, null if the page lacked them.
+        "forecast_date": forecast_date.isoformat() if forecast_date else None,
+        "valid_upto": valid_upto.isoformat() if valid_upto else None,
         "source": {
             "name": SOURCE_NAME,
             "url": SOURCE_URL,

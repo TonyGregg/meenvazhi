@@ -69,6 +69,10 @@ export interface PfzDocument {
   generator: string;
   advisory_date: string | null;
   valid_until: string | null;
+  /** INCOIS's "Forecast Date" from its Text Data page. Absent in older documents. */
+  forecast_date?: string | null;
+  /** INCOIS's "Valid upto" from its Text Data page. Absent in older documents. */
+  valid_upto?: string | null;
   source: { name: string; url: string; credit: string };
   disclaimer: string;
   home_port: HomePort;

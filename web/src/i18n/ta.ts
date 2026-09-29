@@ -28,9 +28,11 @@ export const ta: Messages = {
   expiredWarning: 'இந்த அறிவிப்பின் காலம் முடிந்தது. மண்டலங்கள் நகர்ந்துவிட்டன.',
   noDataWarning: 'இந்த ஃபோனில் இன்னும் அறிவிப்பு இல்லை.',
   clockWarning: 'உங்கள் ஃபோன் நேரம் தவறாக இருக்கலாம்.',
+  forecastDate: 'முன்னறிவிப்பு தேதி',
+  validUpto: 'செல்லுபடி வரை',
   validUntil: (date: string) => `${date} வரை செல்லும்`,
   noValidity: 'காலாவதி தேதி வெளியிடப்படவில்லை',
-  issued: (date: string) => `${date} அன்று வெளியிடப்பட்டது`,
+  issued: (date: string) => `முன்னறிவிப்பு தேதி ${date}`,
   lastChecked: (time: string) => `கடைசியாக சரிபார்த்தது ${time}`,
   usingSavedCopy: 'சேமித்த நகலைக் காட்டுகிறது. சிக்னல் இல்லை.',
 

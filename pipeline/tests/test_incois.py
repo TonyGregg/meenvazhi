@@ -163,7 +163,7 @@ def test_fetch_all_visits_sectors_in_order() -> None:
         return httpx.Response(200, text=KERALA if secid == "SEC005" else KARNATAKA)
 
     with make_client(handler) as client:
-        results = fetch_all(client, ["SEC005", "SEC004"])
+        results = fetch_all(client, ["SEC005", "SEC004"]).results
 
     assert requested == ["SEC005", "SEC004"]
     assert [r.sector_id for r in results] == ["SEC005", "SEC004"]
@@ -181,7 +181,7 @@ def test_fetch_all_records_a_transport_failure_without_aborting() -> None:
         return httpx.Response(200, text=KERALA)
 
     with make_client(handler) as client:
-        results = fetch_all(client, ["SEC005", "SEC004"])
+        results = fetch_all(client, ["SEC005", "SEC004"]).results
 
     assert results[0].ok
     assert not results[1].ok
@@ -203,7 +203,7 @@ def test_fetch_all_nests_saved_html_under_a_timestamp(tmp_path: Path) -> None:
 
 
 def test_load_from_fixtures_matches_by_sector_id() -> None:
-    results = load_from_fixtures(HTML_DIR, ["SEC005", "SEC004", "SEC014"])
+    results = load_from_fixtures(HTML_DIR, ["SEC005", "SEC004", "SEC014"]).results
     assert [r.status for r in results] == [
         SectorStatus.NO_ADVISORY,
         SectorStatus.HAS_ADVISORY,
@@ -212,13 +212,63 @@ def test_load_from_fixtures_matches_by_sector_id() -> None:
 
 
 def test_load_from_fixtures_reports_a_missing_file(tmp_path: Path) -> None:
-    results = load_from_fixtures(tmp_path, ["SEC004"])
+    results = load_from_fixtures(tmp_path, ["SEC004"]).results
     assert not results[0].ok
     assert "no fixture" in (results[0].error or "")
 
 
 def test_load_from_fixtures_reports_an_unparseable_file(tmp_path: Path) -> None:
     (tmp_path / "SEC004.html").write_text(SHELL, encoding="utf-8")
-    results = load_from_fixtures(tmp_path, ["SEC004"])
+    results = load_from_fixtures(tmp_path, ["SEC004"]).results
     assert not results[0].ok
     assert results[0].status is SectorStatus.FETCH_FAILED
+
+
+def test_fetch_all_reads_the_forecast_dates_from_the_page_it_already_loads() -> None:
+    """The landing page opens the session, so its dates cost no extra request."""
+    home = read_fixture("textdatahome.html")
+    requests: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        requests.append(str(request.url))
+        if "TextDataHome" in str(request.url):
+            return httpx.Response(200, text=home, headers=SESSION_HEADER)
+        return httpx.Response(200, text=KERALA)
+
+    with make_client(handler) as client:
+        fetched = fetch_all(client, ["SEC005"])
+
+    assert fetched.forecast.forecast_date is not None
+    assert fetched.forecast.forecast_date.isoformat() == "2026-09-27"
+    assert fetched.forecast.valid_upto is not None
+    assert fetched.forecast.valid_upto.isoformat() == "2026-09-28"
+    assert len(requests) == 2, "one landing page and one sector, nothing extra"
+
+
+def test_fetch_all_saves_the_landing_page_for_debugging(tmp_path: Path) -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        if "TextDataHome" in str(request.url):
+            return httpx.Response(200, text=read_fixture("textdatahome.html"), headers=SESSION_HEADER)
+        return httpx.Response(200, text=KERALA)
+
+    with make_client(handler) as client:
+        fetch_all(client, ["SEC005"], save_dir=tmp_path)
+
+    run = next(tmp_path.iterdir())
+    assert (run / "TextDataHome.html").exists()
+    # And a --save-html folder can be replayed with --from-fixtures, dates included.
+    replayed = load_from_fixtures(run, ["SEC005"])
+    assert replayed.forecast.forecast_date is not None
+
+
+def test_load_from_fixtures_reads_the_forecast_dates() -> None:
+    fetched = load_from_fixtures(HTML_DIR, ["SEC004"])
+    assert fetched.forecast.forecast_date is not None
+    assert fetched.forecast.forecast_date.isoformat() == "2026-09-27"
+
+
+def test_load_from_fixtures_without_a_landing_page_has_no_dates(tmp_path: Path) -> None:
+    (tmp_path / "SEC004.html").write_text(KARNATAKA, encoding="utf-8")
+    fetched = load_from_fixtures(tmp_path, ["SEC004"])
+    assert fetched.forecast.forecast_date is None
+    assert fetched.forecast.valid_upto is None

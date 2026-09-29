@@ -32,9 +32,11 @@ export const en = {
   expiredWarning: 'This advisory has expired. The zones have moved.',
   noDataWarning: 'No advisory on this device yet.',
   clockWarning: 'Your device clock may be wrong.',
-  validUntil: (date: string) => `Valid until ${date}`,
+  forecastDate: 'Forecast date',
+  validUpto: 'Valid upto',
+  validUntil: (date: string) => `Valid upto ${date}`,
   noValidity: 'No validity date published',
-  issued: (date: string) => `Issued ${date}`,
+  issued: (date: string) => `Forecast date ${date}`,
   lastChecked: (time: string) => `Last checked ${time}`,
   usingSavedCopy: 'Showing the saved copy. No signal.',
 

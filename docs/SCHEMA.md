@@ -30,6 +30,8 @@ document whose version it does not know rather than mis-rendering it.
   "generator": "Meenvazhi/1.0.0",
   "advisory_date": "2026-09-27",
   "valid_until": "2026-09-28",
+  "forecast_date": "2026-09-27",
+  "valid_upto": "2026-09-28",
   "source": {
     "name": "INCOIS Potential Fishing Zone advisory",
     "url": "https://incois.gov.in/MarineFisheries/TextDataHome?mfid=1&request_locale=en",
@@ -48,6 +50,14 @@ hidden `updatedDate` field on their page. It is never the UTC run date: a retry
 either side of midnight UTC would otherwise relabel yesterday's advisory as
 today's and make stale data look fresh. `generated_at` is the run time in UTC, and
 is not a freshness signal.
+
+`forecast_date` and `valid_upto` are the Forecast Date and Valid upto shown on
+INCOIS's Text Data landing page, exactly as labelled there, or null if the page
+lacked them. The pipeline already loads that page to open its session, so they cost
+no extra request. They matter most on a day when every sector is cloud-covered:
+the sector pages then carry no date at all, but the landing page still does. When
+present they also supply `advisory_date` and `valid_until`. Added without changing
+`schema_version`, because older apps simply ignore fields they do not know.
 
 `valid_until` comes from INCOIS's own "FISH STOCK TILL" line. An advisory is good
 for about a day, so on day five of a trip a cached document is not slightly old,

@@ -143,3 +143,15 @@ class SectorPage:
     @property
     def zone_count(self) -> int:
         return len(self.rows)
+
+
+@dataclass(frozen=True, slots=True)
+class ForecastDates:
+    """The Forecast Date and Valid upto shown on INCOIS's Text Data landing page.
+
+    Unlike the timestamp on each sector page, these appear every day, including days
+    when every sector is cloud-covered and no sector page carries a date at all.
+    """
+
+    forecast_date: date | None
+    valid_upto: date | None
