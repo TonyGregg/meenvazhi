@@ -19,7 +19,9 @@
     "build:android": "npm run build:native && cap sync android",
     "apk:debug": "npm run build:android && cd android && ./gradlew assembleDebug && cd .. && mkdir -p ../apk && cp android/app/build/outputs/apk/debug/app-debug.apk ../apk/Meenvazhi-debug.apk",
     "build:native": "tsc --build && BUILD_TARGET=native vite build",
-    "build:e2e": "npm run build && rm -rf dist/data && mkdir -p dist/data && cp ../pipeline/tests/fixtures/golden/pfz-latest.json dist/data/"
+    "build:e2e": "npm run build && rm -rf dist/data && mkdir -p dist/data && cp ../pipeline/tests/fixtures/golden/pfz-latest.json dist/data/",
+    "android:run": "npm run apk:debug && sh scripts/android-run.sh",
+    "android:install": "sh scripts/android-run.sh"
   },
   "dependencies": {
     "@capacitor/android": "^8.5.2",

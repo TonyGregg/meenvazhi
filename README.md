@@ -134,9 +134,14 @@ $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;an
 echo "sdk.dir=$ANDROID_HOME" > web/android/local.properties
 
 cd web
-npm run apk:debug
-# -> apk/Meenvazhi-debug.apk at the top of the project
+npm run apk:debug      # build only -> apk/Meenvazhi-debug.apk
+npm run android:run    # build, then install and open it on a phone or the emulator
+npm run android:install  # install and open the APK already in apk/, no rebuild
 ```
+
+`android:run` uses a phone plugged in by USB with USB debugging switched on, if
+there is one. Otherwise it starts the Android 15 emulator, `meenvazhi-a15`, and
+waits for it to boot.
 
 ### Putting it on a phone
 
