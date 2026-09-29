@@ -13,7 +13,7 @@ name: Daily PFZ pipeline
 #   - Before INCOIS posts the day's update, a run fetches the same advisory as
 #     last time. The pipeline recognises it as unchanged and writes nothing, so
 #     there is nothing to commit and nothing to deploy.
-# Each run that does reach INCOIS makes six sequential requests: the Text Data
+# Each run that does reach INCOIS makes four sequential requests: the Text Data
 # landing page, which opens the session and carries the forecast dates, then one
 # per sector, at least two seconds apart.
 on:

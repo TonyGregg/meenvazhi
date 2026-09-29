@@ -21,11 +21,13 @@ incois:
   # the order the app lists the areas in.
   sectors:
     - SEC006   # SOUTH TAMILNADU
-    - SEC007   # NORTH TAMILNADU
     - SEC005   # KERALA
     - SEC004   # KARNATAKA
-    - SEC003   # GOA
-    # SEC014 LAKSHADWEEP was fetched until 29 Sep 2026; add it back here to restore it.
+    # Skipped for now; add a line back here to restore any of them. Their home
+    # ports and area names are still in the app.
+    #   - SEC007   # NORTH TAMILNADU
+    #   - SEC003   # GOA
+    #   - SEC014   # LAKSHADWEEP
 
 output:
   home_port: kochi
