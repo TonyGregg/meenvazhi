@@ -28,7 +28,12 @@ export interface Settings {
   view: ZoneView;
   /** The area last opened in the "By area" view, by INCOIS sector id. */
   areaSectorId: string | null;
+  /** The boat's usual speed in knots, for an ETA before it moves. Null means off. */
+  cruiseSpeedKnots: number | null;
 }
+
+/** Buttons rather than a slider: dragging fails with wet hands on a moving deck. */
+export const CRUISE_SPEED_OPTIONS: readonly (number | null)[] = [null, 6, 7, 8, 9, 10, 12] as const;
 
 export const RANGE_OPTIONS: readonly (number | null)[] = [50, 100, 150, 200, null] as const;
 
@@ -60,6 +65,7 @@ function defaults(): Settings {
     targetZoneId: null,
     view: 'nearest',
     areaSectorId: null,
+    cruiseSpeedKnots: null,
   };
 }
 
@@ -78,6 +84,10 @@ function reconcile(stored: Partial<Settings>): Settings {
     targetZoneId: typeof stored.targetZoneId === 'string' ? stored.targetZoneId : null,
     view: stored.view === 'area' ? 'area' : 'nearest',
     areaSectorId: typeof stored.areaSectorId === 'string' ? stored.areaSectorId : null,
+    cruiseSpeedKnots:
+      typeof stored.cruiseSpeedKnots === 'number' && stored.cruiseSpeedKnots >= 1 && stored.cruiseSpeedKnots <= 40
+        ? stored.cruiseSpeedKnots
+        : null,
   };
 }
 

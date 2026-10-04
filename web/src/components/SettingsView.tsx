@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { Messages } from '@/i18n';
 import { LOCALE_NAMES, LOCALES } from '@/i18n';
-import type { Settings, Theme } from '@/hooks/useSettings';
+import { CRUISE_SPEED_OPTIONS, type Settings, type Theme } from '@/hooks/useSettings';
 import { requestPersistence, storageEstimate } from '@/lib/store';
 import { bytes } from '@/lib/format';
 import type { PfzDocument } from '@/lib/pfz';
@@ -74,6 +74,28 @@ export function SettingsView({ t, settings, doc, onChange }: Props): React.JSX.E
         </div>
         <p className="muted" style={{ margin: 0 }}>
           {settings.theme === 'night' ? t.themeNightWhy : t.themeSunWhy}
+        </p>
+      </div>
+
+      <div className="card stack">
+        <span className="label" id="cruise-label">
+          {t.cruiseSpeed}
+        </span>
+        <div className="area-grid" role="group" aria-labelledby="cruise-label" style={{ gridTemplateColumns: 'repeat(4, minmax(0, 1fr))' }}>
+          {CRUISE_SPEED_OPTIONS.map((speed) => (
+            <button
+              key={String(speed)}
+              type="button"
+              className="num"
+              aria-pressed={settings.cruiseSpeedKnots === speed}
+              onClick={() => onChange('cruiseSpeedKnots', speed)}
+            >
+              {speed === null ? t.cruiseOff : `${speed} ${t.knots}`}
+            </button>
+          ))}
+        </div>
+        <p className="muted" style={{ margin: 0 }}>
+          {t.cruiseSpeedWhy}
         </p>
       </div>
 

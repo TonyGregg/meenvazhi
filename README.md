@@ -51,8 +51,10 @@ reproduced the captured fixtures exactly.
 
 A ranked list of zones is the home screen, not a map. Bearing and distance from
 your home port are the largest things on it. There is also a canvas plot with
-range rings, a compass that recomputes the course from the boat's own position,
-and GPX export of whatever is in range.
+range rings, a compass that recomputes the course and distance from the boat's own
+position, and GPX export of whatever is in range. The compass also shows speed over
+ground averaged over two minutes and an ETA, falling back to a cruising speed set in
+Settings before the boat is under way.
 
 English, Malayalam and Tamil, with the fonts subsetted and self-hosted so they
 work with no network. Digits stay Latin in every language, because they are read
@@ -115,7 +117,8 @@ and gated on running inside the app:
 - **GPX export** goes through the Android share sheet, because the WebView can
   neither download files nor share them the browser way.
 - **GPS** uses the native location permission, requested only when the Compass tab
-  opens.
+  opens. It asks for high accuracy, because offshore there are no towers or Wi-Fi to
+  fall back on, and stops whenever the tab or the app is hidden to save battery.
 - **The back button** returns to the zone list, then sends the app to the
   background rather than closing it.
 

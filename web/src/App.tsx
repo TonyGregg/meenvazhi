@@ -215,7 +215,16 @@ export function App(): React.JSX.Element {
           )
         ) : null}
 
-        {tab === 'compass' ? <CompassView t={t} target={target} active={tab === 'compass'} /> : null}
+        {tab === 'compass' ? (
+          <CompassView
+            t={t}
+            target={target}
+            active={tab === 'compass'}
+            portName={portShortName(port.name)}
+            cruiseSpeedKnots={settings.cruiseSpeedKnots}
+            localeTag={localeTag}
+          />
+        ) : null}
 
         {tab === 'settings' ? <SettingsView t={t} settings={settings} doc={doc} onChange={update} /> : null}
 
