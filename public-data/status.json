@@ -1,9 +1,9 @@
 {
-  "last_attempt_at": "2026-10-08T13:47:58Z",
+  "last_attempt_at": "2026-10-09T13:32:35Z",
   "published": true,
   "reason": null,
   "exit_code": 0,
-  "advisory_date": "2026-10-08",
+  "advisory_date": "2026-10-09",
   "consecutive_failures": 0,
   "sectors": [
     {
@@ -11,7 +11,7 @@
       "sector_name": "SOUTH TAMILNADU",
       "status": "HAS_ADVISORY",
       "reason": null,
-      "zone_count": 148
+      "zone_count": 153
     },
     {
       "sector_id": "SEC005",
@@ -28,5 +28,5 @@
       "zone_count": 29
     }
   ],
-  "last_success_at": "2026-10-08T13:47:58Z"
+  "last_success_at": "2026-10-09T13:32:35Z"
 }
