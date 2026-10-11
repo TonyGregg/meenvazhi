@@ -1,0 +1,4235 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-11T10:56:31Z",
+  "generator": "Meenvazhi/1.0.0",
+  "advisory_date": "2026-10-11",
+  "valid_until": "2026-10-12",
+  "forecast_date": "2026-10-11",
+  "valid_upto": "2026-10-12",
+  "source": {
+    "name": "INCOIS Potential Fishing Zone advisory",
+    "url": "https://incois.gov.in/MarineFisheries/TextDataHome?mfid=1&request_locale=en",
+    "credit": "Source: INCOIS, Ministry of Earth Sciences, Govt. of India"
+  },
+  "disclaimer": "Advisory only. Not for navigation or safety of life at sea.",
+  "home_port": {
+    "id": "kochi",
+    "name": "Kochi (Cochin Fisheries Harbour)",
+    "lat": 9.937,
+    "lon": 76.261
+  },
+  "reachable_nmi": 120.0,
+  "sectors": [
+    {
+      "sector_id": "SEC006",
+      "sector_name": "SOUTH TAMILNADU",
+      "status": "HAS_ADVISORY",
+      "reason": null,
+      "incois_updated_at": "2026-10-11T16:24:41+05:30",
+      "valid_until": "2026-10-12",
+      "zone_count": 29,
+      "zones": [
+        {
+          "id": "SEC006-20",
+          "gpx_name": "TS20",
+          "landing_centre": "Perumanal",
+          "lat": 7.998889,
+          "lon": 77.845833,
+          "lat_dms": "7 59 56 N",
+          "lon_dms": "77 50 45 E",
+          "depth_m": {
+            "from": 28,
+            "to": 33
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 151,
+            "distance_km": {
+              "from": 20,
+              "to": 25
+            }
+          },
+          "from_home": {
+            "distance_km": 276.3,
+            "distance_nmi": 149.2,
+            "bearing_deg": 140.8,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-25",
+          "gpx_name": "TS25",
+          "landing_centre": "Kanniyakumari",
+          "lat": 7.875278,
+          "lon": 77.701944,
+          "lat_dms": "7 52 31 N",
+          "lon_dms": "77 42 7 E",
+          "depth_m": {
+            "from": 38,
+            "to": 43
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 145,
+            "distance_km": {
+              "from": 26,
+              "to": 31
+            }
+          },
+          "from_home": {
+            "distance_km": 277.7,
+            "distance_nmi": 149.9,
+            "bearing_deg": 145.1,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-26",
+          "gpx_name": "TS26",
+          "landing_centre": "Puthur",
+          "lat": 7.849722,
+          "lon": 77.669444,
+          "lat_dms": "7 50 59 N",
+          "lon_dms": "77 40 10 E",
+          "depth_m": {
+            "from": 40,
+            "to": 45
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 149,
+            "distance_km": {
+              "from": 27,
+              "to": 32
+            }
+          },
+          "from_home": {
+            "distance_km": 278.0,
+            "distance_nmi": 150.1,
+            "bearing_deg": 146.0,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-24",
+          "gpx_name": "TS24",
+          "landing_centre": "Puthugramam (Vavuthurai",
+          "lat": 7.893889,
+          "lon": 77.738611,
+          "lat_dms": "7 53 38 N",
+          "lon_dms": "77 44 19 E",
+          "depth_m": {
+            "from": 38,
+            "to": 43
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 135,
+            "distance_km": {
+              "from": 27,
+              "to": 32
+            }
+          },
+          "from_home": {
+            "distance_km": 278.3,
+            "distance_nmi": 150.3,
+            "bearing_deg": 144.2,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-22",
+          "gpx_name": "TS22",
+          "landing_centre": "Idinthakarai",
+          "lat": 7.958611,
+          "lon": 77.838611,
+          "lat_dms": "7 57 31 N",
+          "lon_dms": "77 50 19 E",
+          "depth_m": {
+            "from": 32,
+            "to": 37
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 154,
+            "distance_km": {
+              "from": 24,
+              "to": 29
+            }
+          },
+          "from_home": {
+            "distance_km": 279.2,
+            "distance_nmi": 150.8,
+            "bearing_deg": 141.5,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-27",
+          "gpx_name": "TS27",
+          "landing_centre": "Kovalam Kanniyakumarai",
+          "lat": 7.818333,
+          "lon": 77.642778,
+          "lat_dms": "7 49 6 N",
+          "lon_dms": "77 38 34 E",
+          "depth_m": {
+            "from": 40,
+            "to": 45
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 156,
+            "distance_km": {
+              "from": 29,
+              "to": 34
+            }
+          },
+          "from_home": {
+            "distance_km": 279.3,
+            "distance_nmi": 150.8,
+            "bearing_deg": 146.9,
+            "compass": "SSE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-23",
+          "gpx_name": "TS23",
+          "landing_centre": "Kudangulam",
+          "lat": 7.925833,
+          "lon": 77.813889,
+          "lat_dms": "7 55 33 N",
+          "lon_dms": "77 48 50 E",
+          "depth_m": {
+            "from": 34,
+            "to": 39
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 157,
+            "distance_km": {
+              "from": 26,
+              "to": 31
+            }
+          },
+          "from_home": {
+            "distance_km": 280.4,
+            "distance_nmi": 151.4,
+            "bearing_deg": 142.4,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-28",
+          "gpx_name": "TS28",
+          "landing_centre": "Chinnamuttom",
+          "lat": 7.781667,
+          "lon": 77.624444,
+          "lat_dms": "7 46 54 N",
+          "lon_dms": "77 37 28 E",
+          "depth_m": {
+            "from": 50,
+            "to": 55
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 169,
+            "distance_km": {
+              "from": 33,
+              "to": 38
+            }
+          },
+          "from_home": {
+            "distance_km": 281.6,
+            "distance_nmi": 152.1,
+            "bearing_deg": 147.7,
+            "compass": "SSE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-11",
+          "gpx_name": "TS11",
+          "landing_centre": "Manappad Pt",
+          "lat": 8.324722,
+          "lon": 78.279167,
+          "lat_dms": "8 19 29 N",
+          "lon_dms": "78 16 45 E",
+          "depth_m": {
+            "from": 12,
+            "to": 17
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 102,
+            "distance_km": {
+              "from": 22,
+              "to": 27
+            }
+          },
+          "from_home": {
+            "distance_km": 284.6,
+            "distance_nmi": 153.7,
+            "bearing_deg": 128.6,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-29",
+          "gpx_name": "TS29",
+          "landing_centre": "Mela Manakudi",
+          "lat": 7.741111,
+          "lon": 77.616944,
+          "lat_dms": "7 44 28 N",
+          "lon_dms": "77 37 1 E",
+          "depth_m": {
+            "from": 51,
+            "to": 56
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 162,
+            "distance_km": {
+              "from": 37,
+              "to": 42
+            }
+          },
+          "from_home": {
+            "distance_km": 285.0,
+            "distance_nmi": 153.9,
+            "bearing_deg": 148.3,
+            "compass": "SSE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-07",
+          "gpx_name": "TS07",
+          "landing_centre": "Ratchanyapuram",
+          "lat": 8.633056,
+          "lon": 78.511389,
+          "lat_dms": "8 37 59 N",
+          "lon_dms": "78 30 41 E",
+          "depth_m": {
+            "from": 396,
+            "to": 401
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 95,
+            "distance_km": {
+              "from": 39,
+              "to": 44
+            }
+          },
+          "from_home": {
+            "distance_km": 286.2,
+            "distance_nmi": 154.6,
+            "bearing_deg": 120.1,
+            "compass": "ESE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-12",
+          "gpx_name": "TS12",
+          "landing_centre": "Kulasekharapattinam",
+          "lat": 8.280833,
+          "lon": 78.278611,
+          "lat_dms": "8 16 51 N",
+          "lon_dms": "78 16 43 E",
+          "depth_m": {
+            "from": 25,
+            "to": 30
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 118,
+            "distance_km": {
+              "from": 25,
+              "to": 30
+            }
+          },
+          "from_home": {
+            "distance_km": 287.6,
+            "distance_nmi": 155.3,
+            "bearing_deg": 129.4,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-15",
+          "gpx_name": "TS15",
+          "landing_centre": "Periyathalai",
+          "lat": 8.176944,
+          "lon": 78.206111,
+          "lat_dms": "8 10 37 N",
+          "lon_dms": "78 12 22 E",
+          "depth_m": {
+            "from": 29,
+            "to": 34
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 125,
+            "distance_km": {
+              "from": 28,
+              "to": 33
+            }
+          },
+          "from_home": {
+            "distance_km": 289.2,
+            "distance_nmi": 156.1,
+            "bearing_deg": 132.2,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-13",
+          "gpx_name": "TS13",
+          "landing_centre": "Kallamozhi",
+          "lat": 8.238611,
+          "lon": 78.266389,
+          "lat_dms": "8 14 19 N",
+          "lon_dms": "78 15 59 E",
+          "depth_m": {
+            "from": 32,
+            "to": 37
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 138,
+            "distance_km": {
+              "from": 28,
+              "to": 33
+            }
+          },
+          "from_home": {
+            "distance_km": 289.6,
+            "distance_nmi": 156.4,
+            "bearing_deg": 130.3,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-14",
+          "gpx_name": "TS14",
+          "landing_centre": "Alanthalai",
+          "lat": 8.203056,
+          "lon": 78.241389,
+          "lat_dms": "8 12 11 N",
+          "lon_dms": "78 14 29 E",
+          "depth_m": {
+            "from": 25,
+            "to": 30
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 152,
+            "distance_km": {
+              "from": 30,
+              "to": 35
+            }
+          },
+          "from_home": {
+            "distance_km": 290.1,
+            "distance_nmi": 156.7,
+            "bearing_deg": 131.2,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-16",
+          "gpx_name": "TS16",
+          "landing_centre": "Kooduthalai",
+          "lat": 8.139444,
+          "lon": 78.183889,
+          "lat_dms": "8 8 22 N",
+          "lon_dms": "78 11 2 E",
+          "depth_m": {
+            "from": 35,
+            "to": 40
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 122,
+            "distance_km": {
+              "from": 31,
+              "to": 36
+            }
+          },
+          "from_home": {
+            "distance_km": 290.2,
+            "distance_nmi": 156.7,
+            "bearing_deg": 133.1,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-10",
+          "gpx_name": "TS10",
+          "landing_centre": "Singhithurai",
+          "lat": 8.616944,
+          "lon": 78.549167,
+          "lat_dms": "8 37 1 N",
+          "lon_dms": "78 32 57 E",
+          "depth_m": {
+            "from": 596,
+            "to": 601
+          },
+          "incois": {
+            "direction": "NE",
+            "bearing_deg": 83,
+            "distance_km": {
+              "from": 43,
+              "to": 48
+            }
+          },
+          "from_home": {
+            "distance_km": 290.7,
+            "distance_nmi": 157.0,
+            "bearing_deg": 120.0,
+            "compass": "ESE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-17",
+          "gpx_name": "TS17",
+          "landing_centre": "Koottappanai",
+          "lat": 8.096389,
+          "lon": 78.175,
+          "lat_dms": "8 5 47 N",
+          "lon_dms": "78 10 30 E",
+          "depth_m": {
+            "from": 33,
+            "to": 38
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 126,
+            "distance_km": {
+              "from": 34,
+              "to": 39
+            }
+          },
+          "from_home": {
+            "distance_km": 292.8,
+            "distance_nmi": 158.1,
+            "bearing_deg": 133.9,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-09",
+          "gpx_name": "TS09",
+          "landing_centre": "Kombuthurai Madhakoil",
+          "lat": 8.620278,
+          "lon": 78.591111,
+          "lat_dms": "8 37 13 N",
+          "lon_dms": "78 35 28 E",
+          "depth_m": {
+            "from": 805,
+            "to": 810
+          },
+          "incois": {
+            "direction": "NE",
+            "bearing_deg": 85,
+            "distance_km": {
+              "from": 47,
+              "to": 52
+            }
+          },
+          "from_home": {
+            "distance_km": 294.5,
+            "distance_nmi": 159.0,
+            "bearing_deg": 119.4,
+            "compass": "ESE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-18",
+          "gpx_name": "TS18",
+          "landing_centre": "Uvari",
+          "lat": 8.052778,
+          "lon": 78.179444,
+          "lat_dms": "8 3 10 N",
+          "lon_dms": "78 10 46 E",
+          "depth_m": {
+            "from": 46,
+            "to": 51
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 128,
+            "distance_km": {
+              "from": 37,
+              "to": 42
+            }
+          },
+          "from_home": {
+            "distance_km": 296.5,
+            "distance_nmi": 160.1,
+            "bearing_deg": 134.5,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-08",
+          "gpx_name": "TS08",
+          "landing_centre": "Inico nagar",
+          "lat": 8.629722,
+          "lon": 78.632222,
+          "lat_dms": "8 37 47 N",
+          "lon_dms": "78 37 56 E",
+          "depth_m": {
+            "from": 817,
+            "to": 822
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 109,
+            "distance_km": {
+              "from": 52,
+              "to": 57
+            }
+          },
+          "from_home": {
+            "distance_km": 298.0,
+            "distance_nmi": 160.9,
+            "bearing_deg": 118.8,
+            "compass": "ESE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-06",
+          "gpx_name": "TS06",
+          "landing_centre": "Tuticorin",
+          "lat": 8.647222,
+          "lon": 78.670278,
+          "lat_dms": "8 38 50 N",
+          "lon_dms": "78 40 13 E",
+          "depth_m": {
+            "from": 874,
+            "to": 879
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 101,
+            "distance_km": {
+              "from": 54,
+              "to": 59
+            }
+          },
+          "from_home": {
+            "distance_km": 300.7,
+            "distance_nmi": 162.4,
+            "bearing_deg": 118.1,
+            "compass": "ESE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-19",
+          "gpx_name": "TS19",
+          "landing_centre": "Kundal",
+          "lat": 8.011389,
+          "lon": 78.193889,
+          "lat_dms": "8 0 41 N",
+          "lon_dms": "78 11 38 E",
+          "depth_m": {
+            "from": 33,
+            "to": 38
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 126,
+            "distance_km": {
+              "from": 43,
+              "to": 48
+            }
+          },
+          "from_home": {
+            "distance_km": 300.9,
+            "distance_nmi": 162.5,
+            "bearing_deg": 134.9,
+            "compass": "SE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-05",
+          "gpx_name": "TS05",
+          "landing_centre": "Pandyan",
+          "lat": 8.674444,
+          "lon": 78.702222,
+          "lat_dms": "8 40 28 N",
+          "lon_dms": "78 42 8 E",
+          "depth_m": {
+            "from": 903,
+            "to": 908
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 102,
+            "distance_km": {
+              "from": 54,
+              "to": 59
+            }
+          },
+          "from_home": {
+            "distance_km": 302.4,
+            "distance_nmi": 163.3,
+            "bearing_deg": 117.3,
+            "compass": "ESE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-01",
+          "gpx_name": "TS01",
+          "landing_centre": "Valinokkam",
+          "lat": 8.818889,
+          "lon": 78.781111,
+          "lat_dms": "8 49 8 N",
+          "lon_dms": "78 46 52 E",
+          "depth_m": {
+            "from": 503,
+            "to": 508
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 159,
+            "distance_km": {
+              "from": 38,
+              "to": 43
+            }
+          },
+          "from_home": {
+            "distance_km": 303.2,
+            "distance_nmi": 163.7,
+            "bearing_deg": 113.9,
+            "compass": "ESE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-04",
+          "gpx_name": "TS04",
+          "landing_centre": "Rojma Nagar",
+          "lat": 8.706944,
+          "lon": 78.729167,
+          "lat_dms": "8 42 25 N",
+          "lon_dms": "78 43 45 E",
+          "depth_m": {
+            "from": 840,
+            "to": 845
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 139,
+            "distance_km": {
+              "from": 54,
+              "to": 59
+            }
+          },
+          "from_home": {
+            "distance_km": 303.4,
+            "distance_nmi": 163.8,
+            "bearing_deg": 116.4,
+            "compass": "ESE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-03",
+          "gpx_name": "TS03",
+          "landing_centre": "Terku Mookkaiyur",
+          "lat": 8.741389,
+          "lon": 78.753333,
+          "lat_dms": "8 44 29 N",
+          "lon_dms": "78 45 12 E",
+          "depth_m": {
+            "from": 836,
+            "to": 841
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 145,
+            "distance_km": {
+              "from": 49,
+              "to": 54
+            }
+          },
+          "from_home": {
+            "distance_km": 304.0,
+            "distance_nmi": 164.2,
+            "bearing_deg": 115.6,
+            "compass": "ESE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-02",
+          "gpx_name": "TS02",
+          "landing_centre": "Chinna Ervadi",
+          "lat": 8.7775,
+          "lon": 78.775,
+          "lat_dms": "8 46 39 N",
+          "lon_dms": "78 46 30 E",
+          "depth_m": {
+            "from": 671,
+            "to": 676
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 172,
+            "distance_km": {
+              "from": 44,
+              "to": 49
+            }
+          },
+          "from_home": {
+            "distance_km": 304.5,
+            "distance_nmi": 164.4,
+            "bearing_deg": 114.7,
+            "compass": "ESE",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC006-21",
+          "gpx_name": "TS21",
+          "landing_centre": "Koothanguzhi",
+          "lat": 7.974444,
+          "lon": 78.2175,
+          "lat_dms": "7 58 28 N",
+          "lon_dms": "78 13 3 E",
+          "depth_m": {
+            "from": 2,
+            "to": 7
+          },
+          "incois": {
+            "direction": "SE",
+            "bearing_deg": 120,
+            "distance_km": {
+              "from": 52,
+              "to": 57
+            }
+          },
+          "from_home": {
+            "distance_km": 305.6,
+            "distance_nmi": 165.0,
+            "bearing_deg": 135.1,
+            "compass": "SE",
+            "reachable": false
+          }
+        }
+      ]
+    },
+    {
+      "sector_id": "SEC005",
+      "sector_name": "KERALA",
+      "status": "HAS_ADVISORY",
+      "reason": null,
+      "incois_updated_at": "2026-10-11T16:24:41+05:30",
+      "valid_until": "2026-10-12",
+      "zone_count": 100,
+      "zones": [
+        {
+          "id": "SEC005-59",
+          "gpx_name": "KL59",
+          "landing_centre": "Malipuram",
+          "lat": 9.870833,
+          "lon": 75.861944,
+          "lat_dms": "9 52 15 N",
+          "lon_dms": "75 51 43 E",
+          "depth_m": {
+            "from": 54,
+            "to": 59
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 247,
+            "distance_km": {
+              "from": 39,
+              "to": 44
+            }
+          },
+          "from_home": {
+            "distance_km": 44.4,
+            "distance_nmi": 24.0,
+            "bearing_deg": 260.5,
+            "compass": "W",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-60",
+          "gpx_name": "KL60",
+          "landing_centre": "Kalamukku",
+          "lat": 9.833889,
+          "lon": 75.8625,
+          "lat_dms": "9 50 2 N",
+          "lon_dms": "75 51 45 E",
+          "depth_m": {
+            "from": 54,
+            "to": 59
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 249,
+            "distance_km": {
+              "from": 41,
+              "to": 46
+            }
+          },
+          "from_home": {
+            "distance_km": 45.2,
+            "distance_nmi": 24.4,
+            "bearing_deg": 255.4,
+            "compass": "WSW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-58",
+          "gpx_name": "KL58",
+          "landing_centre": "Ernakulam",
+          "lat": 9.896389,
+          "lon": 75.836389,
+          "lat_dms": "9 53 47 N",
+          "lon_dms": "75 50 11 E",
+          "depth_m": {
+            "from": 59,
+            "to": 64
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 255,
+            "distance_km": {
+              "from": 41,
+              "to": 46
+            }
+          },
+          "from_home": {
+            "distance_km": 46.8,
+            "distance_nmi": 25.3,
+            "bearing_deg": 264.5,
+            "compass": "W",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-61",
+          "gpx_name": "KL61",
+          "landing_centre": "Thykal",
+          "lat": 9.646944,
+          "lon": 75.93,
+          "lat_dms": "9 38 49 N",
+          "lon_dms": "75 55 48 E",
+          "depth_m": {
+            "from": 55,
+            "to": 60
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 264,
+            "distance_km": {
+              "from": 37,
+              "to": 42
+            }
+          },
+          "from_home": {
+            "distance_km": 48.5,
+            "distance_nmi": 26.2,
+            "bearing_deg": 228.6,
+            "compass": "SW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-57",
+          "gpx_name": "KL57",
+          "landing_centre": "Narakkal",
+          "lat": 9.925278,
+          "lon": 75.815,
+          "lat_dms": "9 55 31 N",
+          "lon_dms": "75 48 54 E",
+          "depth_m": {
+            "from": 43,
+            "to": 48
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 253,
+            "distance_km": {
+              "from": 42,
+              "to": 47
+            }
+          },
+          "from_home": {
+            "distance_km": 48.9,
+            "distance_nmi": 26.4,
+            "bearing_deg": 268.5,
+            "compass": "W",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-56",
+          "gpx_name": "KL56",
+          "landing_centre": "Vadakkal",
+          "lat": 9.962222,
+          "lon": 75.808889,
+          "lat_dms": "9 57 44 N",
+          "lon_dms": "75 48 32 E",
+          "depth_m": {
+            "from": 35,
+            "to": 40
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 253,
+            "distance_km": {
+              "from": 42,
+              "to": 47
+            }
+          },
+          "from_home": {
+            "distance_km": 49.7,
+            "distance_nmi": 26.8,
+            "bearing_deg": 273.3,
+            "compass": "W",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-62",
+          "gpx_name": "KL62",
+          "landing_centre": "Aratungal",
+          "lat": 9.613333,
+          "lon": 75.9375,
+          "lat_dms": "9 36 48 N",
+          "lon_dms": "75 56 15 E",
+          "depth_m": {
+            "from": 54,
+            "to": 59
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 263,
+            "distance_km": {
+              "from": 37,
+              "to": 42
+            }
+          },
+          "from_home": {
+            "distance_km": 50.4,
+            "distance_nmi": 27.2,
+            "bearing_deg": 224.8,
+            "compass": "SW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-55",
+          "gpx_name": "KL55",
+          "landing_centre": "Edavanakad",
+          "lat": 9.997778,
+          "lon": 75.7975,
+          "lat_dms": "9 59 52 N",
+          "lon_dms": "75 47 51 E",
+          "depth_m": {
+            "from": 60,
+            "to": 65
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 257,
+            "distance_km": {
+              "from": 42,
+              "to": 47
+            }
+          },
+          "from_home": {
+            "distance_km": 51.3,
+            "distance_nmi": 27.7,
+            "bearing_deg": 277.6,
+            "compass": "W",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-63",
+          "gpx_name": "KL63",
+          "landing_centre": "Chethy",
+          "lat": 9.583333,
+          "lon": 75.954167,
+          "lat_dms": "9 35 0 N",
+          "lon_dms": "75 57 15 E",
+          "depth_m": {
+            "from": 51,
+            "to": 56
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 264,
+            "distance_km": {
+              "from": 35,
+              "to": 40
+            }
+          },
+          "from_home": {
+            "distance_km": 51.6,
+            "distance_nmi": 27.9,
+            "bearing_deg": 220.7,
+            "compass": "SW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-64",
+          "gpx_name": "KL64",
+          "landing_centre": "Kottamkulangara",
+          "lat": 9.558056,
+          "lon": 75.977778,
+          "lat_dms": "9 33 29 N",
+          "lon_dms": "75 58 40 E",
+          "depth_m": {
+            "from": 55,
+            "to": 60
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 264,
+            "distance_km": {
+              "from": 33,
+              "to": 38
+            }
+          },
+          "from_home": {
+            "distance_km": 52.2,
+            "distance_nmi": 28.2,
+            "bearing_deg": 216.6,
+            "compass": "SW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-65",
+          "gpx_name": "KL65",
+          "landing_centre": "Pollethai",
+          "lat": 9.533333,
+          "lon": 76.001944,
+          "lat_dms": "9 32 0 N",
+          "lon_dms": "76 0 7 E",
+          "depth_m": {
+            "from": 56,
+            "to": 61
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 263,
+            "distance_km": {
+              "from": 31,
+              "to": 36
+            }
+          },
+          "from_home": {
+            "distance_km": 52.9,
+            "distance_nmi": 28.6,
+            "bearing_deg": 212.5,
+            "compass": "SSW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-54",
+          "gpx_name": "KL54",
+          "landing_centre": "Kuzhuppilly",
+          "lat": 10.031944,
+          "lon": 75.781944,
+          "lat_dms": "10 1 55 N",
+          "lon_dms": "75 46 55 E",
+          "depth_m": {
+            "from": 59,
+            "to": 64
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 251,
+            "distance_km": {
+              "from": 43,
+              "to": 48
+            }
+          },
+          "from_home": {
+            "distance_km": 53.6,
+            "distance_nmi": 28.9,
+            "bearing_deg": 281.3,
+            "compass": "WNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-66",
+          "gpx_name": "KL66",
+          "landing_centre": "Thumpolly",
+          "lat": 9.503889,
+          "lon": 76.019722,
+          "lat_dms": "9 30 14 N",
+          "lon_dms": "76 1 11 E",
+          "depth_m": {
+            "from": 45,
+            "to": 50
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 265,
+            "distance_km": {
+              "from": 30,
+              "to": 35
+            }
+          },
+          "from_home": {
+            "distance_km": 54.7,
+            "distance_nmi": 29.6,
+            "bearing_deg": 208.9,
+            "compass": "SSW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-53",
+          "gpx_name": "KL53",
+          "landing_centre": "Kodungallur",
+          "lat": 10.065278,
+          "lon": 75.764722,
+          "lat_dms": "10 3 55 N",
+          "lon_dms": "75 45 53 E",
+          "depth_m": {
+            "from": 58,
+            "to": 63
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 251,
+            "distance_km": {
+              "from": 43,
+              "to": 48
+            }
+          },
+          "from_home": {
+            "distance_km": 56.2,
+            "distance_nmi": 30.4,
+            "bearing_deg": 284.7,
+            "compass": "WNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-67",
+          "gpx_name": "KL67",
+          "landing_centre": "Thazhampally",
+          "lat": 9.470833,
+          "lon": 76.029444,
+          "lat_dms": "9 28 15 N",
+          "lon_dms": "76 1 46 E",
+          "depth_m": {
+            "from": 47,
+            "to": 52
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 263,
+            "distance_km": {
+              "from": 29,
+              "to": 34
+            }
+          },
+          "from_home": {
+            "distance_km": 57.5,
+            "distance_nmi": 31.0,
+            "bearing_deg": 206.3,
+            "compass": "SSW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-52",
+          "gpx_name": "KL52",
+          "landing_centre": "Pullut",
+          "lat": 10.0975,
+          "lon": 75.745833,
+          "lat_dms": "10 5 51 N",
+          "lon_dms": "75 44 45 E",
+          "depth_m": {
+            "from": 67,
+            "to": 72
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 251,
+            "distance_km": {
+              "from": 44,
+              "to": 49
+            }
+          },
+          "from_home": {
+            "distance_km": 59.2,
+            "distance_nmi": 32.0,
+            "bearing_deg": 287.5,
+            "compass": "WNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-68",
+          "gpx_name": "KL68",
+          "landing_centre": "AlleppeyBeach",
+          "lat": 9.436667,
+          "lon": 76.033333,
+          "lat_dms": "9 26 12 N",
+          "lon_dms": "76 2 0 E",
+          "depth_m": {
+            "from": 50,
+            "to": 55
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 259,
+            "distance_km": {
+              "from": 30,
+              "to": 35
+            }
+          },
+          "from_home": {
+            "distance_km": 60.7,
+            "distance_nmi": 32.8,
+            "bearing_deg": 204.3,
+            "compass": "SSW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-51",
+          "gpx_name": "KL51",
+          "landing_centre": "Kara",
+          "lat": 10.128889,
+          "lon": 75.725278,
+          "lat_dms": "10 7 44 N",
+          "lon_dms": "75 43 31 E",
+          "depth_m": {
+            "from": 59,
+            "to": 64
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 255,
+            "distance_km": {
+              "from": 45,
+              "to": 50
+            }
+          },
+          "from_home": {
+            "distance_km": 62.4,
+            "distance_nmi": 33.7,
+            "bearing_deg": 289.9,
+            "compass": "WNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-69",
+          "gpx_name": "KL69",
+          "landing_centre": "Kalarkod",
+          "lat": 9.401944,
+          "lon": 76.032222,
+          "lat_dms": "9 24 7 N",
+          "lon_dms": "76 1 56 E",
+          "depth_m": {
+            "from": 57,
+            "to": 62
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 259,
+            "distance_km": {
+              "from": 30,
+              "to": 35
+            }
+          },
+          "from_home": {
+            "distance_km": 64.3,
+            "distance_nmi": 34.7,
+            "bearing_deg": 203.0,
+            "compass": "SSW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-70",
+          "gpx_name": "KL70",
+          "landing_centre": "Punnappra",
+          "lat": 9.368056,
+          "lon": 76.026667,
+          "lat_dms": "9 22 5 N",
+          "lon_dms": "76 1 36 E",
+          "depth_m": {
+            "from": 61,
+            "to": 66
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 256,
+            "distance_km": {
+              "from": 32,
+              "to": 37
+            }
+          },
+          "from_home": {
+            "distance_km": 68.0,
+            "distance_nmi": 36.7,
+            "bearing_deg": 202.2,
+            "compass": "SSW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-50",
+          "gpx_name": "KL50",
+          "landing_centre": "Nattika",
+          "lat": 10.251389,
+          "lon": 75.600556,
+          "lat_dms": "10 15 5 N",
+          "lon_dms": "75 36 2 E",
+          "depth_m": {
+            "from": 448,
+            "to": 453
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 249,
+            "distance_km": {
+              "from": 53,
+              "to": 58
+            }
+          },
+          "from_home": {
+            "distance_km": 80.3,
+            "distance_nmi": 43.4,
+            "bearing_deg": 295.7,
+            "compass": "WNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-49",
+          "gpx_name": "KL49",
+          "landing_centre": "Thalikulam",
+          "lat": 10.283611,
+          "lon": 75.582778,
+          "lat_dms": "10 17 1 N",
+          "lon_dms": "75 34 58 E",
+          "depth_m": {
+            "from": 698,
+            "to": 703
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 252,
+            "distance_km": {
+              "from": 54,
+              "to": 59
+            }
+          },
+          "from_home": {
+            "distance_km": 83.6,
+            "distance_nmi": 45.2,
+            "bearing_deg": 297.3,
+            "compass": "WNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-48",
+          "gpx_name": "KL48",
+          "landing_centre": "Vadanappally",
+          "lat": 10.320278,
+          "lon": 75.58,
+          "lat_dms": "10 19 13 N",
+          "lon_dms": "75 34 48 E",
+          "depth_m": {
+            "from": 631,
+            "to": 636
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 251,
+            "distance_km": {
+              "from": 52,
+              "to": 57
+            }
+          },
+          "from_home": {
+            "distance_km": 85.8,
+            "distance_nmi": 46.3,
+            "bearing_deg": 299.7,
+            "compass": "WNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-71",
+          "gpx_name": "KL71",
+          "landing_centre": "Thottappally",
+          "lat": 9.1675,
+          "lon": 76.084444,
+          "lat_dms": "9 10 3 N",
+          "lon_dms": "76 5 4 E",
+          "depth_m": {
+            "from": 53,
+            "to": 58
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 243,
+            "distance_km": {
+              "from": 34,
+              "to": 39
+            }
+          },
+          "from_home": {
+            "distance_km": 87.3,
+            "distance_nmi": 47.1,
+            "bearing_deg": 192.8,
+            "compass": "SSW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-47",
+          "gpx_name": "KL47",
+          "landing_centre": "Chavakkad",
+          "lat": 10.356944,
+          "lon": 75.585278,
+          "lat_dms": "10 21 25 N",
+          "lon_dms": "75 35 7 E",
+          "depth_m": {
+            "from": 390,
+            "to": 395
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 246,
+            "distance_km": {
+              "from": 49,
+              "to": 54
+            }
+          },
+          "from_home": {
+            "distance_km": 87.4,
+            "distance_nmi": 47.2,
+            "bearing_deg": 302.2,
+            "compass": "WNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-46",
+          "gpx_name": "KL46",
+          "landing_centre": "Blangad",
+          "lat": 10.393611,
+          "lon": 75.589167,
+          "lat_dms": "10 23 37 N",
+          "lon_dms": "75 35 21 E",
+          "depth_m": {
+            "from": 104,
+            "to": 109
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 247,
+            "distance_km": {
+              "from": 47,
+              "to": 52
+            }
+          },
+          "from_home": {
+            "distance_km": 89.3,
+            "distance_nmi": 48.2,
+            "bearing_deg": 304.5,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-72",
+          "gpx_name": "KL72",
+          "landing_centre": "Thrikunnapuzha",
+          "lat": 9.131667,
+          "lon": 76.098611,
+          "lat_dms": "9 7 54 N",
+          "lon_dms": "76 5 55 E",
+          "depth_m": {
+            "from": 57,
+            "to": 62
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 243,
+            "distance_km": {
+              "from": 34,
+              "to": 39
+            }
+          },
+          "from_home": {
+            "distance_km": 90.8,
+            "distance_nmi": 49.0,
+            "bearing_deg": 191.3,
+            "compass": "SSW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-45",
+          "gpx_name": "KL45",
+          "landing_centre": "Panchavadi",
+          "lat": 10.429444,
+          "lon": 75.581944,
+          "lat_dms": "10 25 46 N",
+          "lon_dms": "75 34 55 E",
+          "depth_m": {
+            "from": 75,
+            "to": 80
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 244,
+            "distance_km": {
+              "from": 46,
+              "to": 51
+            }
+          },
+          "from_home": {
+            "distance_km": 92.2,
+            "distance_nmi": 49.8,
+            "bearing_deg": 306.3,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-73",
+          "gpx_name": "KL73",
+          "landing_centre": "Padiyamkara Tekku",
+          "lat": 9.102222,
+          "lon": 76.123889,
+          "lat_dms": "9 6 8 N",
+          "lon_dms": "76 7 26 E",
+          "depth_m": {
+            "from": 68,
+            "to": 73
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 245,
+            "distance_km": {
+              "from": 33,
+              "to": 38
+            }
+          },
+          "from_home": {
+            "distance_km": 93.5,
+            "distance_nmi": 50.5,
+            "bearing_deg": 189.3,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-44",
+          "gpx_name": "KL44",
+          "landing_centre": "Edakazhiyur",
+          "lat": 10.462778,
+          "lon": 75.566111,
+          "lat_dms": "10 27 46 N",
+          "lon_dms": "75 33 58 E",
+          "depth_m": {
+            "from": 81,
+            "to": 86
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 248,
+            "distance_km": {
+              "from": 47,
+              "to": 52
+            }
+          },
+          "from_home": {
+            "distance_km": 95.8,
+            "distance_nmi": 51.7,
+            "bearing_deg": 307.4,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-74",
+          "gpx_name": "KL74",
+          "landing_centre": "Ramancheri Tura",
+          "lat": 9.075,
+          "lon": 76.151667,
+          "lat_dms": "9 4 30 N",
+          "lon_dms": "76 9 6 E",
+          "depth_m": {
+            "from": 60,
+            "to": 65
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 251,
+            "distance_km": {
+              "from": 32,
+              "to": 37
+            }
+          },
+          "from_home": {
+            "distance_km": 96.1,
+            "distance_nmi": 51.9,
+            "bearing_deg": 187.2,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-75",
+          "gpx_name": "KL75",
+          "landing_centre": "AzheekalJetty",
+          "lat": 9.045833,
+          "lon": 76.176944,
+          "lat_dms": "9 2 45 N",
+          "lon_dms": "76 10 37 E",
+          "depth_m": {
+            "from": 53,
+            "to": 58
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 255,
+            "distance_km": {
+              "from": 31,
+              "to": 36
+            }
+          },
+          "from_home": {
+            "distance_km": 99.0,
+            "distance_nmi": 53.5,
+            "bearing_deg": 185.4,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-43",
+          "gpx_name": "KL43",
+          "landing_centre": "Vayilattur",
+          "lat": 10.491667,
+          "lon": 75.543056,
+          "lat_dms": "10 29 30 N",
+          "lon_dms": "75 32 35 E",
+          "depth_m": {
+            "from": 88,
+            "to": 93
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 252,
+            "distance_km": {
+              "from": 48,
+              "to": 53
+            }
+          },
+          "from_home": {
+            "distance_km": 99.8,
+            "distance_nmi": 53.9,
+            "bearing_deg": 308.0,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-76",
+          "gpx_name": "KL76",
+          "landing_centre": "Alappattu",
+          "lat": 9.010833,
+          "lon": 76.193611,
+          "lat_dms": "9 0 39 N",
+          "lon_dms": "76 11 37 E",
+          "depth_m": {
+            "from": 51,
+            "to": 56
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 258,
+            "distance_km": {
+              "from": 31,
+              "to": 36
+            }
+          },
+          "from_home": {
+            "distance_km": 102.7,
+            "distance_nmi": 55.5,
+            "bearing_deg": 184.1,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-42",
+          "gpx_name": "KL42",
+          "landing_centre": "Attupuram",
+          "lat": 10.515,
+          "lon": 75.514444,
+          "lat_dms": "10 30 54 N",
+          "lon_dms": "75 30 52 E",
+          "depth_m": {
+            "from": 120,
+            "to": 125
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 253,
+            "distance_km": {
+              "from": 50,
+              "to": 55
+            }
+          },
+          "from_home": {
+            "distance_km": 103.8,
+            "distance_nmi": 56.1,
+            "bearing_deg": 308.1,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-77",
+          "gpx_name": "KL77",
+          "landing_centre": "Cheriazheekal",
+          "lat": 8.973333,
+          "lon": 76.203889,
+          "lat_dms": "8 58 24 N",
+          "lon_dms": "76 12 14 E",
+          "depth_m": {
+            "from": 50,
+            "to": 55
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 256,
+            "distance_km": {
+              "from": 32,
+              "to": 37
+            }
+          },
+          "from_home": {
+            "distance_km": 106.8,
+            "distance_nmi": 57.7,
+            "bearing_deg": 183.4,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-41",
+          "gpx_name": "KL41",
+          "landing_centre": "Mannalamkunnu",
+          "lat": 10.543889,
+          "lon": 75.491667,
+          "lat_dms": "10 32 38 N",
+          "lon_dms": "75 29 30 E",
+          "depth_m": {
+            "from": 95,
+            "to": 100
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 256,
+            "distance_km": {
+              "from": 51,
+              "to": 56
+            }
+          },
+          "from_home": {
+            "distance_km": 107.8,
+            "distance_nmi": 58.2,
+            "bearing_deg": 308.6,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-78",
+          "gpx_name": "KL78",
+          "landing_centre": "Kovilthottam",
+          "lat": 8.934722,
+          "lon": 76.208333,
+          "lat_dms": "8 56 5 N",
+          "lon_dms": "76 12 30 E",
+          "depth_m": {
+            "from": 45,
+            "to": 50
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 261,
+            "distance_km": {
+              "from": 33,
+              "to": 38
+            }
+          },
+          "from_home": {
+            "distance_km": 111.0,
+            "distance_nmi": 59.9,
+            "bearing_deg": 183.0,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-79",
+          "gpx_name": "KL79",
+          "landing_centre": "Chavara",
+          "lat": 8.895833,
+          "lon": 76.207222,
+          "lat_dms": "8 53 45 N",
+          "lon_dms": "76 12 26 E",
+          "depth_m": {
+            "from": 52,
+            "to": 57
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 258,
+            "distance_km": {
+              "from": 34,
+              "to": 39
+            }
+          },
+          "from_home": {
+            "distance_km": 115.3,
+            "distance_nmi": 62.3,
+            "bearing_deg": 182.9,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-80",
+          "gpx_name": "KL80",
+          "landing_centre": "Neendakara",
+          "lat": 8.857778,
+          "lon": 76.200556,
+          "lat_dms": "8 51 28 N",
+          "lon_dms": "76 12 2 E",
+          "depth_m": {
+            "from": 56,
+            "to": 61
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 257,
+            "distance_km": {
+              "from": 35,
+              "to": 40
+            }
+          },
+          "from_home": {
+            "distance_km": 119.6,
+            "distance_nmi": 64.6,
+            "bearing_deg": 183.2,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-36",
+          "gpx_name": "KL36",
+          "landing_centre": "Koottayi",
+          "lat": 10.825833,
+          "lon": 75.553333,
+          "lat_dms": "10 49 33 N",
+          "lon_dms": "75 33 12 E",
+          "depth_m": {
+            "from": 42,
+            "to": 47
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 267,
+            "distance_km": {
+              "from": 36,
+              "to": 41
+            }
+          },
+          "from_home": {
+            "distance_km": 125.2,
+            "distance_nmi": 67.6,
+            "bearing_deg": 321.8,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-37",
+          "gpx_name": "KL37",
+          "landing_centre": "Ponnani",
+          "lat": 10.801667,
+          "lon": 75.504444,
+          "lat_dms": "10 48 6 N",
+          "lon_dms": "75 30 16 E",
+          "depth_m": {
+            "from": 55,
+            "to": 60
+          },
+          "incois": {
+            "direction": "NW",
+            "bearing_deg": 273,
+            "distance_km": {
+              "from": 42,
+              "to": 47
+            }
+          },
+          "from_home": {
+            "distance_km": 126.5,
+            "distance_nmi": 68.3,
+            "bearing_deg": 319.2,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-35",
+          "gpx_name": "KL35",
+          "landing_centre": "Vakkad",
+          "lat": 10.874722,
+          "lon": 75.569167,
+          "lat_dms": "10 52 29 N",
+          "lon_dms": "75 34 9 E",
+          "depth_m": {
+            "from": 42,
+            "to": 47
+          },
+          "incois": {
+            "direction": "W",
+            "bearing_deg": 270,
+            "distance_km": {
+              "from": 33,
+              "to": 38
+            }
+          },
+          "from_home": {
+            "distance_km": 128.4,
+            "distance_nmi": 69.4,
+            "bearing_deg": 323.9,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-38",
+          "gpx_name": "KL38",
+          "landing_centre": "Purattur",
+          "lat": 10.795556,
+          "lon": 75.448889,
+          "lat_dms": "10 47 44 N",
+          "lon_dms": "75 26 56 E",
+          "depth_m": {
+            "from": 63,
+            "to": 68
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 268,
+            "distance_km": {
+              "from": 49,
+              "to": 54
+            }
+          },
+          "from_home": {
+            "distance_km": 130.1,
+            "distance_nmi": 70.3,
+            "bearing_deg": 316.9,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-40",
+          "gpx_name": "KL40",
+          "landing_centre": "Palappetty",
+          "lat": 10.726944,
+          "lon": 75.372778,
+          "lat_dms": "10 43 37 N",
+          "lon_dms": "75 22 22 E",
+          "depth_m": {
+            "from": 96,
+            "to": 101
+          },
+          "incois": {
+            "direction": "NW",
+            "bearing_deg": 273,
+            "distance_km": {
+              "from": 60,
+              "to": 65
+            }
+          },
+          "from_home": {
+            "distance_km": 130.8,
+            "distance_nmi": 70.6,
+            "bearing_deg": 312.0,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-39",
+          "gpx_name": "KL39",
+          "landing_centre": "Veliyangod",
+          "lat": 10.775,
+          "lon": 75.398056,
+          "lat_dms": "10 46 30 N",
+          "lon_dms": "75 23 53 E",
+          "depth_m": {
+            "from": 77,
+            "to": 82
+          },
+          "incois": {
+            "direction": "NW",
+            "bearing_deg": 275,
+            "distance_km": {
+              "from": 57,
+              "to": 62
+            }
+          },
+          "from_home": {
+            "distance_km": 132.4,
+            "distance_nmi": 71.5,
+            "bearing_deg": 314.5,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-34",
+          "gpx_name": "KL34",
+          "landing_centre": "Paravannangadi",
+          "lat": 10.916944,
+          "lon": 75.534444,
+          "lat_dms": "10 55 1 N",
+          "lon_dms": "75 32 4 E",
+          "depth_m": {
+            "from": 42,
+            "to": 47
+          },
+          "incois": {
+            "direction": "NW",
+            "bearing_deg": 273,
+            "distance_km": {
+              "from": 36,
+              "to": 41
+            }
+          },
+          "from_home": {
+            "distance_km": 134.5,
+            "distance_nmi": 72.6,
+            "bearing_deg": 323.8,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-32",
+          "gpx_name": "KL32",
+          "landing_centre": "Thanur",
+          "lat": 10.927222,
+          "lon": 75.481389,
+          "lat_dms": "10 55 38 N",
+          "lon_dms": "75 28 53 E",
+          "depth_m": {
+            "from": 47,
+            "to": 52
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 261,
+            "distance_km": {
+              "from": 40,
+              "to": 45
+            }
+          },
+          "from_home": {
+            "distance_km": 138.9,
+            "distance_nmi": 75.0,
+            "bearing_deg": 322.1,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-81",
+          "gpx_name": "KL81",
+          "landing_centre": "Thankassery F.H.",
+          "lat": 8.661944,
+          "lon": 76.238056,
+          "lat_dms": "8 39 43 N",
+          "lon_dms": "76 14 17 E",
+          "depth_m": {
+            "from": 85,
+            "to": 90
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 235,
+            "distance_km": {
+              "from": 41,
+              "to": 46
+            }
+          },
+          "from_home": {
+            "distance_km": 141.0,
+            "distance_nmi": 76.2,
+            "bearing_deg": 181.0,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-33",
+          "gpx_name": "KL33",
+          "landing_centre": "Parapanangadi",
+          "lat": 10.923056,
+          "lon": 75.425833,
+          "lat_dms": "10 55 23 N",
+          "lon_dms": "75 25 33 E",
+          "depth_m": {
+            "from": 57,
+            "to": 62
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 253,
+            "distance_km": {
+              "from": 46,
+              "to": 51
+            }
+          },
+          "from_home": {
+            "distance_km": 142.3,
+            "distance_nmi": 76.9,
+            "bearing_deg": 320.1,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-82",
+          "gpx_name": "KL82",
+          "landing_centre": "QuilonPort",
+          "lat": 8.627778,
+          "lon": 76.243889,
+          "lat_dms": "8 37 40 N",
+          "lon_dms": "76 14 38 E",
+          "depth_m": {
+            "from": 115,
+            "to": 120
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 232,
+            "distance_km": {
+              "from": 43,
+              "to": 48
+            }
+          },
+          "from_home": {
+            "distance_km": 144.8,
+            "distance_nmi": 78.2,
+            "bearing_deg": 180.7,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-31",
+          "gpx_name": "KL31",
+          "landing_centre": "Beypore",
+          "lat": 10.969722,
+          "lon": 75.402222,
+          "lat_dms": "10 58 11 N",
+          "lon_dms": "75 24 8 E",
+          "depth_m": {
+            "from": 60,
+            "to": 65
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 245,
+            "distance_km": {
+              "from": 46,
+              "to": 51
+            }
+          },
+          "from_home": {
+            "distance_km": 147.9,
+            "distance_nmi": 79.9,
+            "bearing_deg": 320.6,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-83",
+          "gpx_name": "KL83",
+          "landing_centre": "Quilon",
+          "lat": 8.598889,
+          "lon": 76.263056,
+          "lat_dms": "8 35 56 N",
+          "lon_dms": "76 15 47 E",
+          "depth_m": {
+            "from": 155,
+            "to": 160
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 227,
+            "distance_km": {
+              "from": 43,
+              "to": 48
+            }
+          },
+          "from_home": {
+            "distance_km": 148.0,
+            "distance_nmi": 79.9,
+            "bearing_deg": 179.9,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-84",
+          "gpx_name": "KL84",
+          "landing_centre": "Wadi",
+          "lat": 8.574444,
+          "lon": 76.288056,
+          "lat_dms": "8 34 28 N",
+          "lon_dms": "76 17 17 E",
+          "depth_m": {
+            "from": 135,
+            "to": 140
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 223,
+            "distance_km": {
+              "from": 43,
+              "to": 48
+            }
+          },
+          "from_home": {
+            "distance_km": 150.7,
+            "distance_nmi": 81.4,
+            "bearing_deg": 178.9,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-85",
+          "gpx_name": "KL85",
+          "landing_centre": "Moothakara",
+          "lat": 8.554722,
+          "lon": 76.316667,
+          "lat_dms": "8 33 17 N",
+          "lon_dms": "76 19 0 E",
+          "depth_m": {
+            "from": 122,
+            "to": 127
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 218,
+            "distance_km": {
+              "from": 43,
+              "to": 48
+            }
+          },
+          "from_home": {
+            "distance_km": 153.0,
+            "distance_nmi": 82.6,
+            "bearing_deg": 177.7,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-86",
+          "gpx_name": "KL86",
+          "landing_centre": "Paravoor",
+          "lat": 8.54,
+          "lon": 76.348333,
+          "lat_dms": "8 32 24 N",
+          "lon_dms": "76 20 54 E",
+          "depth_m": {
+            "from": 136,
+            "to": 141
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 229,
+            "distance_km": {
+              "from": 42,
+              "to": 47
+            }
+          },
+          "from_home": {
+            "distance_km": 154.8,
+            "distance_nmi": 83.6,
+            "bearing_deg": 176.4,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-87",
+          "gpx_name": "KL87",
+          "landing_centre": "Edaval",
+          "lat": 8.5325,
+          "lon": 76.382222,
+          "lat_dms": "8 31 57 N",
+          "lon_dms": "76 22 56 E",
+          "depth_m": {
+            "from": 111,
+            "to": 116
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 235,
+            "distance_km": {
+              "from": 39,
+              "to": 44
+            }
+          },
+          "from_home": {
+            "distance_km": 155.9,
+            "distance_nmi": 84.2,
+            "bearing_deg": 175.1,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-88",
+          "gpx_name": "KL88",
+          "landing_centre": "Vettoor",
+          "lat": 8.529167,
+          "lon": 76.416944,
+          "lat_dms": "8 31 45 N",
+          "lon_dms": "76 25 1 E",
+          "depth_m": {
+            "from": 78,
+            "to": 83
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 237,
+            "distance_km": {
+              "from": 36,
+              "to": 41
+            }
+          },
+          "from_home": {
+            "distance_km": 156.7,
+            "distance_nmi": 84.6,
+            "bearing_deg": 173.7,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-89",
+          "gpx_name": "KL89",
+          "landing_centre": "Chilakkoor",
+          "lat": 8.523889,
+          "lon": 76.451667,
+          "lat_dms": "8 31 26 N",
+          "lon_dms": "76 27 6 E",
+          "depth_m": {
+            "from": 68,
+            "to": 73
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 234,
+            "distance_km": {
+              "from": 34,
+              "to": 39
+            }
+          },
+          "from_home": {
+            "distance_km": 157.7,
+            "distance_nmi": 85.1,
+            "bearing_deg": 172.3,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-90",
+          "gpx_name": "KL90",
+          "landing_centre": "Arivalam&Rathikkal",
+          "lat": 8.510833,
+          "lon": 76.483889,
+          "lat_dms": "8 30 39 N",
+          "lon_dms": "76 29 2 E",
+          "depth_m": {
+            "from": 64,
+            "to": 69
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 232,
+            "distance_km": {
+              "from": 32,
+              "to": 37
+            }
+          },
+          "from_home": {
+            "distance_km": 159.6,
+            "distance_nmi": 86.2,
+            "bearing_deg": 171.2,
+            "compass": "S",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-30",
+          "gpx_name": "KL30",
+          "landing_centre": "Vellayil",
+          "lat": 11.144444,
+          "lon": 75.383889,
+          "lat_dms": "11 8 40 N",
+          "lon_dms": "75 23 2 E",
+          "depth_m": {
+            "from": 55,
+            "to": 60
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 252,
+            "distance_km": {
+              "from": 41,
+              "to": 46
+            }
+          },
+          "from_home": {
+            "distance_km": 164.5,
+            "distance_nmi": 88.8,
+            "bearing_deg": 324.4,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-29",
+          "gpx_name": "KL29",
+          "landing_centre": "PuthiyappaFH",
+          "lat": 11.185833,
+          "lon": 75.388333,
+          "lat_dms": "11 11 9 N",
+          "lon_dms": "75 23 18 E",
+          "depth_m": {
+            "from": 33,
+            "to": 38
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 250,
+            "distance_km": {
+              "from": 39,
+              "to": 44
+            }
+          },
+          "from_home": {
+            "distance_km": 167.9,
+            "distance_nmi": 90.7,
+            "bearing_deg": 325.4,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-28",
+          "gpx_name": "KL28",
+          "landing_centre": "Chemancheri",
+          "lat": 11.226944,
+          "lon": 75.383889,
+          "lat_dms": "11 13 37 N",
+          "lon_dms": "75 23 2 E",
+          "depth_m": {
+            "from": 17,
+            "to": 22
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 243,
+            "distance_km": {
+              "from": 38,
+              "to": 43
+            }
+          },
+          "from_home": {
+            "distance_km": 172.0,
+            "distance_nmi": 92.9,
+            "bearing_deg": 326.1,
+            "compass": "NW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-27",
+          "gpx_name": "KL27",
+          "landing_centre": "Quilandy/Koloth(Defunct)",
+          "lat": 11.264722,
+          "lon": 75.366944,
+          "lat_dms": "11 15 53 N",
+          "lon_dms": "75 22 1 E",
+          "depth_m": {
+            "from": 23,
+            "to": 28
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 237,
+            "distance_km": {
+              "from": 37,
+              "to": 42
+            }
+          },
+          "from_home": {
+            "distance_km": 176.5,
+            "distance_nmi": 95.3,
+            "bearing_deg": 326.4,
+            "compass": "NNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-91",
+          "gpx_name": "KL91",
+          "landing_centre": "Thumba",
+          "lat": 8.362778,
+          "lon": 76.638056,
+          "lat_dms": "8 21 46 N",
+          "lon_dms": "76 38 17 E",
+          "depth_m": {
+            "from": 77,
+            "to": 82
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 234,
+            "distance_km": {
+              "from": 29,
+              "to": 34
+            }
+          },
+          "from_home": {
+            "distance_km": 179.0,
+            "distance_nmi": 96.6,
+            "bearing_deg": 166.6,
+            "compass": "SSE",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-26",
+          "gpx_name": "KL26",
+          "landing_centre": "Kadalur Pt",
+          "lat": 11.304167,
+          "lon": 75.354444,
+          "lat_dms": "11 18 15 N",
+          "lon_dms": "75 21 16 E",
+          "depth_m": {
+            "from": 27,
+            "to": 32
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 240,
+            "distance_km": {
+              "from": 33,
+              "to": 38
+            }
+          },
+          "from_home": {
+            "distance_km": 180.9,
+            "distance_nmi": 97.7,
+            "bearing_deg": 326.8,
+            "compass": "NNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-92",
+          "gpx_name": "KL92",
+          "landing_centre": "Valiaveli",
+          "lat": 8.321389,
+          "lon": 76.650278,
+          "lat_dms": "8 19 17 N",
+          "lon_dms": "76 39 1 E",
+          "depth_m": {
+            "from": 70,
+            "to": 75
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 231,
+            "distance_km": {
+              "from": 31,
+              "to": 36
+            }
+          },
+          "from_home": {
+            "distance_km": 183.7,
+            "distance_nmi": 99.2,
+            "bearing_deg": 166.5,
+            "compass": "SSE",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-25",
+          "gpx_name": "KL25",
+          "landing_centre": "Thikkodi(Kodikkal)",
+          "lat": 11.345556,
+          "lon": 75.351944,
+          "lat_dms": "11 20 44 N",
+          "lon_dms": "75 21 7 E",
+          "depth_m": {
+            "from": 43,
+            "to": 48
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 244,
+            "distance_km": {
+              "from": 30,
+              "to": 35
+            }
+          },
+          "from_home": {
+            "distance_km": 184.8,
+            "distance_nmi": 99.8,
+            "bearing_deg": 327.5,
+            "compass": "NNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-24",
+          "gpx_name": "KL24",
+          "landing_centre": "Tikkoti",
+          "lat": 11.386944,
+          "lon": 75.355,
+          "lat_dms": "11 23 13 N",
+          "lon_dms": "75 21 18 E",
+          "depth_m": {
+            "from": 42,
+            "to": 47
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 249,
+            "distance_km": {
+              "from": 28,
+              "to": 33
+            }
+          },
+          "from_home": {
+            "distance_km": 188.5,
+            "distance_nmi": 101.8,
+            "bearing_deg": 328.4,
+            "compass": "NNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-93",
+          "gpx_name": "KL93",
+          "landing_centre": "Kannanthura",
+          "lat": 8.279722,
+          "lon": 76.660278,
+          "lat_dms": "8 16 47 N",
+          "lon_dms": "76 39 37 E",
+          "depth_m": {
+            "from": 74,
+            "to": 79
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 230,
+            "distance_km": {
+              "from": 33,
+              "to": 38
+            }
+          },
+          "from_home": {
+            "distance_km": 188.5,
+            "distance_nmi": 101.8,
+            "bearing_deg": 166.5,
+            "compass": "SSE",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-23",
+          "gpx_name": "KL23",
+          "landing_centre": "Moodady",
+          "lat": 11.428333,
+          "lon": 75.359722,
+          "lat_dms": "11 25 42 N",
+          "lon_dms": "75 21 35 E",
+          "depth_m": {
+            "from": 38,
+            "to": 43
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 258,
+            "distance_km": {
+              "from": 27,
+              "to": 32
+            }
+          },
+          "from_home": {
+            "distance_km": 192.2,
+            "distance_nmi": 103.8,
+            "bearing_deg": 329.2,
+            "compass": "NNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-94",
+          "gpx_name": "KL94",
+          "landing_centre": "Valiathura/ValiathuraPier",
+          "lat": 8.237222,
+          "lon": 76.666667,
+          "lat_dms": "8 14 14 N",
+          "lon_dms": "76 40 0 E",
+          "depth_m": {
+            "from": 95,
+            "to": 100
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 229,
+            "distance_km": {
+              "from": 35,
+              "to": 40
+            }
+          },
+          "from_home": {
+            "distance_km": 193.2,
+            "distance_nmi": 104.3,
+            "bearing_deg": 166.6,
+            "compass": "SSE",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-22",
+          "gpx_name": "KL22",
+          "landing_centre": "Kizhur",
+          "lat": 11.469167,
+          "lon": 75.366667,
+          "lat_dms": "11 28 9 N",
+          "lon_dms": "75 22 0 E",
+          "depth_m": {
+            "from": 37,
+            "to": 42
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 258,
+            "distance_km": {
+              "from": 24,
+              "to": 29
+            }
+          },
+          "from_home": {
+            "distance_km": 195.7,
+            "distance_nmi": 105.7,
+            "bearing_deg": 330.1,
+            "compass": "NNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-95",
+          "gpx_name": "KL95",
+          "landing_centre": "Vizhinjam&Kottapuram",
+          "lat": 8.194444,
+          "lon": 76.668611,
+          "lat_dms": "8 11 40 N",
+          "lon_dms": "76 40 7 E",
+          "depth_m": {
+            "from": 94,
+            "to": 99
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 237,
+            "distance_km": {
+              "from": 37,
+              "to": 42
+            }
+          },
+          "from_home": {
+            "distance_km": 197.9,
+            "distance_nmi": 106.8,
+            "bearing_deg": 166.9,
+            "compass": "SSE",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-21",
+          "gpx_name": "KL21",
+          "landing_centre": "Badagara",
+          "lat": 11.507778,
+          "lon": 75.381667,
+          "lat_dms": "11 30 28 N",
+          "lon_dms": "75 22 54 E",
+          "depth_m": {
+            "from": 37,
+            "to": 42
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 247,
+            "distance_km": {
+              "from": 21,
+              "to": 26
+            }
+          },
+          "from_home": {
+            "distance_km": 198.6,
+            "distance_nmi": 107.2,
+            "bearing_deg": 331.1,
+            "compass": "NNW",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-96",
+          "gpx_name": "KL96",
+          "landing_centre": "Vilinjam",
+          "lat": 8.151944,
+          "lon": 76.673889,
+          "lat_dms": "8 9 7 N",
+          "lon_dms": "76 40 26 E",
+          "depth_m": {
+            "from": 112,
+            "to": 117
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 233,
+            "distance_km": {
+              "from": 40,
+              "to": 45
+            }
+          },
+          "from_home": {
+            "distance_km": 202.6,
+            "distance_nmi": 109.4,
+            "bearing_deg": 167.0,
+            "compass": "SSE",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-97",
+          "gpx_name": "KL97",
+          "landing_centre": "VizhinjamNorth",
+          "lat": 8.111944,
+          "lon": 76.689167,
+          "lat_dms": "8 6 43 N",
+          "lon_dms": "76 41 21 E",
+          "depth_m": {
+            "from": 127,
+            "to": 132
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 228,
+            "distance_km": {
+              "from": 41,
+              "to": 46
+            }
+          },
+          "from_home": {
+            "distance_km": 207.3,
+            "distance_nmi": 111.9,
+            "bearing_deg": 166.8,
+            "compass": "SSE",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-98",
+          "gpx_name": "KL98",
+          "landing_centre": "Mariyanadu",
+          "lat": 8.075278,
+          "lon": 76.711389,
+          "lat_dms": "8 4 31 N",
+          "lon_dms": "76 42 41 E",
+          "depth_m": {
+            "from": 131,
+            "to": 136
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 226,
+            "distance_km": {
+              "from": 43,
+              "to": 48
+            }
+          },
+          "from_home": {
+            "distance_km": 211.8,
+            "distance_nmi": 114.4,
+            "bearing_deg": 166.4,
+            "compass": "SSE",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-99",
+          "gpx_name": "KL99",
+          "landing_centre": "Adimalathura",
+          "lat": 8.0425,
+          "lon": 76.739167,
+          "lat_dms": "8 2 33 N",
+          "lon_dms": "76 44 21 E",
+          "depth_m": {
+            "from": 106,
+            "to": 111
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 222,
+            "distance_km": {
+              "from": 43,
+              "to": 48
+            }
+          },
+          "from_home": {
+            "distance_km": 216.0,
+            "distance_nmi": 116.6,
+            "bearing_deg": 165.9,
+            "compass": "SSE",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-100",
+          "gpx_name": "KL100",
+          "landing_centre": "Puthiathura(Kochupally)",
+          "lat": 8.013889,
+          "lon": 76.771111,
+          "lat_dms": "8 0 50 N",
+          "lon_dms": "76 46 16 E",
+          "depth_m": {
+            "from": 96,
+            "to": 101
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 218,
+            "distance_km": {
+              "from": 44,
+              "to": 49
+            }
+          },
+          "from_home": {
+            "distance_km": 220.0,
+            "distance_nmi": 118.8,
+            "bearing_deg": 165.2,
+            "compass": "SSE",
+            "reachable": true
+          }
+        },
+        {
+          "id": "SEC005-20",
+          "gpx_name": "KL20",
+          "landing_centre": "Edakkad",
+          "lat": 11.689722,
+          "lon": 75.170556,
+          "lat_dms": "11 41 23 N",
+          "lon_dms": "75 10 14 E",
+          "depth_m": {
+            "from": 51,
+            "to": 56
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 245,
+            "distance_km": {
+              "from": 29,
+              "to": 34
+            }
+          },
+          "from_home": {
+            "distance_km": 227.6,
+            "distance_nmi": 122.9,
+            "bearing_deg": 328.5,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-19",
+          "gpx_name": "KL19",
+          "landing_centre": "AyikkaraFH",
+          "lat": 11.726944,
+          "lon": 75.184722,
+          "lat_dms": "11 43 37 N",
+          "lon_dms": "75 11 5 E",
+          "depth_m": {
+            "from": 43,
+            "to": 48
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 235,
+            "distance_km": {
+              "from": 23,
+              "to": 28
+            }
+          },
+          "from_home": {
+            "distance_km": 230.3,
+            "distance_nmi": 124.4,
+            "bearing_deg": 329.4,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-18",
+          "gpx_name": "KL18",
+          "landing_centre": "Kannur",
+          "lat": 11.764444,
+          "lon": 75.171667,
+          "lat_dms": "11 45 52 N",
+          "lon_dms": "75 10 18 E",
+          "depth_m": {
+            "from": 47,
+            "to": 52
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 239,
+            "distance_km": {
+              "from": 21,
+              "to": 26
+            }
+          },
+          "from_home": {
+            "distance_km": 234.6,
+            "distance_nmi": 126.7,
+            "bearing_deg": 329.6,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-17",
+          "gpx_name": "KL17",
+          "landing_centre": "Azheecode",
+          "lat": 11.800556,
+          "lon": 75.1575,
+          "lat_dms": "11 48 2 N",
+          "lon_dms": "75 9 27 E",
+          "depth_m": {
+            "from": 42,
+            "to": 47
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 231,
+            "distance_km": {
+              "from": 19,
+              "to": 24
+            }
+          },
+          "from_home": {
+            "distance_km": 238.8,
+            "distance_nmi": 129.0,
+            "bearing_deg": 329.8,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-16",
+          "gpx_name": "KL16",
+          "landing_centre": "AzheecodeSouth",
+          "lat": 11.829722,
+          "lon": 75.135278,
+          "lat_dms": "11 49 47 N",
+          "lon_dms": "75 8 7 E",
+          "depth_m": {
+            "from": 41,
+            "to": 46
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 246,
+            "distance_km": {
+              "from": 20,
+              "to": 25
+            }
+          },
+          "from_home": {
+            "distance_km": 242.9,
+            "distance_nmi": 131.1,
+            "bearing_deg": 329.7,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-15",
+          "gpx_name": "KL15",
+          "landing_centre": "Azhikal",
+          "lat": 11.843056,
+          "lon": 75.096389,
+          "lat_dms": "11 50 35 N",
+          "lon_dms": "75 5 47 E",
+          "depth_m": {
+            "from": 44,
+            "to": 49
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 242,
+            "distance_km": {
+              "from": 23,
+              "to": 28
+            }
+          },
+          "from_home": {
+            "distance_km": 246.3,
+            "distance_nmi": 133.0,
+            "bearing_deg": 329.0,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-14",
+          "gpx_name": "KL14",
+          "landing_centre": "Kavvayi",
+          "lat": 11.871389,
+          "lon": 75.067778,
+          "lat_dms": "11 52 17 N",
+          "lon_dms": "75 4 4 E",
+          "depth_m": {
+            "from": 47,
+            "to": 52
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 204,
+            "distance_km": {
+              "from": 24,
+              "to": 29
+            }
+          },
+          "from_home": {
+            "distance_km": 250.6,
+            "distance_nmi": 135.3,
+            "bearing_deg": 328.7,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-13",
+          "gpx_name": "KL13",
+          "landing_centre": "Ettikulam",
+          "lat": 11.904167,
+          "lon": 75.043333,
+          "lat_dms": "11 54 15 N",
+          "lon_dms": "75 2 36 E",
+          "depth_m": {
+            "from": 45,
+            "to": 50
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 237,
+            "distance_km": {
+              "from": 20,
+              "to": 25
+            }
+          },
+          "from_home": {
+            "distance_km": 255.1,
+            "distance_nmi": 137.7,
+            "bearing_deg": 328.7,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-12",
+          "gpx_name": "KL12",
+          "landing_centre": "Kotte Kunnu",
+          "lat": 11.928889,
+          "lon": 75.010556,
+          "lat_dms": "11 55 44 N",
+          "lon_dms": "75 0 38 E",
+          "depth_m": {
+            "from": 46,
+            "to": 51
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 248,
+            "distance_km": {
+              "from": 20,
+              "to": 25
+            }
+          },
+          "from_home": {
+            "distance_km": 259.3,
+            "distance_nmi": 140.0,
+            "bearing_deg": 328.3,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-11",
+          "gpx_name": "KL11",
+          "landing_centre": "Kunnariyam",
+          "lat": 11.957778,
+          "lon": 74.982222,
+          "lat_dms": "11 57 28 N",
+          "lon_dms": "74 58 56 E",
+          "depth_m": {
+            "from": 50,
+            "to": 55
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 248,
+            "distance_km": {
+              "from": 22,
+              "to": 27
+            }
+          },
+          "from_home": {
+            "distance_km": 263.6,
+            "distance_nmi": 142.3,
+            "bearing_deg": 328.1,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-10",
+          "gpx_name": "KL10",
+          "landing_centre": "Hosdrug",
+          "lat": 12.2425,
+          "lon": 74.849722,
+          "lat_dms": "12 14 33 N",
+          "lon_dms": "74 50 59 E",
+          "depth_m": {
+            "from": 47,
+            "to": 52
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 253,
+            "distance_km": {
+              "from": 23,
+              "to": 28
+            }
+          },
+          "from_home": {
+            "distance_km": 298.0,
+            "distance_nmi": 160.9,
+            "bearing_deg": 329.0,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-09",
+          "gpx_name": "KL09",
+          "landing_centre": "Ajanoor-N-Bella",
+          "lat": 12.250833,
+          "lon": 74.807222,
+          "lat_dms": "12 15 3 N",
+          "lon_dms": "74 48 26 E",
+          "depth_m": {
+            "from": 50,
+            "to": 55
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 253,
+            "distance_km": {
+              "from": 27,
+              "to": 32
+            }
+          },
+          "from_home": {
+            "distance_km": 301.2,
+            "distance_nmi": 162.6,
+            "bearing_deg": 328.3,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-08",
+          "gpx_name": "KL08",
+          "landing_centre": "Pallikere",
+          "lat": 12.273333,
+          "lon": 74.770556,
+          "lat_dms": "12 16 24 N",
+          "lon_dms": "74 46 14 E",
+          "depth_m": {
+            "from": 52,
+            "to": 57
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 247,
+            "distance_km": {
+              "from": 30,
+              "to": 35
+            }
+          },
+          "from_home": {
+            "distance_km": 305.4,
+            "distance_nmi": 164.9,
+            "bearing_deg": 327.9,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-07",
+          "gpx_name": "KL07",
+          "landing_centre": "Bekal",
+          "lat": 12.305833,
+          "lon": 74.741944,
+          "lat_dms": "12 18 21 N",
+          "lon_dms": "74 44 31 E",
+          "depth_m": {
+            "from": 54,
+            "to": 59
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 252,
+            "distance_km": {
+              "from": 31,
+              "to": 36
+            }
+          },
+          "from_home": {
+            "distance_km": 310.2,
+            "distance_nmi": 167.5,
+            "bearing_deg": 327.8,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-06",
+          "gpx_name": "KL06",
+          "landing_centre": "Kotikulam",
+          "lat": 12.341944,
+          "lon": 74.718056,
+          "lat_dms": "12 20 31 N",
+          "lon_dms": "74 43 5 E",
+          "depth_m": {
+            "from": 50,
+            "to": 55
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 254,
+            "distance_km": {
+              "from": 31,
+              "to": 36
+            }
+          },
+          "from_home": {
+            "distance_km": 314.9,
+            "distance_nmi": 170.0,
+            "bearing_deg": 327.8,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-05",
+          "gpx_name": "KL05",
+          "landing_centre": "Kasaragod",
+          "lat": 12.378889,
+          "lon": 74.694722,
+          "lat_dms": "12 22 44 N",
+          "lon_dms": "74 41 41 E",
+          "depth_m": {
+            "from": 48,
+            "to": 53
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 246,
+            "distance_km": {
+              "from": 31,
+              "to": 36
+            }
+          },
+          "from_home": {
+            "distance_km": 319.7,
+            "distance_nmi": 172.6,
+            "bearing_deg": 327.8,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-04",
+          "gpx_name": "KL04",
+          "landing_centre": "Adakathbail",
+          "lat": 12.413889,
+          "lon": 74.669444,
+          "lat_dms": "12 24 50 N",
+          "lon_dms": "74 40 10 E",
+          "depth_m": {
+            "from": 63,
+            "to": 68
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 251,
+            "distance_km": {
+              "from": 32,
+              "to": 37
+            }
+          },
+          "from_home": {
+            "distance_km": 324.5,
+            "distance_nmi": 175.2,
+            "bearing_deg": 327.8,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-03",
+          "gpx_name": "KL03",
+          "landing_centre": "Mogral",
+          "lat": 12.449722,
+          "lon": 74.644722,
+          "lat_dms": "12 26 59 N",
+          "lon_dms": "74 38 41 E",
+          "depth_m": {
+            "from": 60,
+            "to": 65
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 248,
+            "distance_km": {
+              "from": 33,
+              "to": 38
+            }
+          },
+          "from_home": {
+            "distance_km": 329.3,
+            "distance_nmi": 177.8,
+            "bearing_deg": 327.7,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-02",
+          "gpx_name": "KL02",
+          "landing_centre": "Koipadi",
+          "lat": 12.489722,
+          "lon": 74.628889,
+          "lat_dms": "12 29 23 N",
+          "lon_dms": "74 37 44 E",
+          "depth_m": {
+            "from": 48,
+            "to": 53
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 251,
+            "distance_km": {
+              "from": 33,
+              "to": 38
+            }
+          },
+          "from_home": {
+            "distance_km": 333.9,
+            "distance_nmi": 180.3,
+            "bearing_deg": 327.9,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC005-01",
+          "gpx_name": "KL01",
+          "landing_centre": "Uppala",
+          "lat": 12.533056,
+          "lon": 74.6275,
+          "lat_dms": "12 31 59 N",
+          "lon_dms": "74 37 39 E",
+          "depth_m": {
+            "from": 52,
+            "to": 57
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 242,
+            "distance_km": {
+              "from": 31,
+              "to": 36
+            }
+          },
+          "from_home": {
+            "distance_km": 338.0,
+            "distance_nmi": 182.5,
+            "bearing_deg": 328.3,
+            "compass": "NNW",
+            "reachable": false
+          }
+        }
+      ]
+    },
+    {
+      "sector_id": "SEC004",
+      "sector_name": "KARNATAKA",
+      "status": "HAS_ADVISORY",
+      "reason": null,
+      "incois_updated_at": "2026-10-11T16:24:41+05:30",
+      "valid_until": "2026-10-12",
+      "zone_count": 20,
+      "zones": [
+        {
+          "id": "SEC004-20",
+          "gpx_name": "KA20",
+          "landing_centre": "Hosabettu-Udaivar",
+          "lat": 13.036111,
+          "lon": 74.421944,
+          "lat_dms": "13 2 10 N",
+          "lon_dms": "74 25 19 E",
+          "depth_m": {
+            "from": 47,
+            "to": 52
+          },
+          "incois": {
+            "direction": "W",
+            "bearing_deg": 270,
+            "distance_km": {
+              "from": 37,
+              "to": 42
+            }
+          },
+          "from_home": {
+            "distance_km": 397.2,
+            "distance_nmi": 214.5,
+            "bearing_deg": 329.8,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-19",
+          "gpx_name": "KA19",
+          "landing_centre": "Kapu",
+          "lat": 13.117222,
+          "lon": 74.390278,
+          "lat_dms": "13 7 2 N",
+          "lon_dms": "74 23 25 E",
+          "depth_m": {
+            "from": 48,
+            "to": 53
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 253,
+            "distance_km": {
+              "from": 37,
+              "to": 42
+            }
+          },
+          "from_home": {
+            "distance_km": 406.7,
+            "distance_nmi": 219.6,
+            "bearing_deg": 330.1,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-18",
+          "gpx_name": "KA18",
+          "landing_centre": "Udiyavara",
+          "lat": 13.201667,
+          "lon": 74.415278,
+          "lat_dms": "13 12 6 N",
+          "lon_dms": "74 24 55 E",
+          "depth_m": {
+            "from": 42,
+            "to": 47
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 251,
+            "distance_km": {
+              "from": 33,
+              "to": 38
+            }
+          },
+          "from_home": {
+            "distance_km": 413.4,
+            "distance_nmi": 223.2,
+            "bearing_deg": 331.0,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-17",
+          "gpx_name": "KA17",
+          "landing_centre": "Malpe",
+          "lat": 13.250833,
+          "lon": 74.487222,
+          "lat_dms": "13 15 3 N",
+          "lon_dms": "74 29 14 E",
+          "depth_m": {
+            "from": 36,
+            "to": 41
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 244,
+            "distance_km": {
+              "from": 22,
+              "to": 27
+            }
+          },
+          "from_home": {
+            "distance_km": 414.5,
+            "distance_nmi": 223.8,
+            "bearing_deg": 332.4,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-16",
+          "gpx_name": "KA16",
+          "landing_centre": "Coondapoor (gangoli)",
+          "lat": 13.495,
+          "lon": 74.166111,
+          "lat_dms": "13 29 42 N",
+          "lon_dms": "74 9 58 E",
+          "depth_m": {
+            "from": 45,
+            "to": 50
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 256,
+            "distance_km": {
+              "from": 54,
+              "to": 59
+            }
+          },
+          "from_home": {
+            "distance_km": 455.0,
+            "distance_nmi": 245.7,
+            "bearing_deg": 330.1,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-15",
+          "gpx_name": "KA15",
+          "landing_centre": "Gangoli",
+          "lat": 13.543889,
+          "lon": 74.205556,
+          "lat_dms": "13 32 38 N",
+          "lon_dms": "74 12 20 E",
+          "depth_m": {
+            "from": 42,
+            "to": 47
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 256,
+            "distance_km": {
+              "from": 49,
+              "to": 54
+            }
+          },
+          "from_home": {
+            "distance_km": 457.6,
+            "distance_nmi": 247.1,
+            "bearing_deg": 330.9,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-14",
+          "gpx_name": "KA14",
+          "landing_centre": "Navunda",
+          "lat": 13.608611,
+          "lon": 74.195556,
+          "lat_dms": "13 36 31 N",
+          "lon_dms": "74 11 44 E",
+          "depth_m": {
+            "from": 46,
+            "to": 51
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 252,
+            "distance_km": {
+              "from": 48,
+              "to": 53
+            }
+          },
+          "from_home": {
+            "distance_km": 464.4,
+            "distance_nmi": 250.7,
+            "bearing_deg": 331.2,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-13",
+          "gpx_name": "KA13",
+          "landing_centre": "Bhatkal",
+          "lat": 13.665556,
+          "lon": 74.164167,
+          "lat_dms": "13 39 56 N",
+          "lon_dms": "74 9 51 E",
+          "depth_m": {
+            "from": 48,
+            "to": 53
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 229,
+            "distance_km": {
+              "from": 50,
+              "to": 55
+            }
+          },
+          "from_home": {
+            "distance_km": 471.5,
+            "distance_nmi": 254.6,
+            "bearing_deg": 331.2,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-12",
+          "gpx_name": "KA12",
+          "landing_centre": "Dhareshvar",
+          "lat": 13.859722,
+          "lon": 74.284444,
+          "lat_dms": "13 51 35 N",
+          "lon_dms": "74 17 4 E",
+          "depth_m": {
+            "from": 37,
+            "to": 42
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 193,
+            "distance_km": {
+              "from": 55,
+              "to": 60
+            }
+          },
+          "from_home": {
+            "distance_km": 484.4,
+            "distance_nmi": 261.6,
+            "bearing_deg": 333.8,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-11",
+          "gpx_name": "KA11",
+          "landing_centre": "Baindur",
+          "lat": 13.873333,
+          "lon": 74.230833,
+          "lat_dms": "13 52 24 N",
+          "lon_dms": "74 13 51 E",
+          "depth_m": {
+            "from": 34,
+            "to": 39
+          },
+          "incois": {
+            "direction": "NW",
+            "bearing_deg": 271,
+            "distance_km": {
+              "from": 39,
+              "to": 44
+            }
+          },
+          "from_home": {
+            "distance_km": 488.4,
+            "distance_nmi": 263.7,
+            "bearing_deg": 333.3,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-10",
+          "gpx_name": "KA10",
+          "landing_centre": "Mavalli",
+          "lat": 13.905833,
+          "lon": 74.185833,
+          "lat_dms": "13 54 21 N",
+          "lon_dms": "74 11 9 E",
+          "depth_m": {
+            "from": 46,
+            "to": 51
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 235,
+            "distance_km": {
+              "from": 37,
+              "to": 42
+            }
+          },
+          "from_home": {
+            "distance_km": 493.8,
+            "distance_nmi": 266.6,
+            "bearing_deg": 333.0,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-09",
+          "gpx_name": "KA09",
+          "landing_centre": "Shirali",
+          "lat": 13.931389,
+          "lon": 74.136667,
+          "lat_dms": "13 55 53 N",
+          "lon_dms": "74 8 12 E",
+          "depth_m": {
+            "from": 48,
+            "to": 53
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 255,
+            "distance_km": {
+              "from": 40,
+              "to": 45
+            }
+          },
+          "from_home": {
+            "distance_km": 498.8,
+            "distance_nmi": 269.3,
+            "bearing_deg": 332.6,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-08",
+          "gpx_name": "KA08",
+          "landing_centre": "Navayatkere",
+          "lat": 14.115833,
+          "lon": 74.158056,
+          "lat_dms": "14 6 57 N",
+          "lon_dms": "74 9 29 E",
+          "depth_m": {
+            "from": 48,
+            "to": 53
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 256,
+            "distance_km": {
+              "from": 32,
+              "to": 37
+            }
+          },
+          "from_home": {
+            "distance_km": 515.9,
+            "distance_nmi": 278.5,
+            "bearing_deg": 333.9,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-07",
+          "gpx_name": "KA07",
+          "landing_centre": "Honavar",
+          "lat": 14.138889,
+          "lon": 74.102778,
+          "lat_dms": "14 8 20 N",
+          "lon_dms": "74 6 10 E",
+          "depth_m": {
+            "from": 44,
+            "to": 49
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 247,
+            "distance_km": {
+              "from": 37,
+              "to": 42
+            }
+          },
+          "from_home": {
+            "distance_km": 520.8,
+            "distance_nmi": 281.2,
+            "bearing_deg": 333.4,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-06",
+          "gpx_name": "KA06",
+          "landing_centre": "Kasarkod",
+          "lat": 14.188333,
+          "lon": 74.073056,
+          "lat_dms": "14 11 18 N",
+          "lon_dms": "74 4 23 E",
+          "depth_m": {
+            "from": 43,
+            "to": 48
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 260,
+            "distance_km": {
+              "from": 38,
+              "to": 43
+            }
+          },
+          "from_home": {
+            "distance_km": 527.2,
+            "distance_nmi": 284.6,
+            "bearing_deg": 333.4,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-05",
+          "gpx_name": "KA05",
+          "landing_centre": "Karki",
+          "lat": 14.248333,
+          "lon": 74.080278,
+          "lat_dms": "14 14 54 N",
+          "lon_dms": "74 4 49 E",
+          "depth_m": {
+            "from": 45,
+            "to": 50
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 259,
+            "distance_km": {
+              "from": 35,
+              "to": 40
+            }
+          },
+          "from_home": {
+            "distance_km": 532.7,
+            "distance_nmi": 287.6,
+            "bearing_deg": 333.8,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-04",
+          "gpx_name": "KA04",
+          "landing_centre": "Gangavali",
+          "lat": 14.518889,
+          "lon": 73.870556,
+          "lat_dms": "14 31 8 N",
+          "lon_dms": "73 52 14 E",
+          "depth_m": {
+            "from": 51,
+            "to": 56
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 260,
+            "distance_km": {
+              "from": 45,
+              "to": 50
+            }
+          },
+          "from_home": {
+            "distance_km": 569.7,
+            "distance_nmi": 307.6,
+            "bearing_deg": 333.1,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-03",
+          "gpx_name": "KA03",
+          "landing_centre": "Belekeri",
+          "lat": 14.557778,
+          "lon": 73.923333,
+          "lat_dms": "14 33 28 N",
+          "lon_dms": "73 55 24 E",
+          "depth_m": {
+            "from": 47,
+            "to": 52
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 245,
+            "distance_km": {
+              "from": 38,
+              "to": 43
+            }
+          },
+          "from_home": {
+            "distance_km": 570.9,
+            "distance_nmi": 308.3,
+            "bearing_deg": 333.8,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-02",
+          "gpx_name": "KA02",
+          "landing_centre": "Sadasguvgarg",
+          "lat": 14.621389,
+          "lon": 73.932222,
+          "lat_dms": "14 37 17 N",
+          "lon_dms": "73 55 56 E",
+          "depth_m": {
+            "from": 49,
+            "to": 54
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 220,
+            "distance_km": {
+              "from": 30,
+              "to": 35
+            }
+          },
+          "from_home": {
+            "distance_km": 576.8,
+            "distance_nmi": 311.4,
+            "bearing_deg": 334.2,
+            "compass": "NNW",
+            "reachable": false
+          }
+        },
+        {
+          "id": "SEC004-01",
+          "gpx_name": "KA01",
+          "landing_centre": "Karwar",
+          "lat": 14.686389,
+          "lon": 73.92,
+          "lat_dms": "14 41 11 N",
+          "lon_dms": "73 55 12 E",
+          "depth_m": {
+            "from": 39,
+            "to": 44
+          },
+          "incois": {
+            "direction": "SW",
+            "bearing_deg": 225,
+            "distance_km": {
+              "from": 19,
+              "to": 24
+            }
+          },
+          "from_home": {
+            "distance_km": 583.8,
+            "distance_nmi": 315.2,
+            "bearing_deg": 334.4,
+            "compass": "NNW",
+            "reachable": false
+          }
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "sectors": 3,
+    "with_advisory": 3,
+    "zones": 149,
+    "reachable": 80
+  }
+}
