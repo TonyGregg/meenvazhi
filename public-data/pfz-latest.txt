@@ -1,10 +1,10 @@
-MEENVAZHI PFZ 2026-10-21
-Valid until: 2026-10-22
+MEENVAZHI PFZ 2026-10-22
+Valid until: 2026-10-23
 From: Kochi (Cochin Fisheries Harbour)
 
-SOUTH TAMILNADU: 150 zones, none within 120 nmi
+SOUTH TAMILNADU: no advisory (excessive cloud cover)
 KERALA: no advisory (excessive cloud cover)
-KARNATAKA: 29 zones, none within 120 nmi
+KARNATAKA: no advisory (excessive cloud cover)
 
 Advisory only. Not for navigation or safety of life at sea.
 Source: INCOIS, Ministry of Earth Sciences, Govt. of India

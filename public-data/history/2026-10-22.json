@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-22T14:01:29Z",
+  "generator": "Meenvazhi/1.0.0",
+  "advisory_date": "2026-10-22",
+  "valid_until": "2026-10-23",
+  "forecast_date": "2026-10-22",
+  "valid_upto": "2026-10-23",
+  "source": {
+    "name": "INCOIS Potential Fishing Zone advisory",
+    "url": "https://incois.gov.in/MarineFisheries/TextDataHome?mfid=1&request_locale=en",
+    "credit": "Source: INCOIS, Ministry of Earth Sciences, Govt. of India"
+  },
+  "disclaimer": "Advisory only. Not for navigation or safety of life at sea.",
+  "home_port": {
+    "id": "kochi",
+    "name": "Kochi (Cochin Fisheries Harbour)",
+    "lat": 9.937,
+    "lon": 76.261
+  },
+  "reachable_nmi": 120.0,
+  "sectors": [
+    {
+      "sector_id": "SEC006",
+      "sector_name": "SOUTH TAMILNADU",
+      "status": "NO_ADVISORY",
+      "reason": "excessive cloud cover",
+      "incois_updated_at": null,
+      "valid_until": null,
+      "zone_count": 0,
+      "zones": []
+    },
+    {
+      "sector_id": "SEC005",
+      "sector_name": "KERALA",
+      "status": "NO_ADVISORY",
+      "reason": "excessive cloud cover",
+      "incois_updated_at": null,
+      "valid_until": null,
+      "zone_count": 0,
+      "zones": []
+    },
+    {
+      "sector_id": "SEC004",
+      "sector_name": "KARNATAKA",
+      "status": "NO_ADVISORY",
+      "reason": "excessive cloud cover",
+      "incois_updated_at": null,
+      "valid_until": null,
+      "zone_count": 0,
+      "zones": []
+    }
+  ],
+  "counts": {
+    "sectors": 3,
+    "with_advisory": 0,
+    "zones": 0,
+    "reachable": 0
+  }
+}
