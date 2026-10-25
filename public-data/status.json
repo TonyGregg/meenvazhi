@@ -1,9 +1,9 @@
 {
-  "last_attempt_at": "2026-10-24T12:52:32Z",
+  "last_attempt_at": "2026-10-25T11:52:11Z",
   "published": true,
   "reason": "all sectors cloud-covered",
   "exit_code": 0,
-  "advisory_date": "2026-10-24",
+  "advisory_date": "2026-10-25",
   "consecutive_failures": 0,
   "sectors": [
     {
@@ -28,5 +28,5 @@
       "zone_count": 0
     }
   ],
-  "last_success_at": "2026-10-24T12:52:32Z"
+  "last_success_at": "2026-10-25T11:52:11Z"
 }

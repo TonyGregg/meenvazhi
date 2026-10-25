@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T12:52:32Z",
+  "generated_at": "2026-10-25T11:52:11Z",
   "generator": "Meenvazhi/1.0.0",
-  "advisory_date": "2026-10-24",
-  "valid_until": "2026-10-25",
-  "forecast_date": "2026-10-24",
-  "valid_upto": "2026-10-25",
+  "advisory_date": "2026-10-25",
+  "valid_until": "2026-10-26",
+  "forecast_date": "2026-10-25",
+  "valid_upto": "2026-10-26",
   "source": {
     "name": "INCOIS Potential Fishing Zone advisory",
     "url": "https://incois.gov.in/MarineFisheries/TextDataHome?mfid=1&request_locale=en",
