@@ -1,9 +1,9 @@
 {
-  "last_attempt_at": "2026-10-25T11:52:11Z",
+  "last_attempt_at": "2026-10-26T13:22:34Z",
   "published": true,
-  "reason": "all sectors cloud-covered",
+  "reason": null,
   "exit_code": 0,
-  "advisory_date": "2026-10-25",
+  "advisory_date": "2026-10-26",
   "consecutive_failures": 0,
   "sectors": [
     {
@@ -23,10 +23,10 @@
     {
       "sector_id": "SEC004",
       "sector_name": "KARNATAKA",
-      "status": "NO_ADVISORY",
-      "reason": "excessive cloud cover",
-      "zone_count": 0
+      "status": "HAS_ADVISORY",
+      "reason": null,
+      "zone_count": 28
     }
   ],
-  "last_success_at": "2026-10-25T11:52:11Z"
+  "last_success_at": "2026-10-26T13:22:34Z"
 }
