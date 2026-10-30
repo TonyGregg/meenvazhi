@@ -1,9 +1,9 @@
 {
-  "last_attempt_at": "2026-10-29T13:26:13Z",
+  "last_attempt_at": "2026-10-30T13:15:59Z",
   "published": true,
   "reason": null,
   "exit_code": 0,
-  "advisory_date": "2026-10-29",
+  "advisory_date": "2026-10-30",
   "consecutive_failures": 0,
   "sectors": [
     {
@@ -11,7 +11,7 @@
       "sector_name": "SOUTH TAMILNADU",
       "status": "HAS_ADVISORY",
       "reason": null,
-      "zone_count": 153
+      "zone_count": 147
     },
     {
       "sector_id": "SEC005",
@@ -25,8 +25,8 @@
       "sector_name": "KARNATAKA",
       "status": "HAS_ADVISORY",
       "reason": null,
-      "zone_count": 28
+      "zone_count": 29
     }
   ],
-  "last_success_at": "2026-10-29T13:26:13Z"
+  "last_success_at": "2026-10-30T13:15:59Z"
 }
