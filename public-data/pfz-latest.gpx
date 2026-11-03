@@ -4,439 +4,839 @@
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
-    <name>Meenvazhi PFZ 2026-11-02</name>
-    <desc>INCOIS Potential Fishing Zone advisory. valid until 2026-11-03. Advisory only. Not for navigation or safety of life at sea. Source: INCOIS, Ministry of Earth Sciences, Govt. of India</desc>
-    <time>2026-11-02T12:43:00Z</time>
+    <name>Meenvazhi PFZ 2026-11-03</name>
+    <desc>INCOIS Potential Fishing Zone advisory. valid until 2026-11-04. Advisory only. Not for navigation or safety of life at sea. Source: INCOIS, Ministry of Earth Sciences, Govt. of India</desc>
+    <time>2026-11-03T12:09:28Z</time>
   </metadata>
-  <wpt lat="8.731389" lon="75.918889">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="9.840278" lon="76.145556">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KL11</name>
-    <cmt>Neendakara 75nmi 196T d436-441m</cmt>
-    <desc>KERALA / Neendakara. 74.8 nmi at 196 deg true from home port. Depth 436-441 m. Valid until 2026-11-03.</desc>
+    <cmt>Puthenthodu(Kannamali) 9nmi 230T d21-26m</cmt>
+    <desc>KERALA / Puthenthodu(Kannamali). 9.0 nmi at 230 deg true from home port. Depth 21-26 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="8.720556" lon="75.875278">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="9.830000" lon="76.135833">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KL12</name>
-    <cmt>Vettuthura 76nmi 198T d458-463m</cmt>
-    <desc>KERALA / Vettuthura. 76.2 nmi at 198 deg true from home port. Depth 458-463 m. Valid until 2026-11-03.</desc>
+    <cmt>Maruvakad 10nmi 229T d21-26m</cmt>
+    <desc>KERALA / Maruvakad. 9.8 nmi at 229 deg true from home port. Depth 21-26 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="8.691944" lon="75.845556">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL13</name>
-    <cmt>Chavara 78nmi 198T d599-604m</cmt>
-    <desc>KERALA / Chavara. 78.3 nmi at 198 deg true from home port. Depth 599-604 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.646944" lon="75.848611">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL14</name>
-    <cmt>Thankassery F.H. 81nmi 198T d795-800m</cmt>
-    <desc>KERALA / Thankassery F.H.. 80.8 nmi at 198 deg true from home port. Depth 795-800 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.607778" lon="75.870278">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL15</name>
-    <cmt>QuilonPort 83nmi 196T d1001-1006m</cmt>
-    <desc>KERALA / QuilonPort. 82.7 nmi at 196 deg true from home port. Depth 1001-1006 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.575000" lon="75.901111">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL16</name>
-    <cmt>Quilon 84nmi 195T d1048-1053m</cmt>
-    <desc>KERALA / Quilon. 84.1 nmi at 195 deg true from home port. Depth 1048-1053 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.538889" lon="75.927500">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL17</name>
-    <cmt>Wadi 86nmi 193T d1046-1051m</cmt>
-    <desc>KERALA / Wadi. 85.8 nmi at 193 deg true from home port. Depth 1046-1051 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.494444" lon="75.931944">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL18</name>
-    <cmt>Moothakara 88nmi 193T d1107-1112m</cmt>
-    <desc>KERALA / Moothakara. 88.3 nmi at 193 deg true from home port. Depth 1107-1112 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.450278" lon="75.923056">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL19</name>
-    <cmt>Pallithottam 91nmi 193T d1181-1186m</cmt>
-    <desc>KERALA / Pallithottam. 91.0 nmi at 193 deg true from home port. Depth 1181-1186 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.405556" lon="75.918889">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL20</name>
-    <cmt>Sakthikulangara 94nmi 192T d1259-1264m</cmt>
-    <desc>KERALA / Sakthikulangara. 93.7 nmi at 192 deg true from home port. Depth 1259-1264 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.163333" lon="76.504444">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL21</name>
-    <cmt>Vell 107nmi 172T d748-753m</cmt>
-    <desc>KERALA / Vell. 106.9 nmi at 172 deg true from home port. Depth 748-753 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.138056" lon="76.478889">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL22</name>
-    <cmt>Vettucaud 108nmi 173T d855-860m</cmt>
-    <desc>KERALA / Vettucaud. 108.2 nmi at 173 deg true from home port. Depth 855-860 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.120556" lon="76.446111">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL23</name>
-    <cmt>Valiaveli 109nmi 174T d944-949m</cmt>
-    <desc>KERALA / Valiaveli. 109.0 nmi at 174 deg true from home port. Depth 944-949 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.092778" lon="76.423611">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL24</name>
-    <cmt>Kannanthura 111nmi 175T d1039-1044m</cmt>
-    <desc>KERALA / Kannanthura. 110.6 nmi at 175 deg true from home port. Depth 1039-1044 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.056389" lon="76.417500">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL25</name>
-    <cmt>Vizhinjam&amp;Kottapuram 113nmi 175T d1072-1</cmt>
-    <desc>KERALA / Vizhinjam&amp;Kottapuram. 112.7 nmi at 175 deg true from home port. Depth 1072-1077 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.025000" lon="76.435000">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL26</name>
-    <cmt>Vilinjam 115nmi 175T d1096-1101m</cmt>
-    <desc>KERALA / Vilinjam. 114.7 nmi at 175 deg true from home port. Depth 1096-1101 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="8.003333" lon="76.464722">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL27</name>
-    <cmt>VizhinjamNorth 116nmi 174T d1055-1060m</cmt>
-    <desc>KERALA / VizhinjamNorth. 116.1 nmi at 174 deg true from home port. Depth 1055-1060 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="7.988056" lon="76.498333">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL28</name>
-    <cmt>Kovalad 117nmi 173T d1069-1074m</cmt>
-    <desc>KERALA / Kovalad. 117.2 nmi at 173 deg true from home port. Depth 1069-1074 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="7.960000" lon="76.522222">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL29</name>
-    <cmt>Mariyanadu 119nmi 172T d1068-1073m</cmt>
-    <desc>KERALA / Mariyanadu. 119.1 nmi at 172 deg true from home port. Depth 1068-1073 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="7.926111" lon="76.536389">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KL30</name>
-    <cmt>Adimalathura 121nmi 172T d1087-1092m</cmt>
-    <desc>KERALA / Adimalathura. 121.2 nmi at 172 deg true from home port. Depth 1087-1092 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="12.422222" lon="74.252500">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="9.920278" lon="76.089722">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KL10</name>
-    <cmt>ThalangarJetty 190nmi 322T d226-231m</cmt>
-    <desc>KERALA / ThalangarJetty. 189.9 nmi at 322 deg true from home port. Depth 226-231 m. Valid until 2026-11-03.</desc>
+    <cmt>Narakkal 10nmi 264T d26-31m</cmt>
+    <desc>KERALA / Narakkal. 10.2 nmi at 264 deg true from home port. Depth 26-31 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="12.460000" lon="74.264722">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="9.818056" lon="76.127778">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL13</name>
+    <cmt>Chillickal 11nmi 228T d23-28m</cmt>
+    <desc>KERALA / Chillickal. 10.6 nmi at 228 deg true from home port. Depth 23-28 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.804722" lon="76.122222">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL14</name>
+    <cmt>Kochi 11nmi 226T d25-30m</cmt>
+    <desc>KERALA / Kochi. 11.4 nmi at 226 deg true from home port. Depth 25-30 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.948889" lon="76.063889">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KL09</name>
-    <cmt>Kasaragod 191nmi 322T d185-190m</cmt>
-    <desc>KERALA / Kasaragod. 191.2 nmi at 322 deg true from home port. Depth 185-190 m. Valid until 2026-11-03.</desc>
+    <cmt>Malipuram 12nmi 274T d25-30m</cmt>
+    <desc>KERALA / Malipuram. 11.7 nmi at 274 deg true from home port. Depth 25-30 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="12.495278" lon="74.282500">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="9.790833" lon="76.118889">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL15</name>
+    <cmt>FortKochi 12nmi 224T d26-31m</cmt>
+    <desc>KERALA / FortKochi. 12.1 nmi at 224 deg true from home port. Depth 26-31 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.987222" lon="76.058889">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KL08</name>
-    <cmt>Adakathbail 192nmi 323T d140-145m</cmt>
-    <desc>KERALA / Adakathbail. 192.2 nmi at 323 deg true from home port. Depth 140-145 m. Valid until 2026-11-03.</desc>
+    <cmt>Nayarambalam 12nmi 284T d22-27m</cmt>
+    <desc>KERALA / Nayarambalam. 12.3 nmi at 284 deg true from home port. Depth 22-27 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="12.527222" lon="74.306389">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="9.751111" lon="76.168889">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL20</name>
+    <cmt>Ernakulam 12nmi 206T d26-31m</cmt>
+    <desc>KERALA / Ernakulam. 12.4 nmi at 206 deg true from home port. Depth 26-31 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.754167" lon="76.155000">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL19</name>
+    <cmt>Valarpadam 13nmi 210T d27-32m</cmt>
+    <desc>KERALA / Valarpadam. 12.6 nmi at 210 deg true from home port. Depth 27-32 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.776667" lon="76.119444">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL16</name>
+    <cmt>Kalamukku 13nmi 221T d26-31m</cmt>
+    <desc>KERALA / Kalamukku. 12.7 nmi at 221 deg true from home port. Depth 26-31 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.759722" lon="76.141667">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL18</name>
+    <cmt>Murikumpadam 13nmi 214T d22-27m</cmt>
+    <desc>KERALA / Murikumpadam. 12.7 nmi at 214 deg true from home port. Depth 22-27 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.766667" lon="76.129167">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL17</name>
+    <cmt>Vypeen 13nmi 218T d24-29m</cmt>
+    <desc>KERALA / Vypeen. 12.8 nmi at 218 deg true from home port. Depth 24-29 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="10.020833" lon="76.042500">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KL07</name>
-    <cmt>Mogral 193nmi 324T d114-119m</cmt>
-    <desc>KERALA / Mogral. 192.9 nmi at 324 deg true from home port. Depth 114-119 m. Valid until 2026-11-03.</desc>
+    <cmt>Vadakkal 14nmi 291T d25-30m</cmt>
+    <desc>KERALA / Vadakkal. 13.9 nmi at 291 deg true from home port. Depth 25-30 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="12.553889" lon="74.335556">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="10.050000" lon="76.016944">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KL06</name>
-    <cmt>Koipadi 193nmi 324T d105-110m</cmt>
-    <desc>KERALA / Koipadi. 193.2 nmi at 324 deg true from home port. Depth 105-110 m. Valid until 2026-11-03.</desc>
+    <cmt>Edavanakad 16nmi 295T d27-32m</cmt>
+    <desc>KERALA / Edavanakad. 15.9 nmi at 295 deg true from home port. Depth 27-32 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="12.584444" lon="74.359722">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="9.715833" lon="76.063611">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL21</name>
+    <cmt>Puthenkadappuram 18nmi 222T d34-39m</cmt>
+    <desc>KERALA / Puthenkadappuram. 17.6 nmi at 222 deg true from home port. Depth 34-39 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="10.083889" lon="75.998056">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KL05</name>
-    <cmt>Kumbla 194nmi 325T d84-89m</cmt>
-    <desc>KERALA / Kumbla. 193.8 nmi at 325 deg true from home port. Depth 84-89 m. Valid until 2026-11-03.</desc>
+    <cmt>Kuzhuppilly 18nmi 299T d28-33m</cmt>
+    <desc>KERALA / Kuzhuppilly. 17.9 nmi at 299 deg true from home port. Depth 28-33 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="12.623056" lon="74.368611">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="9.700000" lon="76.065000">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL22</name>
+    <cmt>Cherai 18nmi 219T d33-38m</cmt>
+    <desc>KERALA / Cherai. 18.3 nmi at 219 deg true from home port. Depth 33-38 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.684444" lon="76.061667">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL23</name>
+    <cmt>Manakodam 19nmi 218T d32-37m</cmt>
+    <desc>KERALA / Manakodam. 19.2 nmi at 218 deg true from home port. Depth 32-37 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="10.119722" lon="75.985833">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KL04</name>
-    <cmt>Arikkadi 195nmi 325T d77-82m</cmt>
-    <desc>KERALA / Arikkadi. 195.4 nmi at 325 deg true from home port. Depth 77-82 m. Valid until 2026-11-03.</desc>
+    <cmt>MunambamFH 20nmi 304T d29-34m</cmt>
+    <desc>KERALA / MunambamFH. 19.6 nmi at 304 deg true from home port. Depth 29-34 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="12.661944" lon="74.376944">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="9.671944" lon="76.051667">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL24</name>
+    <cmt>Kara 20nmi 218T d36-41m</cmt>
+    <desc>KERALA / Kara. 20.1 nmi at 218 deg true from home port. Depth 36-41 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.663611" lon="76.038056">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL25</name>
+    <cmt>Kulimuttam 21nmi 219T d48-53m</cmt>
+    <desc>KERALA / Kulimuttam. 21.0 nmi at 219 deg true from home port. Depth 48-53 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="10.135000" lon="75.950556">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KL03</name>
-    <cmt>Uppala 197nmi 326T d84-89m</cmt>
-    <desc>KERALA / Uppala. 197.0 nmi at 326 deg true from home port. Depth 84-89 m. Valid until 2026-11-03.</desc>
+    <cmt>Kodungallur 22nmi 303T d30-35m</cmt>
+    <desc>KERALA / Kodungallur. 21.9 nmi at 303 deg true from home port. Depth 30-35 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="12.701111" lon="74.382778">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="9.655556" lon="76.024167">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL26</name>
+    <cmt>PerinjanamAraattukadavu 22nmi 220T d56-6</cmt>
+    <desc>KERALA / PerinjanamAraattukadavu. 21.9 nmi at 220 deg true from home port. Depth 56-61 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.645556" lon="76.011667">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL27</name>
+    <cmt>KaipamangalamVanchipura 23nmi 220T d52-5</cmt>
+    <desc>KERALA / KaipamangalamVanchipura. 22.8 nmi at 220 deg true from home port. Depth 52-57 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.634167" lon="76.000556">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL28</name>
+    <cmt>Palapetty 24nmi 220T d47-52m</cmt>
+    <desc>KERALA / Palapetty. 23.8 nmi at 220 deg true from home port. Depth 47-52 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="10.144444" lon="75.912778">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KL02</name>
-    <cmt>Manjeshwara 199nmi 326T d66-71m</cmt>
-    <desc>KERALA / Manjeshwara. 198.8 nmi at 326 deg true from home port. Depth 66-71 m. Valid until 2026-11-03.</desc>
+    <cmt>Eriyad(Chelarappa) 24nmi 301T d37-42m</cmt>
+    <desc>KERALA / Eriyad(Chelarappa). 24.0 nmi at 301 deg true from home port. Depth 37-42 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="12.739167" lon="74.374167">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="9.621667" lon="75.990278">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL29</name>
+    <cmt>Edamuttam 25nmi 220T d46-51m</cmt>
+    <desc>KERALA / Edamuttam. 24.7 nmi at 220 deg true from home port. Depth 46-51 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.607778" lon="75.982778">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL30</name>
+    <cmt>Kazhimbram 26nmi 220T d47-52m</cmt>
+    <desc>KERALA / Kazhimbram. 25.7 nmi at 220 deg true from home port. Depth 47-52 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="10.155833" lon="75.876389">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KL01</name>
-    <cmt>Kunzhathur 201nmi 327T d64-69m</cmt>
-    <desc>KERALA / Kunzhathur. 200.9 nmi at 327 deg true from home port. Depth 64-69 m. Valid until 2026-11-03.</desc>
+    <cmt>Pullut 26nmi 300T d43-48m</cmt>
+    <desc>KERALA / Pullut. 26.3 nmi at 300 deg true from home port. Depth 43-48 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="12.949722" lon="74.340278">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="8.676389" lon="76.585833">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL63</name>
+    <cmt>Edaval 78nmi 166T d42-47m</cmt>
+    <desc>KERALA / Edaval. 77.7 nmi at 166 deg true from home port. Depth 42-47 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.660000" lon="76.595833">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL64</name>
+    <cmt>Vettoor 79nmi 165T d46-51m</cmt>
+    <desc>KERALA / Vettoor. 78.8 nmi at 165 deg true from home port. Depth 46-51 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.655833" lon="76.613889">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL65</name>
+    <cmt>Chilakkoor 79nmi 165T d45-50m</cmt>
+    <desc>KERALA / Chilakkoor. 79.3 nmi at 165 deg true from home port. Depth 45-50 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.645833" lon="76.630278">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL66</name>
+    <cmt>Arivalam&amp;Rathikkal 80nmi 164T d46-51m</cmt>
+    <desc>KERALA / Arivalam&amp;Rathikkal. 80.2 nmi at 164 deg true from home port. Depth 46-51 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.642778" lon="76.648889">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL67</name>
+    <cmt>Mampally 81nmi 163T d43-48m</cmt>
+    <desc>KERALA / Mampally. 80.6 nmi at 163 deg true from home port. Depth 43-48 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.635000" lon="76.666389">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL68</name>
+    <cmt>AnjengoNorth 81nmi 163T d44-49m</cmt>
+    <desc>KERALA / AnjengoNorth. 81.4 nmi at 163 deg true from home port. Depth 44-49 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.622778" lon="76.681111">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL69</name>
+    <cmt>AnjengoSouth 82nmi 162T d43-48m</cmt>
+    <desc>KERALA / AnjengoSouth. 82.3 nmi at 162 deg true from home port. Depth 43-48 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.606111" lon="76.689722">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL71</name>
+    <cmt>Poothura 84nmi 162T d44-49m</cmt>
+    <desc>KERALA / Poothura. 83.5 nmi at 162 deg true from home port. Depth 44-49 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.586944" lon="76.690556">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL72</name>
+    <cmt>Perumathura 85nmi 162T d47-52m</cmt>
+    <desc>KERALA / Perumathura. 84.6 nmi at 162 deg true from home port. Depth 47-52 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.568333" lon="76.694167">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL73</name>
+    <cmt>Puthukurichi 86nmi 162T d45-50m</cmt>
+    <desc>KERALA / Puthukurichi. 85.7 nmi at 162 deg true from home port. Depth 45-50 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.882222" lon="75.278889">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL49</name>
+    <cmt>Pozhikkara 86nmi 223T d1535-1540m</cmt>
+    <desc>KERALA / Pozhikkara. 85.8 nmi at 223 deg true from home port. Depth 1535-1540 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.864167" lon="75.298333">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL50</name>
+    <cmt>Paravoor 86nmi 222T d1616-1621m</cmt>
+    <desc>KERALA / Paravoor. 85.8 nmi at 222 deg true from home port. Depth 1616-1621 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.895278" lon="75.255556">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL48</name>
+    <cmt>Tanni 86nmi 224T d1531-1536m</cmt>
+    <desc>KERALA / Tanni. 86.2 nmi at 224 deg true from home port. Depth 1531-1536 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.901667" lon="75.229722">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL47</name>
+    <cmt>Eravipuram 87nmi 225T d1650-1655m</cmt>
+    <desc>KERALA / Eravipuram. 87.0 nmi at 225 deg true from home port. Depth 1650-1655 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.906111" lon="75.203333">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL46</name>
+    <cmt>Pallithottam 88nmi 226T d1785-1790m</cmt>
+    <desc>KERALA / Pallithottam. 87.9 nmi at 226 deg true from home port. Depth 1785-1790 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.913056" lon="75.177778">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL45</name>
+    <cmt>Moothakara 89nmi 226T d1948-1953m</cmt>
+    <desc>KERALA / Moothakara. 88.7 nmi at 226 deg true from home port. Depth 1948-1953 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.925000" lon="75.153889">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL44</name>
+    <cmt>Wadi 89nmi 228T d2059-2064m</cmt>
+    <desc>KERALA / Wadi. 89.2 nmi at 228 deg true from home port. Depth 2059-2064 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.936389" lon="75.129722">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL43</name>
+    <cmt>Quilon 90nmi 228T d2132-2137m</cmt>
+    <desc>KERALA / Quilon. 89.8 nmi at 228 deg true from home port. Depth 2132-2137 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.941944" lon="75.103611">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL42</name>
+    <cmt>QuilonPort 91nmi 229T d2205-2210m</cmt>
+    <desc>KERALA / QuilonPort. 90.8 nmi at 229 deg true from home port. Depth 2205-2210 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.943333" lon="75.076944">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL41</name>
+    <cmt>Sakthikulangara 92nmi 230T d2291-2296m</cmt>
+    <desc>KERALA / Sakthikulangara. 91.9 nmi at 230 deg true from home port. Depth 2291-2296 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.080000" lon="74.795833">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL40</name>
+    <cmt>Chellanum 101nmi 240T d2727-2732m</cmt>
+    <desc>KERALA / Chellanum. 100.8 nmi at 240 deg true from home port. Depth 2727-2732 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.139444" lon="74.758333">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL36</name>
+    <cmt>Manakkodam 101nmi 242T d2704-2709m</cmt>
+    <desc>KERALA / Manakkodam. 101.0 nmi at 242 deg true from home port. Depth 2704-2709 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.116944" lon="74.766944">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL38</name>
+    <cmt>Pallithodu 101nmi 241T d2699-2704m</cmt>
+    <desc>KERALA / Pallithodu. 101.2 nmi at 241 deg true from home port. Depth 2699-2704 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.095833" lon="74.777778">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL39</name>
+    <cmt>Padiyamkara Tekku 101nmi 240T d2714-2719</cmt>
+    <desc>KERALA / Padiyamkara Tekku. 101.3 nmi at 240 deg true from home port. Depth 2714-2719 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.156667" lon="74.741667">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL34</name>
+    <cmt>Thykal 101nmi 243T d2732-2737m</cmt>
+    <desc>KERALA / Thykal. 101.4 nmi at 243 deg true from home port. Depth 2732-2737 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.166111" lon="74.720000">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL31</name>
+    <cmt>Arthunkal/Chennavely 102nmi 243T d2780-2</cmt>
+    <desc>KERALA / Arthunkal/Chennavely. 102.3 nmi at 243 deg true from home port. Depth 2780-2785 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.165278" lon="74.695833">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL32</name>
+    <cmt>Aratungal 104nmi 244T d2799-2804m</cmt>
+    <desc>KERALA / Aratungal. 103.6 nmi at 244 deg true from home port. Depth 2799-2804 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.158889" lon="74.672778">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL33</name>
+    <cmt>Chethy 105nmi 244T d2782-2787m</cmt>
+    <desc>KERALA / Chethy. 105.0 nmi at 244 deg true from home port. Depth 2782-2787 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.148333" lon="74.651111">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL35</name>
+    <cmt>Kottamkulangara 106nmi 244T d2713-2718m</cmt>
+    <desc>KERALA / Kottamkulangara. 106.4 nmi at 244 deg true from home port. Depth 2713-2718 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="9.133056" lon="74.632500">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL37</name>
+    <cmt>Pollethai 108nmi 244T d2617-2622m</cmt>
+    <desc>KERALA / Pollethai. 107.8 nmi at 244 deg true from home port. Depth 2617-2622 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.485278" lon="75.107500">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL76</name>
+    <cmt>Cheriazheekal 110nmi 218T d2745-2750m</cmt>
+    <desc>KERALA / Cheriazheekal. 110.5 nmi at 218 deg true from home port. Depth 2745-2750 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.737222" lon="74.819722">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL56</name>
+    <cmt>Ramancheri Tura 112nmi 230T d2757-2762m</cmt>
+    <desc>KERALA / Ramancheri Tura. 111.5 nmi at 230 deg true from home port. Depth 2757-2762 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.805278" lon="74.761667">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL51</name>
+    <cmt>Ambalapuzha 112nmi 233T d2747-2752m</cmt>
+    <desc>KERALA / Ambalapuzha. 111.7 nmi at 233 deg true from home port. Depth 2747-2752 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.788611" lon="74.726667">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL52</name>
+    <cmt>Valanjavazhy 114nmi 233T d2753-2758m</cmt>
+    <desc>KERALA / Valanjavazhy. 114.0 nmi at 233 deg true from home port. Depth 2753-2758 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.440278" lon="75.066667">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL79</name>
+    <cmt>Puthenthura 114nmi 218T d2762-2767m</cmt>
+    <desc>KERALA / Puthenthura. 114.1 nmi at 218 deg true from home port. Depth 2762-2767 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.677500" lon="74.800278">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL62</name>
+    <cmt>AzheekalJetty 115nmi 229T d2759-2764m</cmt>
+    <desc>KERALA / AzheekalJetty. 114.7 nmi at 229 deg true from home port. Depth 2759-2764 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.780278" lon="74.688889">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL53</name>
+    <cmt>Purakkad 116nmi 234T d2728-2733m</cmt>
+    <desc>KERALA / Purakkad. 116.0 nmi at 234 deg true from home port. Depth 2728-2733 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.421389" lon="75.010278">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL80</name>
+    <cmt>Thankassery F.H. 117nmi 220T d2752-2757m</cmt>
+    <desc>KERALA / Thankassery F.H.. 117.1 nmi at 220 deg true from home port. Depth 2752-2757 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.615000" lon="74.794167">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL70</name>
+    <cmt>Alappattu 118nmi 228T d2747-2752m</cmt>
+    <desc>KERALA / Alappattu. 117.5 nmi at 228 deg true from home port. Depth 2747-2752 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.449444" lon="74.954722">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL78</name>
+    <cmt>Kovilthottam 118nmi 221T d2759-2764m</cmt>
+    <desc>KERALA / Kovilthottam. 117.9 nmi at 221 deg true from home port. Depth 2759-2764 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.772500" lon="74.650833">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL54</name>
+    <cmt>Punnappra 118nmi 234T d2715-2720m</cmt>
+    <desc>KERALA / Punnappra. 118.1 nmi at 234 deg true from home port. Depth 2715-2720 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.555278" lon="74.811111">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL74</name>
+    <cmt>Chavara 119nmi 226T d2767-2772m</cmt>
+    <desc>KERALA / Chavara. 119.2 nmi at 226 deg true from home port. Depth 2767-2772 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.509167" lon="74.852778">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL75</name>
+    <cmt>Neendakara 119nmi 224T d2767-2772m</cmt>
+    <desc>KERALA / Neendakara. 119.4 nmi at 224 deg true from home port. Depth 2767-2772 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.464167" lon="74.894444">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL77</name>
+    <cmt>Vettuthura 120nmi 223T d2754-2759m</cmt>
+    <desc>KERALA / Vettuthura. 119.6 nmi at 223 deg true from home port. Depth 2754-2759 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.756944" lon="74.615278">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL55</name>
+    <cmt>Kalarkod 120nmi 234T d2770-2775m</cmt>
+    <desc>KERALA / Kalarkod. 120.4 nmi at 234 deg true from home port. Depth 2770-2775 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.730556" lon="74.587500">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL57</name>
+    <cmt>Thottappally 123nmi 234T d2798-2803m</cmt>
+    <desc>KERALA / Thottappally. 122.7 nmi at 234 deg true from home port. Depth 2798-2803 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.719444" lon="74.550556">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL58</name>
+    <cmt>Thrikunnapuzha 125nmi 234T d2764-2769m</cmt>
+    <desc>KERALA / Thrikunnapuzha. 124.8 nmi at 234 deg true from home port. Depth 2764-2769 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.714722" lon="74.512222">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL59</name>
+    <cmt>AlleppeyBeach 127nmi 235T d2742-2747m</cmt>
+    <desc>KERALA / AlleppeyBeach. 126.8 nmi at 235 deg true from home port. Depth 2742-2747 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.710833" lon="74.473611">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL60</name>
+    <cmt>Thazhampally 129nmi 236T d2760-2765m</cmt>
+    <desc>KERALA / Thazhampally. 128.9 nmi at 236 deg true from home port. Depth 2760-2765 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="8.710833" lon="74.434722">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KL61</name>
+    <cmt>Thumpolly 131nmi 236T d2763-2768m</cmt>
+    <desc>KERALA / Thumpolly. 130.8 nmi at 236 deg true from home port. Depth 2763-2768 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="13.348889" lon="74.613056">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KA24</name>
-    <cmt>Suratakal Pt 213nmi 328T d63-68m</cmt>
-    <desc>KARNATAKA / Suratakal Pt. 212.6 nmi at 328 deg true from home port. Depth 63-68 m. Valid until 2026-11-03.</desc>
+    <cmt>Kota 226nmi 335T d14-19m</cmt>
+    <desc>KARNATAKA / Kota. 225.7 nmi at 335 deg true from home port. Depth 14-19 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="13.022778" lon="74.318611">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="13.374444" lon="74.591389">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KA23</name>
-    <cmt>Hosabettu-Udaivar 217nmi 328T d45-50m</cmt>
-    <desc>KARNATAKA / Hosabettu-Udaivar. 216.9 nmi at 328 deg true from home port. Depth 45-50 m. Valid until 2026-11-03.</desc>
+    <cmt>Udiyavara 228nmi 335T d16-21m</cmt>
+    <desc>KARNATAKA / Udiyavara. 227.6 nmi at 335 deg true from home port. Depth 16-21 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="13.079722" lon="74.272222">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="13.401389" lon="74.571667">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KA22</name>
-    <cmt>Kapu 221nmi 328T d56-61m</cmt>
-    <desc>KARNATAKA / Kapu. 221.3 nmi at 328 deg true from home port. Depth 56-61 m. Valid until 2026-11-03.</desc>
+    <cmt>Malpe 230nmi 334T d17-22m</cmt>
+    <desc>KARNATAKA / Malpe. 229.6 nmi at 334 deg true from home port. Depth 17-22 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="13.153611" lon="74.255833">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="13.430000" lon="74.554722">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KA21</name>
-    <cmt>Malpe 226nmi 329T d43-48m</cmt>
-    <desc>KARNATAKA / Malpe. 225.5 nmi at 329 deg true from home port. Depth 43-48 m. Valid until 2026-11-03.</desc>
+    <cmt>Hangarkatta 232nmi 334T d20-25m</cmt>
+    <desc>KARNATAKA / Hangarkatta. 231.6 nmi at 334 deg true from home port. Depth 20-25 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="13.466389" lon="74.402778">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA20</name>
-    <cmt>Kota 238nmi 333T d31-36m</cmt>
-    <desc>KARNATAKA / Kota. 237.5 nmi at 333 deg true from home port. Depth 31-36 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="13.590278" lon="74.416944">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA19</name>
-    <cmt>Gangoli 244nmi 334T d32-37m</cmt>
-    <desc>KARNATAKA / Gangoli. 243.7 nmi at 334 deg true from home port. Depth 32-37 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="13.715556" lon="74.409167">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA18</name>
-    <cmt>Navunda 251nmi 334T d34-39m</cmt>
-    <desc>KARNATAKA / Navunda. 250.6 nmi at 334 deg true from home port. Depth 34-39 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="13.841389" lon="74.405000">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA17</name>
-    <cmt>Bhatkal 258nmi 335T d29-34m</cmt>
-    <desc>KARNATAKA / Bhatkal. 257.5 nmi at 335 deg true from home port. Depth 29-34 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="14.039722" lon="74.258056">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA14</name>
-    <cmt>Mavalli 272nmi 334T d36-41m</cmt>
-    <desc>KARNATAKA / Mavalli. 271.9 nmi at 334 deg true from home port. Depth 36-41 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="14.112500" lon="74.270000">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA12</name>
-    <cmt>Navayatkere 276nmi 335T d34-39m</cmt>
-    <desc>KARNATAKA / Navayatkere. 275.5 nmi at 335 deg true from home port. Depth 34-39 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="14.185833" lon="74.264444">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA10</name>
-    <cmt>Honavar 280nmi 335T d33-38m</cmt>
-    <desc>KARNATAKA / Honavar. 279.6 nmi at 335 deg true from home port. Depth 33-38 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="14.258889" lon="74.270833">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA09</name>
-    <cmt>Kasarkod 283nmi 336T d29-34m</cmt>
-    <desc>KARNATAKA / Kasarkod. 283.4 nmi at 336 deg true from home port. Depth 29-34 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="14.294444" lon="73.971111">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA08</name>
-    <cmt>Karki 293nmi 333T d47-52m</cmt>
-    <desc>KARNATAKA / Karki. 293.0 nmi at 333 deg true from home port. Depth 47-52 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="13.940000" lon="73.317778">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="13.698889" lon="74.543333">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KA16</name>
-    <cmt>Coondapoor (gangoli) 295nmi 324T d265-27</cmt>
-    <desc>KARNATAKA / Coondapoor (gangoli). 295.2 nmi at 324 deg true from home port. Depth 265-270 m. Valid until 2026-11-03.</desc>
+    <cmt>Coondapoor (gangoli) 246nmi 336T d17-22m</cmt>
+    <desc>KARNATAKA / Coondapoor (gangoli). 246.4 nmi at 336 deg true from home port. Depth 17-22 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="14.375278" lon="73.958889">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA07</name>
-    <cmt>Kumta Pt 298nmi 333T d47-52m</cmt>
-    <desc>KARNATAKA / Kumta Pt. 297.6 nmi at 333 deg true from home port. Depth 47-52 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="14.025556" lon="73.288333">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="13.735833" lon="74.551667">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KA15</name>
-    <cmt>Baindur 300nmi 325T d240-245m</cmt>
-    <desc>KARNATAKA / Baindur. 300.3 nmi at 325 deg true from home port. Depth 240-245 m. Valid until 2026-11-03.</desc>
+    <cmt>Gangoli 248nmi 336T d13-18m</cmt>
+    <desc>KARNATAKA / Gangoli. 248.2 nmi at 336 deg true from home port. Depth 13-18 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="14.455000" lon="73.979167">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA06</name>
-    <cmt>Tadri 301nmi 334T d45-50m</cmt>
-    <desc>KARNATAKA / Tadri. 301.3 nmi at 334 deg true from home port. Depth 45-50 m. Valid until 2026-11-03.</desc>
+  <wpt lat="13.772500" lon="74.538889">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA14</name>
+    <cmt>Navunda 250nmi 336T d16-21m</cmt>
+    <desc>KARNATAKA / Navunda. 250.5 nmi at 336 deg true from home port. Depth 16-21 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="14.537222" lon="73.973611">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA05</name>
-    <cmt>Gangavali 306nmi 334T d36-41m</cmt>
-    <desc>KARNATAKA / Gangavali. 305.9 nmi at 334 deg true from home port. Depth 36-41 m. Valid until 2026-11-03.</desc>
-    <sym>Fish</sym>
-    <type>PFZ</type>
-  </wpt>
-  <wpt lat="14.107222" lon="73.239722">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="13.805000" lon="74.518611">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KA13</name>
-    <cmt>Shirali 306nmi 325T d377-382m</cmt>
-    <desc>KARNATAKA / Shirali. 305.9 nmi at 325 deg true from home port. Depth 377-382 m. Valid until 2026-11-03.</desc>
+    <cmt>Baindur 253nmi 336T d16-21m</cmt>
+    <desc>KARNATAKA / Baindur. 252.7 nmi at 336 deg true from home port. Depth 16-21 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="14.178611" lon="73.176667">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA11</name>
-    <cmt>Dhareshvar 312nmi 325T d684-689m</cmt>
-    <desc>KARNATAKA / Dhareshvar. 311.5 nmi at 325 deg true from home port. Depth 684-689 m. Valid until 2026-11-03.</desc>
+  <wpt lat="13.553333" lon="73.276111">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA20</name>
+    <cmt>Kapu 278nmi 321T d1032-1037m</cmt>
+    <desc>KARNATAKA / Kapu. 278.4 nmi at 321 deg true from home port. Depth 1032-1037 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="14.625278" lon="73.423889">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA01</name>
-    <cmt>Belekeri 326nmi 330T d102-107m</cmt>
-    <desc>KARNATAKA / Belekeri. 325.9 nmi at 330 deg true from home port. Depth 102-107 m. Valid until 2026-11-03.</desc>
+  <wpt lat="13.585278" lon="73.161389">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA18</name>
+    <cmt>Bhatkal 284nmi 320T d1353-1358m</cmt>
+    <desc>KARNATAKA / Bhatkal. 284.2 nmi at 320 deg true from home port. Depth 1353-1358 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="14.619167" lon="73.379167">
-    <time>2026-11-02T12:43:00Z</time>
-    <name>KA02</name>
-    <cmt>Sadasguvgarg 327nmi 329T d103-108m</cmt>
-    <desc>KARNATAKA / Sadasguvgarg. 326.9 nmi at 329 deg true from home port. Depth 103-108 m. Valid until 2026-11-03.</desc>
+  <wpt lat="13.585000" lon="73.039722">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA19</name>
+    <cmt>Shirali 289nmi 319T d1423-1428m</cmt>
+    <desc>KARNATAKA / Shirali. 288.8 nmi at 319 deg true from home port. Depth 1423-1428 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="14.578056" lon="73.302500">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="13.639722" lon="72.931389">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA17</name>
+    <cmt>Mavalli 296nmi 319T d1721-1726m</cmt>
+    <desc>KARNATAKA / Mavalli. 295.5 nmi at 319 deg true from home port. Depth 1721-1726 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="14.525278" lon="74.155278">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA08</name>
+    <cmt>Dhareshvar 301nmi 336T d26-31m</cmt>
+    <desc>KARNATAKA / Dhareshvar. 300.7 nmi at 336 deg true from home port. Depth 26-31 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="14.538056" lon="74.175000">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA07</name>
+    <cmt>Kumta Pt 301nmi 336T d25-30m</cmt>
+    <desc>KARNATAKA / Kumta Pt. 300.9 nmi at 336 deg true from home port. Depth 25-30 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="14.561111" lon="74.171389">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA06</name>
+    <cmt>Tadri 302nmi 336T d22-27m</cmt>
+    <desc>KARNATAKA / Tadri. 302.2 nmi at 336 deg true from home port. Depth 22-27 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="14.579167" lon="74.155278">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA05</name>
+    <cmt>Gangavali 304nmi 336T d23-28m</cmt>
+    <desc>KARNATAKA / Gangavali. 303.6 nmi at 336 deg true from home port. Depth 23-28 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="14.785833" lon="74.033333">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KA04</name>
-    <cmt>Karwar 327nmi 328T d111-116m</cmt>
-    <desc>KARNATAKA / Karwar. 327.2 nmi at 328 deg true from home port. Depth 111-116 m. Valid until 2026-11-03.</desc>
+    <cmt>Belekeri 318nmi 336T d16-21m</cmt>
+    <desc>KARNATAKA / Belekeri. 317.8 nmi at 336 deg true from home port. Depth 16-21 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
-  <wpt lat="14.607500" lon="73.335556">
-    <time>2026-11-02T12:43:00Z</time>
+  <wpt lat="14.810278" lon="74.010000">
+    <time>2026-11-03T12:09:28Z</time>
     <name>KA03</name>
-    <cmt>Majali 328nmi 329T d98-103m</cmt>
-    <desc>KARNATAKA / Majali. 327.6 nmi at 329 deg true from home port. Depth 98-103 m. Valid until 2026-11-03.</desc>
+    <cmt>Sadasguvgarg 320nmi 336T d18-23m</cmt>
+    <desc>KARNATAKA / Sadasguvgarg. 319.7 nmi at 336 deg true from home port. Depth 18-23 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="14.844167" lon="74.006667">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA02</name>
+    <cmt>Majali 322nmi 336T d17-22m</cmt>
+    <desc>KARNATAKA / Majali. 321.6 nmi at 336 deg true from home port. Depth 17-22 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="14.878056" lon="74.005556">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA01</name>
+    <cmt>Karwar 324nmi 336T d13-18m</cmt>
+    <desc>KARNATAKA / Karwar. 323.5 nmi at 336 deg true from home port. Depth 13-18 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="14.232222" lon="72.020833">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA12</name>
+    <cmt>Navayatkere 358nmi 316T d1680-1685m</cmt>
+    <desc>KARNATAKA / Navayatkere. 357.7 nmi at 316 deg true from home port. Depth 1680-1685 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="14.400000" lon="72.184444">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA09</name>
+    <cmt>Karki 358nmi 318T d2067-2072m</cmt>
+    <desc>KARNATAKA / Karki. 358.4 nmi at 318 deg true from home port. Depth 2067-2072 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="14.352222" lon="72.124167">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA10</name>
+    <cmt>Kasarkod 359nmi 318T d2268-2273m</cmt>
+    <desc>KARNATAKA / Kasarkod. 358.7 nmi at 318 deg true from home port. Depth 2268-2273 m. Valid until 2026-11-04.</desc>
+    <sym>Fish</sym>
+    <type>PFZ</type>
+  </wpt>
+  <wpt lat="14.299722" lon="72.065556">
+    <time>2026-11-03T12:09:28Z</time>
+    <name>KA11</name>
+    <cmt>Honavar 359nmi 317T d1971-1976m</cmt>
+    <desc>KARNATAKA / Honavar. 358.7 nmi at 317 deg true from home port. Depth 1971-1976 m. Valid until 2026-11-04.</desc>
     <sym>Fish</sym>
     <type>PFZ</type>
   </wpt>
