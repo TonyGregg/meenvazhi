@@ -1,9 +1,9 @@
 {
-  "last_attempt_at": "2026-11-06T14:27:43Z",
+  "last_attempt_at": "2026-11-07T11:13:36Z",
   "published": true,
   "reason": null,
   "exit_code": 0,
-  "advisory_date": "2026-11-06",
+  "advisory_date": "2026-11-07",
   "consecutive_failures": 0,
   "sectors": [
     {
@@ -18,15 +18,15 @@
       "sector_name": "KERALA",
       "status": "HAS_ADVISORY",
       "reason": null,
-      "zone_count": 90
+      "zone_count": 100
     },
     {
       "sector_id": "SEC004",
       "sector_name": "KARNATAKA",
       "status": "HAS_ADVISORY",
       "reason": null,
-      "zone_count": 28
+      "zone_count": 12
     }
   ],
-  "last_success_at": "2026-11-06T14:27:43Z"
+  "last_success_at": "2026-11-07T11:13:36Z"
 }
