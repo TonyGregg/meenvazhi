@@ -1,32 +1,32 @@
 {
-  "last_attempt_at": "2026-11-14T11:39:14Z",
+  "last_attempt_at": "2026-11-15T12:07:06Z",
   "published": true,
   "reason": null,
   "exit_code": 0,
-  "advisory_date": "2026-11-14",
+  "advisory_date": "2026-11-15",
   "consecutive_failures": 0,
   "sectors": [
     {
       "sector_id": "SEC006",
       "sector_name": "SOUTH TAMILNADU",
-      "status": "HAS_ADVISORY",
-      "reason": null,
-      "zone_count": 50
+      "status": "NO_ADVISORY",
+      "reason": "excessive cloud cover",
+      "zone_count": 0
     },
     {
       "sector_id": "SEC005",
       "sector_name": "KERALA",
       "status": "HAS_ADVISORY",
       "reason": null,
-      "zone_count": 150
+      "zone_count": 100
     },
     {
       "sector_id": "SEC004",
       "sector_name": "KARNATAKA",
       "status": "HAS_ADVISORY",
       "reason": null,
-      "zone_count": 29
+      "zone_count": 16
     }
   ],
-  "last_success_at": "2026-11-14T11:39:14Z"
+  "last_success_at": "2026-11-15T12:07:06Z"
 }
