@@ -160,6 +160,7 @@ export const en = {
   // Always present.
   disclaimer: 'Advisory only. Not for navigation or safety of life at sea.',
   credit: 'Source: INCOIS, Ministry of Earth Sciences, Govt. of India',
+  builtBy: 'Built by Shenil G, a fisherman from Vaniyakudy',
   bearingsAreTrue: 'All bearings are true, not magnetic.',
   banWest: 'Monsoon fishing ban, 1 June to 31 July, west coast. Confirm this year’s dates.',
   banEast: 'Monsoon fishing ban, 15 April to 14 June, east coast. Confirm this year’s dates.',

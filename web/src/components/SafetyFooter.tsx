@@ -19,6 +19,9 @@ export function SafetyFooter({ t }: { t: Messages }): React.JSX.Element {
       <p className="muted" style={{ margin: 0 }}>
         {t.credit}
       </p>
+      <p className="muted" style={{ margin: 0 }}>
+        {t.builtBy}
+      </p>
     </footer>
   );
 }
