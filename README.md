@@ -93,7 +93,7 @@ silently dropped: a line under the list says how many are hidden, with one tap t
 show them.
 
 **By area** works the way INCOIS presents its advisory. Pick South Tamil Nadu,
-Kerala or Karnataka and see every zone in it, in the order INCOIS
+Kerala, Karnataka, Goa or Maharashtra and see every zone in it, in the order INCOIS
 lists them along the coast, with nothing filtered by range. Each zone leads with
 INCOIS's own bearing and distance from its nearest landing centre, which is what
 someone sailing from that stretch of coast uses. The course from your home port

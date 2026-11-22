@@ -94,7 +94,7 @@ SEC004 KARNATAKA        SEC009 NORTH ANDHRA PRADESH   SEC014 LAKSHADWEEP
 SEC005 KERALA           SEC010 ODISHA
 ```
 
-Configured default is Kerala, Karnataka, Lakshadweep and South Tamil Nadu, as a list in config.
+Configured sectors, in order: South Tamil Nadu, Kerala, Karnataka, Goa and Maharashtra, as a list in config.
 
 ## Table shape
 

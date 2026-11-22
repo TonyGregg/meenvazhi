@@ -130,6 +130,7 @@ export const en = {
   fromCoastIncois: (place: string) => `From ${place} coast · INCOIS`,
   fromYourPort: (port: string) => `From ${port}`,
   sectorNames: {
+    SEC002: 'Maharashtra',
     SEC003: 'Goa',
     SEC004: 'Karnataka',
     SEC005: 'Kerala',

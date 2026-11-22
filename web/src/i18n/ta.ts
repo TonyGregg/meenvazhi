@@ -117,6 +117,7 @@ export const ta: Messages = {
   fromCoastIncois: (place: string) => `${place} கரையிலிருந்து · INCOIS`,
   fromYourPort: (port: string) => `${port}-இலிருந்து`,
   sectorNames: {
+    SEC002: 'மகாராஷ்டிரா',
     SEC003: 'கோவா',
     SEC004: 'கர்நாடகா',
     SEC005: 'கேரளா',

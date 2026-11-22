@@ -37,6 +37,11 @@ export const PORTS: readonly Port[] = [
   { slug: 'karwar', name: 'Karwar (Baithkol)', state: 'Karnataka', coast: 'west', lat: 14.805, lon: 74.117 },
   { slug: 'cutbona', name: 'Cutbona', state: 'Goa', coast: 'west', lat: 15.164, lon: 73.944 },
   { slug: 'malim', name: 'Panaji (Malim)', state: 'Goa', coast: 'west', lat: 15.502, lon: 73.823 },
+  { slug: 'malvan', name: 'Malvan', state: 'Maharashtra', coast: 'west', lat: 16.059, lon: 73.466 },
+  { slug: 'devgad', name: 'Devgad', state: 'Maharashtra', coast: 'west', lat: 16.383, lon: 73.383 },
+  { slug: 'ratnagiri', name: 'Ratnagiri (Mirkarwada)', state: 'Maharashtra', coast: 'west', lat: 16.999, lon: 73.279 },
+  { slug: 'harnai', name: 'Harnai', state: 'Maharashtra', coast: 'west', lat: 17.809, lon: 73.092 },
+  { slug: 'mumbai', name: 'Mumbai (Sassoon Dock)', state: 'Maharashtra', coast: 'west', lat: 18.907, lon: 72.826 },
 ] as const;
 
 export const DEFAULT_PORT_SLUG = 'kochi';

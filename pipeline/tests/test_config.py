@@ -138,10 +138,10 @@ def test_default_port_is_the_kochi_fishing_harbour() -> None:
 
 
 def test_ports_have_plausible_indian_coordinates() -> None:
-    # Panaji in the north-west to Chennai in the north-east.
+    # Colachel in the south to Mumbai in the north-west and Chennai in the east.
     for port in PORTS:
-        assert 8.0 <= port.lat <= 16.0, port.slug
-        assert 73.5 <= port.lon <= 80.5, port.slug
+        assert 8.0 <= port.lat <= 19.5, port.slug
+        assert 72.5 <= port.lon <= 80.5, port.slug
         assert port.coast in ("west", "east")
 
 

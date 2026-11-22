@@ -48,6 +48,11 @@ PORTS: tuple[Port, ...] = (
     Port("karwar", "Karwar (Baithkol)", "Karnataka", "west", 14.8050, 74.1170),
     Port("cutbona", "Cutbona", "Goa", "west", 15.1640, 73.9440),
     Port("malim", "Panaji (Malim)", "Goa", "west", 15.5020, 73.8230),
+    Port("malvan", "Malvan", "Maharashtra", "west", 16.0590, 73.4660),
+    Port("devgad", "Devgad", "Maharashtra", "west", 16.3830, 73.3830),
+    Port("ratnagiri", "Ratnagiri (Mirkarwada)", "Maharashtra", "west", 16.9990, 73.2790),
+    Port("harnai", "Harnai", "Maharashtra", "west", 17.8090, 73.0920),
+    Port("mumbai", "Mumbai (Sassoon Dock)", "Maharashtra", "west", 18.9070, 72.8260),
 )
 
 PORT_BY_SLUG = {p.slug: p for p in PORTS}
