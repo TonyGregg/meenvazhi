@@ -141,6 +141,8 @@ KERALA: 136 zone(s)
   KL170 117nmi 172T depth 1014-1019m (7 59 59 N 76 31 51 E)
   KL171 120nmi 186T depth 1495-1500m (7 56 13 N 76 4 7 E)
 KARNATAKA: 29 zones, none within 120 nmi
+GOA: 10 zones, none within 120 nmi
+MAHARASHTRA: 196 zones, none within 120 nmi
 
 Advisory only. Not for navigation or safety of life at sea.
 Source: INCOIS, Ministry of Earth Sciences, Govt. of India

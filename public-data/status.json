@@ -1,5 +1,5 @@
 {
-  "last_attempt_at": "2026-11-22T14:45:53Z",
+  "last_attempt_at": "2026-11-22T14:50:19Z",
   "published": true,
   "reason": null,
   "exit_code": 0,
@@ -26,7 +26,21 @@
       "status": "HAS_ADVISORY",
       "reason": null,
       "zone_count": 29
+    },
+    {
+      "sector_id": "SEC003",
+      "sector_name": "GOA",
+      "status": "HAS_ADVISORY",
+      "reason": null,
+      "zone_count": 10
+    },
+    {
+      "sector_id": "SEC002",
+      "sector_name": "MAHARASHTRA",
+      "status": "HAS_ADVISORY",
+      "reason": null,
+      "zone_count": 196
     }
   ],
-  "last_success_at": "2026-11-22T14:45:53Z"
+  "last_success_at": "2026-11-22T14:50:19Z"
 }
