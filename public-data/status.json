@@ -1,9 +1,9 @@
 {
-  "last_attempt_at": "2026-11-21T14:50:03Z",
+  "last_attempt_at": "2026-11-22T14:45:53Z",
   "published": true,
   "reason": null,
   "exit_code": 0,
-  "advisory_date": "2026-11-21",
+  "advisory_date": "2026-11-22",
   "consecutive_failures": 0,
   "sectors": [
     {
@@ -28,5 +28,5 @@
       "zone_count": 29
     }
   ],
-  "last_success_at": "2026-11-21T14:50:03Z"
+  "last_success_at": "2026-11-22T14:45:53Z"
 }
