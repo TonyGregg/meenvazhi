@@ -24,7 +24,9 @@ first_device() { "$ADB" devices | awk 'NR > 1 && $2 == "device" { print $1; exit
 DEVICE="$(first_device)"
 if [ -z "$DEVICE" ]; then
   echo "No phone or emulator connected. Starting the $AVD emulator; a phone window will appear..."
-  nohup "$EMULATOR" -avd "$AVD" -no-snapshot-save >/dev/null 2>&1 &
+  # Cold boot, never from a saved snapshot: an old snapshot brings back its old
+  # clock, its network state and the advisory it had cached at the time.
+  nohup "$EMULATOR" -avd "$AVD" -no-snapshot >/dev/null 2>&1 &
   "$ADB" wait-for-device
   printf "Waiting for Android to finish booting"
   until [ "$("$ADB" shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')" = "1" ]; do
@@ -33,6 +35,18 @@ if [ -z "$DEVICE" ]; then
   echo
   DEVICE="$(first_device)"
 fi
+
+# Emulator only, never a real phone: make sure it is online with the right time,
+# so Refresh fetches today's advisory rather than showing the saved copy.
+case "$DEVICE" in
+  emulator-*)
+    "$ADB" -s "$DEVICE" shell cmd connectivity airplane-mode disable
+    "$ADB" -s "$DEVICE" shell svc wifi enable
+    "$ADB" -s "$DEVICE" shell svc data enable
+    "$ADB" -s "$DEVICE" shell settings put global auto_time 1
+    echo "Emulator is online (airplane mode off, Wi-Fi and mobile data on)."
+    ;;
+esac
 
 echo "Installing on $DEVICE..."
 "$ADB" -s "$DEVICE" install -r "$APK" >/dev/null
