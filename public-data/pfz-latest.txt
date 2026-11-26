@@ -1,47 +1,12 @@
-MEENVAZHI PFZ 2026-11-25
-Valid until: 2026-11-26
+MEENVAZHI PFZ 2026-11-26
+Valid until: 2026-11-27
 From: Kochi (Cochin Fisheries Harbour)
 
-SOUTH TAMILNADU: 26 zones, none within 120 nmi
-KERALA: 35 zone(s)
-  KL17 45nmi 188T depth 51-56m (9 11 6 N 76 9 32 E)
-  KL18 46nmi 186T depth 49-54m (9 10 8 N 76 11 12 E)
-  KL19 47nmi 184T depth 46-51m (9 8 55 N 76 12 43 E)
-  KL20 49nmi 182T depth 47-52m (9 7 28 N 76 13 59 E)
-  KL21 50nmi 181T depth 42-47m (9 5 43 N 76 14 46 E)
-  KL22 52nmi 181T depth 45-50m (9 3 48 N 76 15 6 E)
-  KL23 54nmi 179T depth 43-48m (9 2 21 N 76 16 13 E)
-  KL24 55nmi 178T depth 39-44m (9 1 21 N 76 17 41 E)
-  KL25 56nmi 178T depth 42-47m (8 59 28 N 76 18 7 E)
-  KL26 58nmi 177T depth 44-49m (8 57 33 N 76 18 23 E)
-  KL27 60nmi 178T depth 43-48m (8 55 37 N 76 18 22 E)
-  KL28 62nmi 178T depth 44-49m (8 53 43 N 76 18 3 E)
-  KL29 64nmi 178T depth 45-50m (8 51 55 N 76 17 20 E)
-  KL30 66nmi 179T depth 48-53m (8 50 13 N 76 16 24 E)
-  KL31 68nmi 180T depth 52-57m (8 48 24 N 76 15 46 E)
-  KL32 69nmi 180T depth 57-62m (8 46 30 N 76 15 24 E)
-  KL33 71nmi 180T depth 63-68m (8 44 34 N 76 15 13 E)
-  KL34 73nmi 180T depth 63-68m (8 42 38 N 76 15 15 E)
-  KL35 97nmi 170T depth 143-148m (8 20 2 N 76 32 46 E)
-  KL36 98nmi 171T depth 275-280m (8 18 40 N 76 31 5 E)
-  KL37 99nmi 172T depth 447-452m (8 17 30 N 76 29 15 E)
-  KL38 100nmi 173T depth 603-608m (8 16 38 N 76 27 15 E)
-  KL39 100nmi 175T depth 693-698m (8 15 54 N 76 25 13 E)
-  KL40 101nmi 176T depth 809-814m (8 14 49 N 76 23 20 E)
-  KL41 102nmi 177T depth 937-942m (8 13 28 N 76 21 37 E)
-  KL42 104nmi 177T depth 1016-1021m (8 11 41 N 76 20 24 E)
-  KL43 106nmi 178T depth 1047-1052m (8 9 33 N 76 20 9 E)
-  KL44 108nmi 177T depth 1082-1087m (8 7 46 N 76 21 11 E)
-  KL45 109nmi 176T depth 1061-1066m (8 6 53 N 76 23 11 E)
-  KL46 111nmi 175T depth 1046-1051m (8 5 30 N 76 24 47 E)
-  KL47 113nmi 175T depth 1072-1077m (8 3 25 N 76 25 21 E)
-  KL48 115nmi 175T depth 1096-1101m (8 1 15 N 76 25 22 E)
-  KL49 117nmi 176T depth 1151-1156m (7 59 8 N 76 24 53 E)
-  KL50 118nmi 176T depth 1215-1220m (7 57 27 N 76 23 32 E)
-  KL51 120nmi 177T depth 1276-1281m (7 56 7 N 76 21 49 E)
-KARNATAKA: 29 zones, none within 120 nmi
+SOUTH TAMILNADU: 38 zones, none within 120 nmi
+KERALA: no advisory (excessive cloud cover)
+KARNATAKA: 24 zones, none within 120 nmi
 GOA: 10 zones, none within 120 nmi
-MAHARASHTRA: 99 zones, none within 120 nmi
+MAHARASHTRA: 122 zones, none within 120 nmi
 
 Advisory only. Not for navigation or safety of life at sea.
 Source: INCOIS, Ministry of Earth Sciences, Govt. of India
